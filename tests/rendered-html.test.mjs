@@ -11,7 +11,7 @@ test("exports a complete static homepage", async () => {
   assert.match(html, /erased\./);
   assert.match(html, /We are here to build them back\./);
   assert.match(html, /The Foundation/);
-  assert.match(html, /V\.56/);
+  assert.match(html, /V\.57/);
   assert.match(html, /Leadership/);
   assert.match(html, /Lifestyle/);
   assert.match(html, /Law/);
@@ -31,4 +31,19 @@ test("exports the expected site routes", async () => {
   ]) {
     assert.ok(entries.includes(route), `missing exported route: ${route}`);
   }
+
+  for (const removedRoute of [
+    "article-concepts",
+    "pillar-concepts",
+    "pillar-concepts-dark",
+    "work-section-concepts",
+  ]) {
+    assert.ok(!entries.includes(removedRoute), `unexpected concept route: ${removedRoute}`);
+  }
+});
+
+test("exports the unlinked article template", async () => {
+  const html = await readFile(new URL("template.html", outputRoot), "utf8");
+  assert.match(html, /The Fathers Front Dispatch/);
+  assert.match(html, /ARTICLE TEMPLATE · V\.57/);
 });

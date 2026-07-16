@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import { articles, getArticle } from "../article-data";
-import styles from "../../article-concepts/styles.module.css";
+import styles from "../article-styles.module.css";
 
 export function generateStaticParams() { return articles.map(({ slug }) => ({ slug })); }
 

@@ -1,6 +1,6 @@
 export type Article = {
   slug: string;
-  pillar: "Law" | "Love" | "Leadership" | "Legacy";
+  pillar: "Law" | "Love" | "Leadership" | "Lifestyle";
   title: string;
   deck: string;
   readTime: string;
@@ -59,14 +59,14 @@ export const articles: Article[] = [
   },
   {
     slug: "protect-what-you-build",
-    pillar: "Legacy",
+    pillar: "Lifestyle",
     title: "Wealth Without Structure Is an Invitation to the System.",
     deck: "Why fathers must think beyond income and build durable structures around family, ownership, and freedom.",
     readTime: "8 minute read",
     lede: "Most men begin thinking about protection after the threat appears. By then, many of the best options are more expensive, more difficult, or no longer available.",
     quote: "What you build is not protected merely because you earned it.",
     sections: [
-      { heading: "Income is not legacy", body: "A high income can disappear through taxes, litigation, support orders, poor ownership structures, and a family that was never taught how to steward what was built." },
+      { heading: "Income is not protection", body: "A high income can disappear through taxes, litigation, support orders, poor ownership structures, and a family that was never taught how to steward what was built." },
       { heading: "Structure before crisis", body: "Entity planning, jurisdiction, succession, insurance, custody strategy, and international options are most useful before the emergency. Build with qualified legal and tax professionals while choices remain available." },
       { heading: "Transfer judgment, not only assets", body: "The final inheritance is not money. It is the capacity of your children to understand responsibility, sovereignty, family loyalty, and the cost required to preserve what matters." },
     ],

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { articles } from "./article-data";
 
-const filters = ["All", "Law", "Love", "Leadership", "Legacy"] as const;
+const filters = ["All", "Law", "Love", "Leadership", "Lifestyle"] as const;
 
 export function ArticleIndex() {
   const [active, setActive] = useState<(typeof filters)[number]>("All");
