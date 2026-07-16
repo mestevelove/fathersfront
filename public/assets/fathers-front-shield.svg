@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">Fathers Front shield</title>
+  <desc id="desc">An angular oxblood outline shield with an open interior.</desc>
+  <path
+    id="shield-outline"
+    d="M176 146 H848 V548 L512 914 L176 548 Z"
+    fill="none"
+    stroke="#912D2F"
+    stroke-width="68"
+    stroke-linecap="square"
+    stroke-linejoin="miter"
+  />
+</svg>

@@ -1,0 +1,19 @@
+DirectoryIndex index.html
+
+Options -Indexes -MultiViews
+
+RewriteEngine On
+
+# Retired resource routes now resolve to the article library.
+RewriteRule ^writing/?$ /articles/ [R=301,L]
+RewriteRule ^resources/?$ /articles/ [R=301,L]
+RewriteRule ^free-guides/?$ /articles/ [R=301,L]
+RewriteRule ^watch-listen/?$ /podcast/ [R=301,L]
+
+# Serve exported Next.js routes from their directory index files.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
+RewriteRule ^(.+?)/?$ $1/index.html [L]
+
+ErrorDocument 404 /404.html
