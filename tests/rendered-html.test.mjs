@@ -10,6 +10,8 @@ test("exports a complete static homepage", async () => {
   assert.match(html, /Fathers are being/);
   assert.match(html, /erased\./);
   assert.match(html, /We are here to build them back\./);
+  assert.match(html, /The Foundation/);
+  assert.match(html, /V\.56/);
   assert.match(html, /Leadership/);
   assert.match(html, /Lifestyle/);
   assert.match(html, /Law/);

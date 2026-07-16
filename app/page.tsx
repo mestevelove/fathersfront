@@ -28,7 +28,7 @@ export default function Home() {
 
       <section className="manifesto cream-section">
         <div className="shell manifesto-approved">
-          <div className="manifesto-rule" aria-hidden="true" />
+          <p className="section-kicker manifesto-kicker">The Foundation</p>
           <h2>Fathers are being <em>erased.</em><span>We are here to build them back.</span></h2>
           <p className="manifesto-detail">I&apos;m Steve Love. Fathers Front helps fathers rebuild their presence, their future, and their ability to lead after family conflict and financial loss.</p>
         </div>
