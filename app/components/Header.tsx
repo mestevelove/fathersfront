@@ -12,11 +12,11 @@ export function Header() {
           <span /><span /><span />
         </button>
         <nav className={open ? "nav open" : "nav"} aria-label="Primary navigation">
-          <div className="mobile-menu-heading"><span>Main Menu</span><b>V.58</b></div>
+          <div className="mobile-menu-heading"><span>Main Menu</span><b>V.59</b></div>
           <Link href="/">Home</Link><Link href="/books">Books</Link><Link href="/articles">Articles</Link>
           <Link href="/speaking">Speaking</Link><Link href="/about">About</Link><Link className="nav-cta" href="/work-with-steve">Work With Steve</Link>
         </nav>
-        <span className="site-version" aria-label="Site version 58">V.58</span>
+        <span className="site-version" aria-label="Site version 59">V.59</span>
       </div>
     </header>
   );
