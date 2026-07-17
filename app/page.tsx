@@ -19,8 +19,7 @@ export default function Home() {
         <div className="hero-shade" />
         <div className="hero-copy shell">
           <div className="hero-rule" aria-hidden="true" />
-          <h1><span data-text="Born in Blood.">Born in Blood.</span><span data-text="Forged in Fire.">Forged in Fire.</span></h1>
-          <p className="hero-sub"><b>Love</b><i>.</i> Law<i>.</i> Leadership<i>.</i> Lifestyle<i>.</i></p>
+          <h1 className="home-hero-headline"><span data-text="Defend your fatherhood.">Defend your fatherhood.</span><span data-text="Rebuild your life.">Rebuild your life.</span><span data-text="Rise beyond the fight.">Rise beyond the fight.</span></h1>
           <div className="hero-actions"><Link className="button ember" href="/work-with-steve">Work with Steve</Link></div>
         </div>
         <div className="scroll-note">Scroll to enter the front <span>&darr;</span></div>
@@ -29,8 +28,8 @@ export default function Home() {
       <section className="manifesto cream-section">
         <div className="shell manifesto-approved">
           <p className="section-kicker manifesto-kicker">The Foundation</p>
-          <h2>Fathers are being <em>erased.</em><span>We are here to build them back.</span></h2>
-          <p className="manifesto-detail">I&apos;m Steve Love. Fathers Front helps fathers protect their relationship with their children when family conflict becomes a legal battle, then rebuild the income, health, leadership, and family life the fight threatens to destroy.</p>
+          <h2 className="home-intro-headline"><span className="home-intro-born">Born in <b>Blood.</b></span><em>Forged in Fire.</em></h2>
+          <p className="manifesto-detail">Fathers Front builds disciplined, powerful fathers who protect their relationship with their children, rebuild what family conflict has damaged, and create the business, freedom, and family legacy that come next.</p>
         </div>
       </section>
 
