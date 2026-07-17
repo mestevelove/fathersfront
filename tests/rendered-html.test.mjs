@@ -11,11 +11,15 @@ test("exports a complete static homepage", async () => {
   assert.match(html, /erased\./);
   assert.match(html, /We are here to build them back\./);
   assert.match(html, /The Foundation/);
-  assert.match(html, /V\.57/);
+  assert.match(html, /V\.58/);
   assert.match(html, /Leadership/);
   assert.match(html, /Lifestyle/);
   assert.match(html, /Law/);
   assert.match(html, /Love/);
+  assert.match(html, /The Fathers Front Dispatch/);
+  assert.match(html, /A weekly field note for fathers and builders under pressure\./);
+  assert.match(html, /Join the Dispatch/);
+  assert.doesNotMatch(html, /Born in Blood\.<br\/?><em>Forged in Fire\.<\/em>/);
 });
 
 test("exports the expected site routes", async () => {
@@ -45,5 +49,20 @@ test("exports the expected site routes", async () => {
 test("exports the unlinked article template", async () => {
   const html = await readFile(new URL("template.html", outputRoot), "utf8");
   assert.match(html, /The Fathers Front Dispatch/);
-  assert.match(html, /ARTICLE TEMPLATE · V\.57/);
+  assert.match(html, /ARTICLE TEMPLATE · V\.58/);
+});
+
+test("exports phase one messaging", async () => {
+  const home = await readFile(new URL("index.html", outputRoot), "utf8");
+  const work = await readFile(new URL("work-with-steve/index.html", outputRoot), "utf8");
+  const speaking = await readFile(new URL("speaking/index.html", outputRoot), "utf8");
+
+  assert.match(home, /protect their relationship with their children/);
+  assert.match(home, /The court case is one front\./);
+  assert.match(work, /Protect your relationship with your children\./);
+  assert.match(work, /continue working through enforcement and return/);
+  assert.doesNotMatch(work, /secured sole custody in two countries/);
+  assert.match(speaking, /The Father Must Lead the Case/);
+  assert.match(speaking, /Born in Blood\. Forged in Fire\./);
+  assert.match(speaking, />04</);
 });

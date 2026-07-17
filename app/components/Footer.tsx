@@ -4,7 +4,16 @@ export function Footer() {
   return (
     <footer className="footer">
       <div className="shell footer-grid">
-        <div><h2>Born in Blood.<br /><em>Forged in Fire.</em></h2></div>
+        <div className="footer-dispatch">
+          <p className="footer-dispatch-kicker">Weekly field note</p>
+          <h2>The Fathers Front Dispatch</h2>
+          <p>A weekly field note for fathers and builders under pressure.</p>
+          <form className="footer-dispatch-form">
+            <label className="sr-only" htmlFor="footer-dispatch-email">Email address</label>
+            <input id="footer-dispatch-email" name="email" type="email" autoComplete="email" placeholder="Email address" required />
+            <button type="submit">Join the Dispatch</button>
+          </form>
+        </div>
         <div className="footer-links">
           <Link href="/">Home</Link>
           <Link href="/books">Books</Link>
