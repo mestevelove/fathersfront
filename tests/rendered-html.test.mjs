@@ -11,7 +11,7 @@ test("exports a complete static homepage", async () => {
   assert.match(html, /erased\./);
   assert.match(html, /We are here to build them back\./);
   assert.match(html, /The Foundation/);
-  assert.match(html, /V\.59/);
+  assert.match(html, /V\.60/);
   assert.match(html, /Leadership/);
   assert.match(html, /Lifestyle/);
   assert.match(html, /Law/);
@@ -49,7 +49,7 @@ test("exports the expected site routes", async () => {
 test("exports the unlinked article template", async () => {
   const html = await readFile(new URL("template.html", outputRoot), "utf8");
   assert.match(html, /The Fathers Front Dispatch/);
-  assert.match(html, /ARTICLE TEMPLATE · V\.59/);
+  assert.match(html, /ARTICLE TEMPLATE · V\.60/);
 });
 
 test("exports phase one messaging", async () => {
