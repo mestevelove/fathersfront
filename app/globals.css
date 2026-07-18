@@ -700,7 +700,10 @@ h1 em,h2 em { font-family:"Source Serif 4",serif; color:var(--ember); text-trans
   .choice-flow { padding:35px 20px; }
   .choice-flow>div { grid-template-columns:1fr; }
   .book-detail h1,.offer-landing h1 { font-size:92px; }
-  .book-detail-sections,.article-index-grid,.offer-benefits { grid-template-columns:1fr; }
+  .book-detail-sections,.offer-benefits { grid-template-columns:1fr; }
+  .article-index-grid { grid-template-columns:minmax(0,1fr); }
+  .article-index-card { min-width:0; }
+  .article-index-card h2 { overflow-wrap:anywhere; }
   .product-detail-sections,.product-detail-sections-3 { grid-template-columns:1fr; }
   .product-detail-sections article { border-right:0; border-bottom:1px solid #bdb1a1; }
   .product-detail-sections article:last-child { border-bottom:0; }

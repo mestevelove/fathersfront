@@ -19,7 +19,7 @@ export default function Home() {
         <div className="hero-shade" />
         <div className="hero-copy shell">
           <div className="hero-rule" aria-hidden="true" />
-          <h1 className="home-hero-headline"><span data-text="Defend your fatherhood.">Defend your fatherhood.</span><span data-text="Rebuild your life.">Rebuild your life.</span><span data-text="Rise beyond the fight.">Rise beyond the fight.</span></h1>
+          <h1 className="home-hero-headline"><span data-text="Fight for your fatherhood.">Fight for your fatherhood.</span><span data-text="Fortify your foundation.">Fortify your foundation.</span><span data-text="Forge your family’s future.">Forge your family’s future.</span></h1>
           <div className="hero-actions"><Link className="button ember" href="/work-with-steve">Work with Steve</Link></div>
         </div>
         <div className="scroll-note">Scroll to enter the front <span>&darr;</span></div>

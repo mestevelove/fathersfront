@@ -7,13 +7,13 @@ const outputRoot = new URL("../out/", import.meta.url);
 test("exports a complete static homepage", async () => {
   const html = await readFile(new URL("index.html", outputRoot), "utf8");
 
-  assert.match(html, /Defend your fatherhood\./);
-  assert.match(html, /Rebuild your life\./);
-  assert.match(html, /Rise beyond the fight\./);
+  assert.match(html, /Fight for your fatherhood\./);
+  assert.match(html, /Fortify your foundation\./);
+  assert.match(html, /Forge your family’s future\./);
   assert.doesNotMatch(html, /Fathers are being erased/);
   assert.doesNotMatch(html, /Love\. Law\. Leadership\. Lifestyle\./);
   assert.match(html, /The Foundation/);
-  assert.match(html, /V\.61/);
+  assert.match(html, /V\.62/);
   assert.match(html, /Born in/);
   assert.match(html, /Blood\./);
   assert.match(html, /Forged in Fire\./);
@@ -55,7 +55,7 @@ test("exports the expected site routes", async () => {
 test("exports the unlinked article template", async () => {
   const html = await readFile(new URL("template.html", outputRoot), "utf8");
   assert.match(html, /The Fathers Front Dispatch/);
-  assert.match(html, /ARTICLE TEMPLATE · V\.61/);
+  assert.match(html, /ARTICLE TEMPLATE · V\.62/);
 });
 
 test("exports phase one messaging", async () => {
