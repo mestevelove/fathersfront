@@ -13,7 +13,7 @@ test("exports a complete static homepage", async () => {
   assert.doesNotMatch(html, /Fathers are being erased/);
   assert.doesNotMatch(html, /Love\. Law\. Leadership\. Lifestyle\./);
   assert.match(html, /The Foundation/);
-  assert.match(html, /V\.64/);
+  assert.match(html, /V\.65/);
   assert.match(html, /Born in/);
   assert.match(html, /Blood\./);
   assert.match(html, /Forged in Fire\./);
@@ -55,7 +55,7 @@ test("exports the expected site routes", async () => {
 test("exports the unlinked article template", async () => {
   const html = await readFile(new URL("template.html", outputRoot), "utf8");
   assert.match(html, /The Fathers Front Dispatch/);
-  assert.match(html, /ARTICLE TEMPLATE · V\.64/);
+  assert.match(html, /ARTICLE TEMPLATE · V\.65/);
 });
 
 test("exports phase one messaging", async () => {
@@ -65,9 +65,12 @@ test("exports phase one messaging", async () => {
 
   assert.match(home, /protect their relationship with their children/);
   assert.match(home, /The court case is one front\./);
-  assert.match(work, /Protect your relationship with your children\./);
-  assert.match(work, /continue working through enforcement and return/);
-  assert.doesNotMatch(work, /secured sole custody in two countries/);
+  assert.match(work, /If you’re a father and made it to this page, there is a reason for it\./);
+  assert.match(work, /Fight for Your Fatherhood/);
+  assert.match(work, /Fortify Your Foundation/);
+  assert.match(work, /Forge Your Family’s Future/);
+  assert.match(work, /Two ways to work with me directly\./);
+  assert.doesNotMatch(work, /The Four Fronts/);
   assert.match(speaking, /The Father Must Lead the Case/);
   assert.match(speaking, /Born in Blood\. Forged in Fire\./);
   assert.match(speaking, />04</);
