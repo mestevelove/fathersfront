@@ -13,7 +13,7 @@ test("exports a complete static homepage", async () => {
   assert.doesNotMatch(html, /Fathers are being erased/);
   assert.doesNotMatch(html, /Love\. Law\. Leadership\. Lifestyle\./);
   assert.match(html, /The Foundation/);
-  assert.match(html, /V\.65/);
+  assert.match(html, /V\.66/);
   assert.match(html, /Born in/);
   assert.match(html, /Blood\./);
   assert.match(html, /Forged in Fire\./);
@@ -55,7 +55,7 @@ test("exports the expected site routes", async () => {
 test("exports the unlinked article template", async () => {
   const html = await readFile(new URL("template.html", outputRoot), "utf8");
   assert.match(html, /The Fathers Front Dispatch/);
-  assert.match(html, /ARTICLE TEMPLATE · V\.65/);
+  assert.match(html, /ARTICLE TEMPLATE · V\.66/);
 });
 
 test("exports phase one messaging", async () => {
@@ -69,8 +69,10 @@ test("exports phase one messaging", async () => {
   assert.match(work, /Fight for Your Fatherhood/);
   assert.match(work, /Fortify Your Foundation/);
   assert.match(work, /Forge Your Family’s Future/);
+  assert.match(work, /The Three Stages/);
   assert.match(work, /Two ways to work with me directly\./);
   assert.doesNotMatch(work, /The Four Fronts/);
+  assert.doesNotMatch(work, /One ascent/);
   assert.match(speaking, /The Father Must Lead the Case/);
   assert.match(speaking, /Born in Blood\. Forged in Fire\./);
   assert.match(speaking, />04</);

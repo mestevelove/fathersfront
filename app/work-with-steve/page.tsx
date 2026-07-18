@@ -3,8 +3,8 @@ import type { ReactNode } from "react";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 
-function Story({ children, className = "" }: { children: ReactNode; className?: string }) {
-  return <section className={`work-story ${className}`.trim()}>{children}</section>;
+function Story({ children }: { children: ReactNode }) {
+  return <section className="work-story">{children}</section>;
 }
 
 const stages = [
@@ -37,7 +37,7 @@ export default function WorkWithStevePage() {
         <h1>If you’re a father and made it to this page, there is a reason for it.</h1>
 
         <Story>
-          <p className="work-story-lead">They say women are born and men are made.</p>
+          <p>They say women are born and men are made.</p>
           <p>I’ve spent over 30 years trying to figure out what makes a man, and I’m a father of four sons.</p>
           <p>The problem is that nothing in Western society teaches men to be men and fathers to be fathers.</p>
           <p>Right when we are born, our dicks are clipped.</p>
@@ -55,7 +55,9 @@ export default function WorkWithStevePage() {
           <p>Close to 90% of women are the first to file.</p>
           <p>You spend years fighting for your kids. Maybe you get some time, maybe you don’t.</p>
           <p>You get child support, though.</p>
-          <div className="work-story-strikes"><p>Financially wiped out.</p><p>Emotionally scarred.</p><p>Lost time with your kids that you will never get back.</p></div>
+          <p>Financially wiped out.</p>
+          <p>Emotionally scarred.</p>
+          <p>Lost time with your kids that you will never get back.</p>
           <p>You’re alone to fight this. Nobody gives a shit.</p>
           <p>The courts, your attorney, and your ex all get their fair share.</p>
           <p>You know it’s wrong. It’s like the entire system gaslit you, and you can feel it pulling your last nerve.</p>
@@ -69,11 +71,11 @@ export default function WorkWithStevePage() {
         </Story>
 
         <Story>
-          <p className="work-story-lead">I want to tell you that you’re not alone.</p>
+          <p>I want to tell you that you’re not alone.</p>
           <p>There are millions of fathers out there going through this.</p>
           <p>It’s been happening for decades.</p>
           <p>And it started when the government started incentivizing mothers to leave.</p>
-          <p className="work-story-pull">The courts became the dad and you became the debtor.</p>
+          <p>The courts became the dad and you became the debtor.</p>
         </Story>
 
         <Story>
@@ -103,7 +105,7 @@ export default function WorkWithStevePage() {
           <p>She kept me off the birth certificate and took me to court.</p>
           <p>I had a choice to make.</p>
           <p>I could just let this go because I knew that I would be in a full-time legal fight for two years minimum.</p>
-          <blockquote>“Who do I become on the other side?”</blockquote>
+          <p>“Who do I become on the other side?”</p>
           <p>I knew I had unfinished business with the family court.</p>
           <p>I was framed as controlling, abusive, and dangerous to his wellbeing.</p>
           <p>They absolutely destroyed me.</p>
@@ -111,7 +113,7 @@ export default function WorkWithStevePage() {
           <p>I had no idea how that could happen after raising three sons.</p>
           <p>I had to figure this out.</p>
           <p>I knew I was being called back to understand how the courts are able to do this when it goes against what is natural and sacred.</p>
-          <p className="work-story-single">Fathers.</p>
+          <p>Fathers.</p>
         </Story>
 
         <Story>
@@ -125,27 +127,23 @@ export default function WorkWithStevePage() {
           <p>You’ll have to read my book, <em>Stolen Sons</em>, to hear how the story ends.</p>
         </Story>
 
-        <Story className="work-story-transition">
+        <Story>
           <p>What I have learned is that, as men, we are made.</p>
           <p>Everything that has happened to this point was to make you into the man God created you to be.</p>
           <p>This was not an accident.</p>
           <p>There are three stages to this journey, and each stage has a different set of challenges.</p>
-          <p className="work-story-lead">They are the levels of the game of fatherhood.</p>
+          <p>They are the levels of the game of fatherhood.</p>
         </Story>
       </div>
     </article>
 
-    <section className="work-stages dark-section" aria-labelledby="work-stages-title">
-      <div className="shell">
-        <div className="work-stages-head">
-          <p className="section-kicker">The Journey</p>
-          <h2 id="work-stages-title">Three stages.<br /><em>One ascent.</em></h2>
-        </div>
-        <div className="work-stage-grid">
-          {stages.map((stage) => <article key={stage.number} className={`work-stage work-stage-${stage.number}`}>
-            <div className="work-stage-top"><span>{stage.label}</span><b aria-hidden="true">{stage.number}</b></div>
-            <h3>{stage.title}</h3>
-            <div className="work-stage-copy">{stage.copy}</div>
+    <section className="work-stages cream-section" aria-labelledby="work-stages-title">
+      <div className="shell work-simple-column">
+        <blockquote className="work-simple-quote" id="work-stages-title">The Three Stages</blockquote>
+        <div className="work-stage-list">
+          {stages.map((stage) => <article key={stage.number}>
+            <span>{stage.number}</span>
+            <div><p className="work-stage-label">{stage.label}</p><h3>{stage.title}</h3>{stage.copy}</div>
           </article>)}
         </div>
       </div>
@@ -160,7 +158,7 @@ export default function WorkWithStevePage() {
           <p>If that’s you, you’re on the wrong page.</p>
           <p>I’m talking to you, the badass motherfucker who’s been through some shit.</p>
           <p>The man who looks at everything he’s been through and is like, “That’s all you got?”</p>
-          <blockquote>“That was just a fucking warm-up for me!”</blockquote>
+          <p>“That was just a fucking warm-up for me!”</p>
           <p>Now imagine having a brotherhood of men who think the same way and are ready to die beside you as we fight for our sacred rights as fathers.</p>
         </Story>
         <Story>
@@ -168,7 +166,7 @@ export default function WorkWithStevePage() {
           <p>As fathers, we’re here to produce, provide, and protect.</p>
           <p>When we are not making ourselves better, we are neglecting our duties as men.</p>
           <p>As we have all experienced, when we neglect our duties, there are people and systems that will dictate our lives.</p>
-          <p className="work-story-pull">I call that tyranny, and it won’t happen on my watch.</p>
+          <p>I call that tyranny, and it won’t happen on my watch.</p>
         </Story>
       </div>
     </article>
