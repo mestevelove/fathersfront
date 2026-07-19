@@ -485,6 +485,8 @@ h1 em,h2 em { font-family:"Source Serif 4",serif; color:var(--ember); text-trans
 .work-simple-copy { padding:92px 0 34px; }
 .work-simple-column { max-width:800px; }
 .work-simple-label { margin:0 0 28px; color:var(--red); font:600 13px/1 var(--display); letter-spacing:.18em; text-transform:uppercase; }
+.work-page-kicker { margin:0 0 42px; }
+.work-page-body { margin-inline:auto; }
 .work-simple h1 { margin:0 0 72px; color:var(--ink); font:600 clamp(44px,5.6vw,76px)/1.03 "Source Serif 4",Georgia,serif; letter-spacing:-.035em; text-transform:none; }
 .work-simple-subtitle { margin:0 0 62px; color:#665e55; font:400 22px/1.5 var(--body); }
 .work-page-deck,.work-section-deck { color:var(--ember); font-family:"Source Serif 4",Georgia,serif; font-style:italic; font-weight:600; text-transform:none; }

@@ -61,10 +61,11 @@ export default function WorkWithStevePage() {
   return <main className="work-simple">
     <Header />
     <article className="work-simple-copy cream-section">
-      <div className="shell work-simple-column">
+      <div className="shell">
         <p className="section-kicker work-page-kicker">Work With Steve</p>
-        <h1>The Men We Were Taught to Become</h1>
-        <p className="work-page-deck">Men are made. Fathers are forged.</p>
+        <div className="work-simple-column work-page-body">
+          <h1>The Men We Were Taught to Become</h1>
+          <p className="work-page-deck">Men are made. Fathers are forged.</p>
 
         <div className="work-story work-opening-story">
           <p>If you’re a father and made it to this page, there is a reason for it.</p>
@@ -225,7 +226,8 @@ export default function WorkWithStevePage() {
           <p>You stop asking for permission.</p>
           <p>You start leading.</p>
           <p>You turn the worst thing that has ever happened to in, into the best thing that has ever happened to you.</p>
-        </WorkSection>
+          </WorkSection>
+        </div>
       </div>
     </article>
 
