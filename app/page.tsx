@@ -28,7 +28,7 @@ export default function Home() {
       <section className="manifesto cream-section">
         <div className="shell manifesto-approved">
           <p className="section-kicker manifesto-kicker">The Foundation</p>
-          <h2 className="home-intro-headline"><span className="home-intro-born">Born in <b>Blood.</b></span><span className="home-intro-forged">Forged in <em>Fire</em>.</span></h2>
+            <h2 className="home-intro-headline"><span className="home-intro-born">Born in <b>Blood.</b></span><span className="home-intro-forged">Forged in <em>Fire.</em></span></h2>
           <p className="manifesto-detail">Fathers Front builds disciplined, powerful fathers who protect their relationship with their children, rebuild what family conflict has damaged, and create the business, freedom, and family legacy that come next.</p>
         </div>
       </section>
