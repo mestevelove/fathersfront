@@ -13,7 +13,7 @@ test("exports a complete static homepage", async () => {
   assert.doesNotMatch(html, /Fathers are being erased/);
   assert.doesNotMatch(html, /Love\. Law\. Leadership\. Lifestyle\./);
   assert.match(html, /The Foundation/);
-  assert.match(html, /V\.68/);
+  assert.match(html, /V\.69/);
   assert.match(html, /Born in/);
   assert.match(html, /Blood\./);
   assert.match(html, /Forged in Fire\./);
@@ -55,7 +55,7 @@ test("exports the expected site routes", async () => {
 test("exports the unlinked article template", async () => {
   const html = await readFile(new URL("template.html", outputRoot), "utf8");
   assert.match(html, /The Fathers Front Dispatch/);
-  assert.match(html, /ARTICLE TEMPLATE · V\.68/);
+  assert.match(html, /ARTICLE TEMPLATE · V\.69/);
 });
 
 test("exports phase one messaging", async () => {
@@ -65,12 +65,16 @@ test("exports phase one messaging", async () => {
 
   assert.match(home, /protect their relationship with their children/);
   assert.match(home, /The court case is one front\./);
-  assert.match(work, /If you’re a father and made it to this page, there is a reason for it\./);
+  assert.doesNotMatch(work, /If you’re a father and made it to this page, there is a reason for it\./);
   assert.match(work, /Fight for Your Fatherhood/);
   assert.match(work, /Fortify Your Foundation/);
   assert.match(work, /Forge Your Family’s Future/);
-  assert.match(work, /The Men We Were Taught to Become/);
-  assert.match(work, /The Three Levels of Fatherhood After Family Court/);
+  assert.match(work, /Family Court Hits Fathers on Four Fronts\./);
+  assert.match(work, /Most Are Only Fighting One\./);
+  assert.match(work, /Your kids, money, peace, and future depend/);
+  assert.match(work, /Three Levels\. One Fight for Your Future\./);
+  assert.match(work, /46% custody and was ordered to pay child support/);
+  assert.match(work, /There is another father in the group who needs you\./);
   assert.match(work, /One brotherhood\. Two ways to work with me\./);
   assert.match(work, /Join Bloodline Brotherhood/);
   assert.match(work, /you also receive access to Bloodline Brotherhood/);

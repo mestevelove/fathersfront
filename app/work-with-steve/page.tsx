@@ -50,6 +50,7 @@ const levels = [
       <p>Most men never really make it here.</p>
       <p>You may no longer be bleeding, but you’re still living smaller than the man you know you could become.</p>
       <p>There is a business, book, mission, family, or life you keep talking about but have not built.</p>
+      <p>For some, it’s continuing to push for full custody.</p>
       <p>These are the men who know they were put here to create, and they take action.</p>
       <p>They build the crazy thing they have always wanted to bring to life.</p>
       <p className="work-section-deck">What level are you willing to stop at?</p>
@@ -64,15 +65,13 @@ export default function WorkWithStevePage() {
       <div className="shell">
         <p className="section-kicker work-page-kicker">Work With Steve</p>
         <div className="work-simple-column work-page-body">
-          <h1>The Men We Were Taught to Become</h1>
-          <p className="work-page-deck">Men are made. Fathers are forged.</p>
+          <h1>Family Court Hits Fathers on Four Fronts.</h1>
+          <p className="work-page-deck">Most Are Only Fighting One.</p>
+          <p className="work-page-intro">Fathers Front helps you take command of the legal fight, rebuild what it has cost you, and forge the future that follows.</p>
+          <p className="work-page-stakes"><strong>Your kids, money, peace, and future depend on whether you keep fighting one front or learn to lead all four.</strong></p>
 
         <div className="work-story work-opening-story">
-          <p>If you’re a father and made it to this page, there is a reason for it.</p>
-          <p>They say women are born and men are made.</p>
-          <p>I’ve spent over 30 years trying to figure out what makes a man.</p>
-          <p>It’s one thing for me to struggle.</p>
-          <p>But I’m a father of four sons.</p>
+          <p>I’m a father of four sons.</p>
           <p>I refuse to pass on all the shit I had to experience to my sons.</p>
           <p>The problem is that nothing in Western society teaches men to be men and fathers to be fathers.</p>
           <p>Right when we are born, our dicks are clipped.</p>
@@ -83,10 +82,11 @@ export default function WorkWithStevePage() {
           <p>In the movies, men are the war heroes.</p>
           <p>At home, they are the joke.</p>
           <p>So we grow up and build the life we were told we were supposed to have.</p>
+          <p>The problem is that we built our lives on a lie.</p>
         </div>
 
-        <WorkSection title="Then the Life You Built Gets Taken Apart" deck="The courts became the dad. You became the debtor.">
-          <p>You find the woman, you have your kids, you’ve got the house, and you’re making good money.</p>
+        <WorkSection title="Then the Life You Built Gets Taken Apart With a Single Filing." deck="The courts became the dad. You became the debtor.">
+          <p>You find the woman, you have your kids, you’ve got the house, and you’re making good money providing for your family.</p>
           <p>Then she leaves and you’re hit with a divorce or custody battle.</p>
           <p>And for many of you, a restraining order.</p>
           <p>Women initiate roughly seven out of ten divorces.</p>
@@ -100,44 +100,47 @@ export default function WorkWithStevePage() {
           <p>Nobody gives a shit.</p>
           <p>There are plenty of angry fathers, but almost nobody has a solution.</p>
           <p>The courts, your attorney, and your ex all get their fair share.</p>
-          <p>Not to mention, they’ll all have more of a say in your kids’ lives.</p>
+          <p>When it comes to decisions about the kids, you’re last on the list.</p>
           <p>You know it’s wrong.</p>
           <p>It’s like the entire system gaslit you, and you can feel it pulling your last nerve.</p>
-          <p>So you suck it up and move through it.</p>
-          <p>You rebuild from nothing.</p>
-          <p>A part of your soul has been stolen.</p>
+          <p>It makes you sick, but you suck it up anyway and move through it.</p>
+          <p>You rebuild from nothing, even though a part of your soul has been stolen.</p>
           <p>Every child support payment.</p>
           <p>Every critical remark from your ex.</p>
-          <p>All the passive-aggressive behavior justified as being “in the best interest of the child.”</p>
+          <p>Every piece of distorted evidence.</p>
+          <p>Every passive-aggressive action.</p>
+          <p>Everything is framed as “in the best interest of the child.”</p>
           <p>It feels like a prison sentence while you wait for your kids to age out and let them make their own choices.</p>
           <p>You’ll always be the subhuman parent.</p>
-          <p>You pray they see the price you paid and the truth.</p>
+          <p>You pray your kids see the price you paid and the truth.</p>
           <p>I want to tell you that you’re not alone.</p>
           <p>There are millions of fathers out there going through this.</p>
           <p>It’s been happening for decades.</p>
-          <p>And it started when the government started incentivizing mothers to leave.</p>
+          <p>And it started when the government started interfering and incentivizing mothers to leave.</p>
         </WorkSection>
 
         <WorkSection title="I’ve Been Through This System Twice" deck="The first time, I stopped. The second time, I learned to lead.">
           <p>I’ve been through this system twice.</p>
-          <p>The first time, I got 44% custody and child support after being married for 20 years and having three boys.</p>
+          <p>The first time, I got 46% custody and was ordered to pay child support after being married for 20 years.</p>
+          <p>We had three boys together.</p>
           <p>And the oldest of my three sons was alienated from me.</p>
           <p>They gave mom primary while she was snorting coke and driving drunk.</p>
           <p>I couldn’t prove it, but I could smell it on her breath.</p>
           <p>The panic I would feel letting her take the kids, let alone paying her bills.</p>
-          <p>The problem is that I didn’t know what to do.</p>
-          <p>I suspected my attorney’s job was to corral me through the system, make me pay the tax, foot her Mercedes note, and move on to the next case.</p>
+          <p>The problem was that I didn’t know what to do.</p>
+          <p>I suspected my attorney’s job was to corral me through the system, pay the tax, foot her Mercedes note, and move on to the next case.</p>
           <p>I knew something was wrong, but I didn’t know how to do it on my own.</p>
-          <p>I thought it was the end, so I stopped.</p>
+          <p>I was too scared, so I stopped.</p>
           <p>It’s just the way it is.</p>
           <p>I moved on and started rebuilding my life.</p>
-          <p>I made millions living all over the world and had a great relationship with my sons.</p>
+          <p>I started a business, made millions while living all over the world, and had a great relationship with my two sons.</p>
           <p>But something never went away.</p>
-          <p>I wasn’t done with the family courts.</p>
-          <p>I also wanted a family.</p>
+          <p>I was living with the damage for years, but didn’t know what I could do about it.</p>
+          <p>I also wanted a family again.</p>
           <p>I had so much more to give as a father, but I didn’t have a family to give it to.</p>
           <p>A decade after my divorce, I met a beautiful German woman.</p>
-          <p>The first year was great, but it wasn’t easy.</p>
+          <p>We fell in love.</p>
+          <p>The first year was great, even though it wasn’t easy.</p>
           <p>I was here for it.</p>
           <p>Then we had a son, Ori.</p>
           <p>I had never been happier in my life.</p>
@@ -147,45 +150,42 @@ export default function WorkWithStevePage() {
           <p>How the fuck could this happen again?</p>
           <p>A decade of deep work, coaching, therapy, men’s work, every modality.</p>
           <p>I did it.</p>
-          <p>I was devastated and afraid she would leave for Germany and never return.</p>
+          <p>I did everything I could to ensure this never happened again.</p>
+          <p>I was devastated and afraid she would abduct my son to Germany and never return.</p>
           <p>She kept me off the birth certificate and took me to court.</p>
           <p>I had a choice to make.</p>
           <p>I could just let this go because I knew that I would be in a full-time legal fight for two years minimum.</p>
+          <p>It’s the last thing I ever wanted to do, but there was something unfinished.</p>
           <p>I had to ask myself:</p>
           <p>“Who do I become on the other side?”</p>
-          <p>I knew I had unfinished business with the family court.</p>
           <p>I had a fight ahead of me, a hundred times worse than my divorce.</p>
           <p>She and her attorney framed me as controlling, abusive, and dangerous to my son.</p>
           <p>Right away, they wouldn’t let me see him, and they put me on supervised visitation for a couple of hours a week.</p>
           <p>“It’s in the best interest of the child.”</p>
-          <p>I had no idea how that could happen after raising three sons.</p>
+          <p>I had no idea how that could happen after raising three sons, even my ex-wife was surprised.</p>
           <p>I had to figure this out.</p>
-          <p>I knew I was being called back to understand how the courts are able to do this when it goes against what is natural and sacred.</p>
-          <p>Fathers.</p>
-          <p>Terrified, I refused to work with an attorney and had no idea what I was doing.</p>
+          <p>It went against everything I knew to be true.</p>
+          <p>Fatherhood was sacred.</p>
+          <p>I learned that I was being initiated at a level few fathers choose.</p>
+          <p>Terrified, I refused to work with an attorney.</p>
+          <p>It was a rite of passage.</p>
+          <p>I had zero idea what I was doing.</p>
           <p>I knew that I was going to lose early, but I was not going to give up.</p>
           <p>I created legal pressure and forced her to start making poor choices.</p>
-          <p>When I started getting results, she fled and abducted our son to Germany.</p>
-          <p>She violated court orders.</p>
+          <p>When I started getting results, she fled and abducted our son to Germany against court orders.</p>
           <p>I took it international through the Hague Convention and won.</p>
           <p>She appealed.</p>
           <p>I won that too.</p>
           <p>I ended up getting sole custody in Texas.</p>
           <p>But winning the orders was not enough.</p>
           <p>I still had to go get him because she refused to follow them.</p>
-          <p>You’ll have to read my book, <em>Stolen Sons</em>, to hear how the story ends.</p>
+          <p>The second time through family court, I learned that winning the case is only the beginning.</p>
+          <p>A father still has to rebuild what the fight damaged and decide what he is going to create from it.</p>
         </WorkSection>
 
         <section className="work-content-section work-levels-intro">
-          <h2 id="work-levels-title">The Three Levels of Fatherhood After Family Court</h2>
-          <p className="work-section-deck">Who do you become on the other side?</p>
-          <div className="work-story">
-            <p>What I have learned is that, as men, we are made.</p>
-            <p>Everything that has happened to this point was to make you into the man God created you to be.</p>
-            <p>This was not an accident.</p>
-            <p>There are three stages to this journey, and each stage has a different set of challenges.</p>
-            <p>They are the levels of the game of fatherhood after you enter family court.</p>
-          </div>
+          <h2 id="work-levels-title">Three Levels. One Fight for Your Future.</h2>
+          <p className="work-section-deck">Fight. Fortify. Forge.</p>
         </section>
 
         <div className="work-stage-list" aria-labelledby="work-levels-title">
@@ -202,7 +202,7 @@ export default function WorkWithStevePage() {
 
         <WorkSection title="We Change Ourselves First" deck="The fight exposes every place a man has not yet learned to lead.">
           <p>Imagine this.</p>
-          <p>Millions of fathers walk into court already broken.</p>
+          <p>There are millions of fathers who walk into court completely broken.</p>
           <p>Broken fathers pass that brokenness to their children.</p>
           <p>That is the cycle I am here to stop.</p>
           <p>We do not begin by changing our exes, courts, or the laws.</p>
@@ -215,8 +215,9 @@ export default function WorkWithStevePage() {
 
         <WorkSection title="What Changes When You Step Up" deck="You stop reacting. You start leading.">
           <p>You stop opening every email with your heart racing.</p>
-          <p>You know the facts, the priorities, and the next move.</p>
-          <p>You walk into calls with your attorney knowing what to ask and what you expect to happen next.</p>
+          <p>You know the facts, the priorities, and the next move, always.</p>
+          <p>You walk into court knowing what to ask and what you expect to happen next.</p>
+          <p>And you’re not dependent on some fucking attorney.</p>
           <p>You stop building your life around your ex’s next move.</p>
           <p>Your body gets stronger.</p>
           <p>Your income starts moving again.</p>
@@ -225,7 +226,7 @@ export default function WorkWithStevePage() {
           <p>You become less reactive, more strategic, and harder to manipulate.</p>
           <p>You stop asking for permission.</p>
           <p>You start leading.</p>
-          <p>You turn the worst thing that has ever happened to in, into the best thing that has ever happened to you.</p>
+          <p>You turn the worst thing that has ever happened to you into the best thing that has ever happened to you.</p>
           </WorkSection>
         </div>
       </div>
@@ -237,7 +238,7 @@ export default function WorkWithStevePage() {
         <p className="work-section-deck">One brotherhood. Two ways to work with me.</p>
         <div className="work-story work-offer-opening">
           <p>Whether you’re still stuck in court, rebuilding after getting your life wrecked, or ready to make your crazy goals happen, we’ve got you, brother.</p>
-          <p>There are two ways to join the brotherhood and get my personal support.</p>
+          <p>If this is you, there are two ways to join the brotherhood and get my personal support.</p>
         </div>
         <div className="work-v2-offers">
           <article className="work-v2-brotherhood">
@@ -245,7 +246,7 @@ export default function WorkWithStevePage() {
             <h3>Bloodline<br />Brotherhood</h3>
             <p>One program.</p><p>Three levels.</p><p>One weekly call.</p><p>Start where you are.</p>
             <p>Fight for your fatherhood.<br />Fortify your foundation.<br />Forge your family’s future.</p>
-            <p>Bloodline Brotherhood combines weekly group coaching, direct feedback, accountability, and the support of fathers moving through the same three levels.</p>
+            <p>Bloodline Brotherhood combines weekly group coaching, direct feedback, accountability, and the support of fathers moving through the same three levels. There is another father in the group who needs you.</p>
             <strong>$497 <small>per month</small></strong>
             <Link className="button cream-button" href="/bloodline-brotherhood">Join Bloodline Brotherhood</Link>
           </article>
@@ -255,7 +256,6 @@ export default function WorkWithStevePage() {
             <p>Some fights require more proximity.</p>
             <p>Bloodline Advisory is private strategic support for fathers facing complex litigation, major financial exposure, interstate or international conflict, abduction, enforcement, or cases involving multiple professional teams.</p>
             <p>As a Bloodline Advisory client, you also receive access to Bloodline Brotherhood for the duration of your advisory engagement.</p>
-            <strong>$297</strong>
             <p>Initial strategy calls are $297.</p>
             <p>Private advisory engagements begin at $15,000.</p>
             <Link className="button ember" href="/bloodline-advisory">Book a Strategy Call</Link>
