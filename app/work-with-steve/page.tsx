@@ -256,8 +256,8 @@ export default function WorkWithStevePage() {
             <p>Some fights require more proximity.</p>
             <p>Bloodline Advisory is private strategic support for fathers facing complex litigation, major financial exposure, interstate or international conflict, abduction, enforcement, or cases involving multiple professional teams.</p>
             <p>As a Bloodline Advisory client, you also receive access to Bloodline Brotherhood for the duration of your advisory engagement.</p>
-            <p>Initial strategy calls are $297.</p>
             <p>Private advisory engagements begin at $15,000.</p>
+            <strong>$297 <small>initial strategy call</small></strong>
             <Link className="button ember" href="/bloodline-advisory">Book a Strategy Call</Link>
           </article>
         </div>
