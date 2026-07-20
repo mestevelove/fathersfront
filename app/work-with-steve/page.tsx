@@ -53,7 +53,6 @@ const levels = [
       <p>For some, it’s continuing to push for full custody.</p>
       <p>These are the men who know they were put here to create, and they take action.</p>
       <p>They build the crazy thing they have always wanted to bring to life.</p>
-      <p className="work-section-deck">What level are you willing to stop at?</p>
     </>,
   },
 ];
@@ -99,8 +98,9 @@ export default function WorkWithStevePage() {
           <p>You’re alone to fight this.</p>
           <p>Nobody gives a shit.</p>
           <p>There are plenty of angry fathers, but almost nobody has a solution.</p>
-          <p>The courts, your attorney, and your ex all get their fair share.</p>
-          <p>When it comes to decisions about the kids, you’re last on the list.</p>
+          <p>The courts, your attorney, and your ex all get their share.</p>
+          <p>You’re the first to pay.</p>
+          <p>When it comes to decisions about the kids, you’re the last.</p>
           <p>You know it’s wrong.</p>
           <p>It’s like the entire system gaslit you, and you can feel it pulling your last nerve.</p>
           <p>It makes you sick, but you suck it up anyway and move through it.</p>
@@ -199,6 +199,7 @@ export default function WorkWithStevePage() {
             </div>
           </article>)}
         </div>
+        <p className="work-levels-closing">What level are you willing to stop at?</p>
 
         <WorkSection title="We Change Ourselves First" deck="The fight exposes every place a man has not yet learned to lead.">
           <p>Imagine this.</p>
@@ -217,7 +218,7 @@ export default function WorkWithStevePage() {
           <p>You stop opening every email with your heart racing.</p>
           <p>You know the facts, the priorities, and the next move, always.</p>
           <p>You walk into court knowing what to ask and what you expect to happen next.</p>
-          <p>And you’re not dependent on some fucking attorney.</p>
+          <p>And you’re not dependent on some fucking attorney, even if you have one.</p>
           <p>You stop building your life around your ex’s next move.</p>
           <p>Your body gets stronger.</p>
           <p>Your income starts moving again.</p>

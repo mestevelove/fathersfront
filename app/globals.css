@@ -517,7 +517,8 @@ h1 em,h2 em { font-family:"Source Serif 4",serif; color:var(--ember); text-trans
 .work-stage-list p + p { margin-top:12px; }
 .work-stage-list .work-section-deck { margin:0 0 20px; color:var(--ember); font:600 italic 18px/1.4 "Source Serif 4",Georgia,serif; }
 .work-levels-intro { margin-bottom:34px; }
-.work-levels-intro+.work-stage-list { margin-bottom:28px; }
+.work-levels-intro+.work-stage-list { margin-bottom:0; }
+.work-levels-closing { margin:34px 0 48px 76px; color:var(--ember); font:600 italic 18px/1.4 "Source Serif 4",Georgia,serif; }
 .work-after-stages { padding-top:82px; }
 .work-simple-framework { padding:14px 0 82px; }
 .work-simple-quote { margin:0 0 28px; padding:17px 0 0; color:var(--ink); border-top:1px solid #bdb1a1; font:600 clamp(28px,3.5vw,42px)/1.08 "Source Serif 4",Georgia,serif; }
@@ -584,6 +585,7 @@ h1 em,h2 em { font-family:"Source Serif 4",serif; color:var(--ember); text-trans
   .work-story { margin-bottom:50px; }
   .work-stages { padding-bottom:60px; }
   .work-stage-list article { grid-template-columns:42px minmax(0,1fr); gap:12px; }
+  .work-levels-closing { margin-left:54px; }
   .work-after-stages { padding-top:78px; }
   .work-simple-framework { padding-bottom:60px; }
   .work-simple-offers .work-v2-offers { grid-template-columns:1fr; }
