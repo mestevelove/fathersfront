@@ -2,13 +2,7 @@ import Link from "next/link";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { BookStack } from "./components/BookStack";
-
-const pillars = [
-  ["01", "Leadership", "Protect the business, income, team, and decision-making capacity that fund the fight and support the future you are building for your children."],
-  ["02", "Lifestyle", "Build the strength, sleep, health, energy, and daily discipline required to carry sustained pressure without abandoning yourself."],
-  ["03", "Law", "Understand the battlefield, build the record, prepare the case, and work intelligently with attorneys or pro se instead of reacting blindly to the court."],
-  ["04", "Love", "Protect the bond with your children, communicate without feeding the conflict, and rebuild what separation, alienation, or litigation has damaged."],
-];
+import { FourFronts } from "./components/FourFronts";
 
 export default function Home() {
   return (
@@ -33,15 +27,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="pillars pillars-cross">
-        <div className="shell pillars-cross-shell">
-          <div className="pillars-cross-heading"><p className="section-kicker pillars-cross-kicker">The framework</p><h2 className="pillars-cross-intro">The court case is one front.<br /><em>The whole life enters it.</em></h2></div>
-          <div className="pillars-cross-grid">
-            {pillars.map(([n, title, copy]) => <article className="pillar" key={title}><span className="pillar-number">{n}</span><h3>{title}</h3><p>{copy}</p></article>)}
-            <h2 className="pillars-cross-center"><span>Four Fronts</span><span>One Father</span></h2>
-          </div>
-        </div>
-      </section>
+      <FourFronts />
 
       <section className="books-section cream-section" id="books"><div className="shell books-grid"><div className="books-copy"><p className="section-kicker">Books from the front</p><h2>The story.<br /><em>The strategy.</em></h2><p>Stolen Sons is the story of father erasure and international custody litigation. Family Lawfare is the field manual for fathers who need to understand the battlefield before temporary damage becomes permanent.</p><Link className="button ink" href="/books">View all books</Link></div><BookStack /></div></section>
 

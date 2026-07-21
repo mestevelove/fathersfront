@@ -37,6 +37,7 @@ test("exports the expected site routes", async () => {
     "bloodline-brotherhood",
     "family-lawfare",
     "stolen-sons",
+    "the-framework",
     "work-with-steve",
   ]) {
     assert.ok(entries.includes(route), `missing exported route: ${route}`);
@@ -50,6 +51,21 @@ test("exports the expected site routes", async () => {
   ]) {
     assert.ok(!entries.includes(removedRoute), `unexpected concept route: ${removedRoute}`);
   }
+});
+
+test("exports the Four Fronts framework page", async () => {
+  const html = await readFile(new URL("the-framework/index.html", outputRoot), "utf8");
+
+  assert.match(html, /Family court may be where the fight starts\. It does not stay there\./);
+  assert.match(html, /Pressure on one front affects the other three\./);
+  assert.match(html, /take radical responsibility/);
+  assert.match(html, /Four Fronts/);
+  assert.match(html, /One Father/);
+  assert.match(html, /Leadership/);
+  assert.match(html, /Lifestyle/);
+  assert.match(html, /Law/);
+  assert.match(html, /Love/);
+  assert.match(html, /Fathers Front is not a law firm/);
 });
 
 test("exports the unlinked article template", async () => {
