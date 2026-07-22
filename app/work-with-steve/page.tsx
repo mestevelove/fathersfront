@@ -235,7 +235,7 @@ export default function WorkWithStevePage() {
 
     <section className="work-simple-offers cream-section">
       <div className="shell work-simple-column">
-        <blockquote className="work-simple-quote">Choose Your Level of Support</blockquote>
+        <h2 className="work-simple-quote">Choose Your Level of Support</h2>
         <p className="work-section-deck">One brotherhood. Two ways to work with me.</p>
         <div className="work-story work-offer-opening">
           <p>Whether you’re still stuck in court, rebuilding after getting your life wrecked, or ready to make your crazy goals happen, we’ve got you, brother.</p>

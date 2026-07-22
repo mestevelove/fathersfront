@@ -17,10 +17,11 @@ export function Footer() {
         <div className="footer-links">
           <Link href="/">Home</Link>
           <Link href="/books">Books</Link>
-          <Link href="/the-framework">The Framework</Link>
+          <Link href="/articles">Articles</Link>
           <Link href="/speaking">Speaking</Link>
           <Link href="/work-with-steve">Work With Steve</Link>
           <Link href="/about">About</Link>
+          <Link href="/the-framework">The Framework</Link>
         </div>
         <div className="footer-note">
           <p className="footer-pillars">Love<i>.</i> Law<i>.</i><br />Leadership<i>.</i> Lifestyle<i>.</i></p>

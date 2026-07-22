@@ -13,8 +13,16 @@ export function Header() {
         </button>
         <nav className={open ? "nav open" : "nav"} aria-label="Primary navigation">
           <div className="mobile-menu-heading"><span>Main Menu</span><b>V.71</b></div>
-          <Link href="/">Home</Link><Link href="/books">Books</Link><Link href="/the-framework">The Framework</Link>
-          <Link href="/speaking">Speaking</Link><Link href="/about">About</Link><Link className="nav-cta" href="/work-with-steve">Work With Steve</Link>
+          <Link href="/">Home</Link><Link href="/books">Books</Link><Link href="/articles">Articles</Link>
+          <Link href="/speaking">Speaking</Link>
+          <div className="nav-dropdown">
+            <Link href="/about" className="nav-dropdown-label">About</Link>
+            <div className="nav-submenu">
+              <Link href="/about">About Steve</Link>
+              <Link href="/the-framework">The Framework</Link>
+            </div>
+          </div>
+          <Link className="nav-cta" href="/work-with-steve">Work With Steve</Link>
         </nav>
         <span className="site-version" aria-label="Site version 71">V.71</span>
       </div>

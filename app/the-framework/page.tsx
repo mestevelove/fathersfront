@@ -16,7 +16,7 @@ const notForYou = ["Only want validation that everyone else is wrong", "Want som
 const command = ["Understanding the facts and priorities", "Knowing what you can and cannot control", "Responding instead of reacting", "Using professionals without surrendering your leadership", "Protecting your relationship with your children", "Rebuilding your body, income, confidence, and life", "Creating a future that is no longer organized around the conflict"];
 
 function Section({ title, children }: { title: string; children: ReactNode }) {
-  return <section><h2>{title}</h2>{children}</section>;
+  return <section><h2>{title}</h2><br />{children}</section>;
 }
 
 function List({ items }: { items: string[] }) {
@@ -54,7 +54,7 @@ export default function FrameworkPage() {
           <Section title="What Taking Command Actually Means Here"><p>Taking command does not mean controlling your ex, the court, the judge, or the outcome.</p><p>It means:</p><List items={command} /></Section>
           <Section title="What Makes Fathers Front Different"><p>Most forms of support address one part of the problem.</p><p>Attorneys handle the legal case.</p><p>Therapists address emotional and mental health.</p><p>Men’s groups provide emotional support and accountability.</p><p>Business coaches help restore income and momentum.</p><p>But fathers do not experience these problems separately.</p><p>All four collide inside one man during one of the most devastating experiences a father can face.</p><p>The case affects your nervous system.</p><p>Your nervous system affects your decisions.</p><p>Your decisions affect your children.</p><p>Your finances affect how long you can remain in the fight.</p><p>Fathers Front connects all four fronts.</p></Section>
           <Section title="Where to Go Next"><p>You do not have to face all four fronts alone.</p><div className="framework-simple-actions"><Link className="button ember" href="/work-with-steve">Work With Steve</Link></div></Section>
-          <aside className={styles.disclaimer}><strong>Important:</strong> Fathers Front and Steve Love provide coaching and general educational information, not legal representation or legal, tax, financial, medical, or therapeutic advice. Fathers Front is not a law firm, and no attorney-client relationship is created by this website, its content, or any coaching or advisory engagement. Decisions are fact-specific; consult qualified professionals familiar with your circumstances.</aside>
+          <aside className={`${styles.disclaimer} framework-disclaimer`}><strong>Important:</strong> Fathers Front and Steve Love provide coaching and general educational information, not legal representation or legal, tax, financial, medical, or therapeutic advice. Fathers Front is not a law firm, and no attorney-client relationship is created by this website, its content, or any coaching or advisory engagement. Decisions are fact-specific; consult qualified professionals familiar with your circumstances.</aside>
         </div>
       </div>
     </article>
