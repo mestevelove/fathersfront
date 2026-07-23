@@ -13,7 +13,7 @@ test("exports a complete static homepage", async () => {
   assert.doesNotMatch(html, /Fathers are being erased/);
   assert.doesNotMatch(html, /Love\. Law\. Leadership\. Lifestyle\./);
   assert.match(html, /The Foundation/);
-  assert.match(html, /V\.71/);
+  assert.match(html, /V\.72/);
   assert.match(html, /Born in/);
   assert.match(html, /Blood\./);
   assert.match(html, /Forged in Fire\./);
@@ -71,7 +71,7 @@ test("exports the Four Fronts framework page", async () => {
 test("exports the unlinked article template", async () => {
   const html = await readFile(new URL("template.html", outputRoot), "utf8");
   assert.match(html, /The Fathers Front Dispatch/);
-  assert.match(html, /ARTICLE TEMPLATE · V\.71/);
+  assert.match(html, /ARTICLE TEMPLATE · V\.72/);
 });
 
 test("exports phase one messaging", async () => {
@@ -100,8 +100,9 @@ test("exports phase one messaging", async () => {
   assert.match(work, /no attorney-client relationship is created/);
   assert.doesNotMatch(work, /The Four Fronts/);
   assert.doesNotMatch(work, /One ascent/);
-  assert.match(speaking, /His Son Was Abducted to Germany\./);
-  assert.match(speaking, /He Took the Fight Across Two Countries\. And Won\./);
+  assert.match(speaking, /Want Steve to speak to your audience or community\?/);
+  assert.match(speaking, /leadership as a father and in business when under impossible pressure/);
   assert.match(speaking, /Who am I on the other side of impossible\?/);
+  assert.match(speaking, /Steve's story is the doorway\. Your audience is the reason he tells it\./);
   assert.match(speaking, /Book Steve to Speak/);
 });

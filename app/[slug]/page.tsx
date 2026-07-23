@@ -28,59 +28,51 @@ function PageContent({ type }: { type: string }) {
     <section className="support-choice"><p className="section-kicker">Choose your level of support</p><h2>Which path is right<br /><em>for you?</em></h2><div className="choice-flow"><span>What kind of support do you need?</span><div><article><b>Ongoing brotherhood</b><p>Group coaching, accountability, and a trusted room of capable men.</p><em>Bloodline Brotherhood</em></article><article><b>Private strategy</b><p>Focused counsel when the legal, financial, family, or business stakes are significant.</p><em>Bloodline Advisory</em></article></div></div></section>
     <section className="inner-grid work-list"><article id="brotherhood"><span>Group program</span><h2>Bloodline Brotherhood</h2><p>A private group coaching environment built around Leadership, Lifestyle, Law, and Love.</p><strong>$497 / month</strong><Link className="button ember" href="/bloodline-brotherhood">Enroll Now</Link></article><article id="advisory"><span>Private advisory</span><h2>Bloodline Advisory</h2><p>For founders, business owners, executives, and leaders navigating consequential battles.</p><strong>$297 / 60 minutes</strong><p className="small">The first 45 minutes focus on strategy. The final 15 minutes determine whether deeper private advisory makes sense.</p><Link className="button ink" href="/bloodline-advisory">Enroll Now</Link></article></section>
   </div>;
-  if (type === "speaking") return <div className="work-simple-column work-page-body">
-    <div className="speaking-hero-split">
-      <img className="speaking-portrait" src="/assets/steve-speaking.jpg" alt="Steve Love speaking to a live audience" />
-      <div>
-        <h1>His Son Was Abducted to Germany.</h1>
-        <p className="work-page-deck">He Took the Fight Across Two Countries. And Won.</p>
-        <p className="work-page-intro">Steve Love speaks about leadership under impossible pressure and the question that changes how we face every challenge:</p>
-        <a className="button ember" href="mailto:hello@fathersfront.com?subject=Speaking%20or%20Podcast%20Invitation">Invite Steve to Speak</a>
-      </div>
+  if (type === "speaking") return <div className="speaking-page speaking-page-rebuilt">
+    <div className="speaking-lead">
+      <img src="/assets/steve-speaking.jpg" alt="Steve Love speaking to a live audience" />
+      <div><h1>Want Steve to speak to your audience or community?</h1></div>
     </div>
-    <p className="work-section-deck speaking-motif">Who am I on the other side of impossible?</p>
-    <div className="speaking-divider" />
-    <section className="work-content-section">
-      <h2>Steve&apos;s Story</h2>
-      <div className="work-story">
-        <p>Steve spent twenty years in corporate consulting, working with organizations including Microsoft, the VA Hospital, Costco, and Mega Millions.</p>
-        <p>He had the life that looked like success from the outside. A good career, a big house, three sons, and a wife.</p>
-        <p>In the shadows were years of drug addiction, divorce, and health challenges.</p>
-        <p>That is when everything changed. In the middle of a personal crisis, Steve experienced a massive spiritual awakening.</p>
-        <blockquote>&ldquo;I&apos;m here to be a better father and to be of service.&rdquo;</blockquote>
-        <p>That is what he did, and it started with his sons.</p>
-        <p>He built a coaching business and worked with hundreds of entrepreneurs, coaches, executives, doctors, attorneys, and other high-performing professionals to grow their businesses, expand their impact, and lead through change.</p>
-        <p>After a decade of deep work, he had it all again.</p>
-        <p>He met the woman of his dreams, built a better home, and they had a baby boy.</p>
-        <p>Then his son was abducted to Germany when he was only a few months old.</p>
-        <p>Steve represented himself through the U.S. litigation, pursued his son&apos;s return internationally under the Hague Convention, defeated the appeal, and was appointed Sole Managing Conservator in Texas.</p>
-        <p>Through every chapter, the question remained the same:</p>
-      </div>
-    </section>
-    <p className="work-section-deck speaking-motif">Who am I on the other side of impossible?</p>
-    <section className="work-content-section">
-      <div className="work-story">
-        <p>That question changed everything.</p>
-        <p>Instead of asking only how to survive the situation, Steve began asking who the situation was asking him to become.</p>
-        <p>This question can be applied to any challenge or impossible goal in life and business.</p>
-      </div>
-    </section>
-    <section className="work-content-section">
-      <h2>Bring Steve to Your Audience</h2>
-      <div className="work-story">
-        <p>Whether you host a podcast or YouTube channel, lead a mastermind, community, church, or men&apos;s group, bring speakers into your company, or run in-person or online events, Steve can bring this story and its central question to your audience.</p>
-        <p><strong>Steve&apos;s story is the doorway. Your audience is the reason he tells it.</strong></p>
-        <p>The goal is not for people to leave impressed by what Steve survived.</p>
-        <p>It is for them to leave asking:</p>
-      </div>
-    </section>
-    <p className="work-section-deck speaking-motif">Who am I on the other side of impossible?</p>
-    <section className="work-content-section">
-      <div className="work-story">
-        <p>If your audience needs this conversation, check Steve&apos;s availability below.</p>
+    <div className="work-simple-column work-page-body speaking-body">
+      <div className="work-story speaking-opening">
+        <p>Steve Love speaks about leadership as a father and in business when under impossible pressure. He is here to help men answer the question: <em className="speaking-accent">Who am I on the other side of impossible?</em>{" "}</p>
       </div>
       <a className="button ember" href="mailto:hello@fathersfront.com?subject=Speaking%20or%20Podcast%20Invitation">Book Steve to Speak</a>
-    </section>
+
+      <section className="work-content-section speaking-copy-section">
+        <h2>Steve&apos;s Story</h2>
+        <div className="work-story">
+          <p>Steve spent twenty years in corporate consulting, working with organizations including Microsoft, the VA Hospital, Costco, and Mega Millions.</p>
+          <p>He had the life that looked like success from the outside. A good career, a big house, three sons, and a wife.</p>
+          <p>In the shadows were years of drug addiction, divorce, and health challenges.</p>
+          <p>That is when everything changed. In the middle of a personal crisis, Steve experienced a massive spiritual awakening.</p>
+          <blockquote>&ldquo;I&apos;m here to be a better father and to be of service.&rdquo;</blockquote>
+          <p>That is what he did, and it started with his sons.</p>
+          <p>Then with his coaching business and worked with hundreds of entrepreneurs, coaches, executives, doctors, attorneys, and other high-performing professionals to grow their businesses, expand their impact, and lead through change.</p>
+          <p>After a decade of deep work, he had it all again.</p>
+          <p>He met the woman of his dreams, built a better home, and they had a baby boy.</p>
+          <p>Then his son was abducted to Germany when he was only a few months old.</p>
+          <p>Steve represented himself through the U.S. litigation, pursued his son&apos;s return internationally under the Hague Convention, defeated the appeal, and was appointed Sole Managing Conservator in Texas.</p>
+          <p>Through every chapter, the question remained the same:</p>
+          <p className="speaking-accent">Who am I on the other side of impossible?</p>
+          <p>That question changed everything.</p>
+          <p>Instead of asking only how to survive the situation, Steve began asking who the situation was asking him to become.</p>
+          <p>This question can be applied to any challenge or impossible goal in life and business.</p>
+        </div>
+      </section>
+
+      <section className="work-content-section speaking-copy-section">
+        <h2>Bring Steve to Your Audience</h2>
+        <div className="work-story">
+          <p>Whether you host a podcast or YouTube channel, lead a mastermind, community, church, or men&apos;s group, bring speakers into your company, or run in-person or online events, Steve can bring this story and its central question to your audience.</p>
+          <p>Steve&apos;s story is the doorway. Your audience is the reason he tells it.</p>
+          <p>The goal is not for people to leave asking:</p>
+          <p className="speaking-accent">Who am I on the other side of impossible?</p>
+          <p>If your audience needs this conversation, check Steve&apos;s availability below.</p>
+        </div>
+        <a className="button ember" href="mailto:hello@fathersfront.com?subject=Speaking%20or%20Podcast%20Invitation">Book Steve to Speak</a>
+      </section>
+    </div>
   </div>;
   if (type === "about") return <AboutTimeline />;
   if (type === "apparel") return <div className="coming-soon"><h2>The Bloodline</h2><p>First drop coming soon.</p><button className="button ink">Get notified</button></div>;
