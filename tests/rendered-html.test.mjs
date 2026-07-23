@@ -100,7 +100,8 @@ test("exports phase one messaging", async () => {
   assert.match(work, /no attorney-client relationship is created/);
   assert.doesNotMatch(work, /The Four Fronts/);
   assert.doesNotMatch(work, /One ascent/);
-  assert.match(speaking, /The Father Must Lead the Case/);
-  assert.match(speaking, /Born in Blood\. Forged in Fire\./);
-  assert.match(speaking, />04</);
+  assert.match(speaking, /His Son Was Abducted to Germany\./);
+  assert.match(speaking, /He Took the Fight Across Two Countries\. And Won\./);
+  assert.match(speaking, /Who am I on the other side of impossible\?/);
+  assert.match(speaking, /Book Steve to Speak/);
 });
