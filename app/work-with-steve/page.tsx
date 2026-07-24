@@ -259,7 +259,7 @@ export default function WorkWithStevePage() {
             <p>As a Bloodline Advisory client, you also receive access to Bloodline Brotherhood for the duration of your advisory engagement.</p>
             <p>Private advisory engagements begin at $15,000.</p>
             <strong>$297 <small>initial strategy call</small></strong>
-            <Link className="button ember" href="/bloodline-advisory">Book a Strategy Call</Link>
+            <Link className="button ink" href="/bloodline-advisory">Book a Strategy Call</Link>
           </article>
         </div>
         <aside className="work-disclaimer" aria-label="Important professional disclaimer">

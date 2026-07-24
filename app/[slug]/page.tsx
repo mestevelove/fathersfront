@@ -8,7 +8,6 @@ const pages: Record<string, { eyebrow: string; title: string; intro: string; typ
   books: { eyebrow: "Books", title: "The story. The strategy.", intro: "Two books born from the same fight: one memoir and one practical guide to protecting your bloodline.", type: "books" },
   speaking: { eyebrow: "Speaking", title: "A voice forged in the fight.", intro: "Steve speaks on fatherhood, family systems, leadership under pressure, and building what survives the battle.", type: "speaking" },
   apparel: { eyebrow: "Apparel · Coming soon", title: "Wear the bloodline.", intro: "A restrained collection for the men who carry the standard. The first drop is being forged.", type: "apparel" },
-  about: { eyebrow: "Steve Love", title: "The man behind the front.", intro: "Author, father, entrepreneur, strategist, and litigator—built through exile, family court, business, and the refusal to disappear.", type: "about" },
 };
 
 export function generateStaticParams() {

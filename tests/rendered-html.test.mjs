@@ -13,8 +13,8 @@ test("exports a complete static homepage", async () => {
   assert.doesNotMatch(html, /Fathers are being erased/);
   assert.doesNotMatch(html, /Love\. Law\. Leadership\. Lifestyle\./);
   assert.match(html, /The Foundation/);
-  assert.match(html, /V\.75/);
-  assert.match(html, /Menu · V\.75/);
+  assert.match(html, /V\.76/);
+  assert.match(html, /Menu · V\.76/);
   assert.match(html, /Born in/);
   assert.match(html, /Blood\./);
   assert.match(html, /Forged in Fire\./);
@@ -34,6 +34,7 @@ test("exports the expected site routes", async () => {
 
   for (const route of [
     "articles",
+    "about",
     "bloodline-advisory",
     "bloodline-brotherhood",
     "family-lawfare",
@@ -51,6 +52,30 @@ test("exports the expected site routes", async () => {
     "work-section-concepts",
   ]) {
     assert.ok(!entries.includes(removedRoute), `unexpected concept route: ${removedRoute}`);
+  }
+});
+
+test("exports the cream editorial About Steve page", async () => {
+  const html = await readFile(new URL("about/index.html", outputRoot), "utf8");
+
+  assert.match(html, /About Steve Love/);
+  assert.match(html, /I Became a Father Before I Knew How to Be a Man/);
+  assert.match(html, /Who Am I on the Other Side of Impossible\?/);
+  assert.match(html, /Why I Created Fathers Front/);
+  assert.match(html, /This Is the Work/);
+  for (const image of [
+    "about-steve-intro-with-sons-at-court.jpg",
+    "about-steve-01-father-at-19.jpg",
+    "about-steve-02-moment-everything-changed.jpg",
+    "about-steve-03-first-family-court.jpg",
+    "about-steve-04-exile-reconstruction.jpg",
+    "about-steve-05-another-chance-at-fatherhood.jpg",
+    "about-steve-06-second-time-learned-to-lead.jpg",
+    "about-steve-07-other-side-of-impossible.jpg",
+    "about-steve-08-why-i-created-fathers-front.jpg",
+    "about-steve-09-this-is-the-work.jpg",
+  ]) {
+    assert.match(html, new RegExp(`/assets/about/${image}`));
   }
 });
 
@@ -72,7 +97,7 @@ test("exports the Four Fronts framework page", async () => {
 test("exports the unlinked article template", async () => {
   const html = await readFile(new URL("template.html", outputRoot), "utf8");
   assert.match(html, /The Fathers Front Dispatch/);
-  assert.match(html, /ARTICLE TEMPLATE · V\.75/);
+  assert.match(html, /ARTICLE TEMPLATE · V\.76/);
 });
 
 test("exports phase one messaging", async () => {
@@ -95,6 +120,7 @@ test("exports phase one messaging", async () => {
   assert.match(work, /One brotherhood\. Two ways to work with me\./);
   assert.match(work, /Join Bloodline Brotherhood/);
   assert.match(work, /you also receive access to Bloodline Brotherhood/);
+  assert.match(work, /class="button ink" href="\/bloodline-advisory\/?"/);
   assert.match(work, /\$297/);
   assert.match(work, /initial strategy call/);
   assert.match(work, /Fathers Front is not a law firm/);
