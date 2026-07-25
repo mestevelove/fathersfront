@@ -647,7 +647,7 @@ p.speaking-accent { margin:22px 0; font-size:clamp(25px,3.2vw,38px); }
 .work-simple-offers .work-v2-brotherhood>span,.work-simple-offers .work-v2-brotherhood h3 { color:var(--red); }
 .work-simple-offers .work-v2-advisory>span,.work-simple-offers .work-v2-advisory h3 { color:var(--ink); }
 .work-simple-offers .work-v2-brotherhood .cream-button { color:var(--cream); background:var(--red); border-color:var(--red); }
-.work-simple-offers .work-v2-brotherhood .cream-button:hover { color:var(--red); background:transparent; border-color:var(--red); }
+.work-simple-offers .work-v2-brotherhood .cream-button:hover { color:var(--red); background:#fff; border-color:var(--red); }
 .work-simple-next { max-width:700px; padding:48px 0 10px; }
 .work-simple-next p { margin:0 0 16px; color:#514a43; font:400 18px/1.82 var(--body); }
 

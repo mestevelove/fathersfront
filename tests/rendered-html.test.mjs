@@ -13,8 +13,13 @@ test("exports a complete static homepage", async () => {
   assert.doesNotMatch(html, /Fathers are being erased/);
   assert.doesNotMatch(html, /Love\. Law\. Leadership\. Lifestyle\./);
   assert.match(html, /The Foundation/);
-  assert.match(html, /V\.76/);
-  assert.match(html, /Menu · V\.76/);
+  assert.match(html, /Fathers Front - Born in Blood\. Forged in Fire\./);
+  assert.match(html, /property="og:image" content="https:\/\/fathersfront\.com\/assets\/social\/fathers-front-social-share\.jpg"/);
+  assert.match(html, /name="twitter:card" content="summary_large_image"/);
+  assert.match(html, /href="\/favicon\.svg"/);
+  assert.match(html, /href="\/apple-touch-icon\.png"/);
+  assert.match(html, /V\.77/);
+  assert.match(html, /Menu · V\.77/);
   assert.match(html, /Born in/);
   assert.match(html, /Blood\./);
   assert.match(html, /Forged in Fire\./);
@@ -97,7 +102,7 @@ test("exports the Four Fronts framework page", async () => {
 test("exports the unlinked article template", async () => {
   const html = await readFile(new URL("template.html", outputRoot), "utf8");
   assert.match(html, /The Fathers Front Dispatch/);
-  assert.match(html, /ARTICLE TEMPLATE · V\.76/);
+  assert.match(html, /ARTICLE TEMPLATE · V\.77/);
 });
 
 test("exports phase one messaging", async () => {
