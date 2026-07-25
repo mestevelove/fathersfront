@@ -10,10 +10,7 @@ export const metadata: Metadata = {
   title: { default: sharedTitle, template: "%s | Fathers Front" },
   description: sharedDescription,
   icons: {
-    icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-    ],
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
   openGraph: {
@@ -41,11 +38,6 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return <html lang="en" data-theme="dark">
-    <head>
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-      <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,600&family=Libre+Franklin:wght@400;500;600&family=Source+Serif+4:ital,wght@1,600&display=swap" rel="stylesheet" />
-    </head>
     <body>{children}</body>
   </html>;
 }

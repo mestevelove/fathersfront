@@ -18,8 +18,8 @@ test("exports a complete static homepage", async () => {
   assert.match(html, /name="twitter:card" content="summary_large_image"/);
   assert.match(html, /href="\/favicon\.svg"/);
   assert.match(html, /href="\/apple-touch-icon\.png"/);
-  assert.match(html, /V\.79/);
-  assert.match(html, /Menu · V\.79/);
+  assert.match(html, /V\.80/);
+  assert.match(html, /Menu · V\.80/);
   assert.match(html, /Born in/);
   assert.match(html, /Blood\./);
   assert.match(html, /Forged in <em>Fire\.<\/em>/);
@@ -72,6 +72,14 @@ test("exports optimized book cover assets", async () => {
   assert.doesNotMatch(homepage, /family-lawfare\.png|stolen-sons\.png/);
 });
 
+test("exports browser cache rules for static assets", async () => {
+  const headers = await readFile(new URL("_headers", outputRoot), "utf8");
+
+  assert.match(headers, /\/_next\/static\/\*\s+Cache-Control: public, max-age=31536000, immutable/);
+  assert.match(headers, /\/assets\/\*\s+Cache-Control: public, max-age=2592000, stale-while-revalidate=86400/);
+  assert.match(headers, /\/fonts\/\*\s+Cache-Control: public, max-age=31536000, immutable/);
+});
+
 test("exports the cream editorial About Steve page", async () => {
   const html = await readFile(new URL("about/index.html", outputRoot), "utf8");
 
@@ -114,7 +122,7 @@ test("exports the Four Fronts framework page", async () => {
 test("exports the unlinked article template", async () => {
   const html = await readFile(new URL("template.html", outputRoot), "utf8");
   assert.match(html, /The Fathers Front Dispatch/);
-  assert.match(html, /ARTICLE TEMPLATE · V\.79/);
+  assert.match(html, /ARTICLE TEMPLATE · V\.80/);
 });
 
 test("exports phase one messaging", async () => {
