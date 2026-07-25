@@ -30,7 +30,12 @@ export function ProductDetail(props: ProductDetailProps) {
         <div className="product-detail-visual">
           {props.image
             ? <img src={props.image} alt={props.imageAlt || ""} />
-            : <div className={`product-service-mark product-service-mark-${props.markTone || "ink"}`}><span>{props.productMark?.eyebrow}</span><strong>{props.productMark?.name}</strong><b>{props.productMark?.price}</b></div>}
+            : <div className={`product-service-mark product-service-mark-${props.markTone || "ink"}`}>
+                <div className="product-service-logo" aria-label="Fathers Front"><i>F</i><i>F</i></div>
+                <span>{props.productMark?.eyebrow}</span>
+                <strong>{props.productMark?.name}</strong>
+                <b>{props.productMark?.price}</b>
+              </div>}
         </div>
         <div className="product-detail-copy">
           <span className="product-status">{props.status}</span>

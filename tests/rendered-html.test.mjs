@@ -18,8 +18,8 @@ test("exports a complete static homepage", async () => {
   assert.match(html, /name="twitter:card" content="summary_large_image"/);
   assert.match(html, /href="\/favicon\.svg"/);
   assert.match(html, /href="\/apple-touch-icon\.png"/);
-  assert.match(html, /V\.80/);
-  assert.match(html, /Menu · V\.80/);
+  assert.match(html, /V\.81/);
+  assert.match(html, /Menu · V\.81/);
   assert.match(html, /Born in/);
   assert.match(html, /Blood\./);
   assert.match(html, /Forged in <em>Fire\.<\/em>/);
@@ -69,6 +69,10 @@ test("exports optimized book cover assets", async () => {
   assert.match(homepage, /stolen-sons-cover\.webp/);
   assert.match(familyLawfare, /family-lawfare-cover\.webp/);
   assert.match(stolenSons, /stolen-sons-cover\.webp/);
+  assert.match(familyLawfare, /https:\/\/portal\.fathersfront\.com\/family-lawfare/);
+  assert.match(stolenSons, /https:\/\/portal\.fathersfront\.com\/stolen-sons/);
+  assert.match(homepage, /V\.81/);
+  assert.match(homepage, /aria-label="Site version 81"/);
   assert.doesNotMatch(homepage, /family-lawfare\.png|stolen-sons\.png/);
 });
 
