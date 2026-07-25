@@ -193,15 +193,19 @@ function Prose({ blocks }: { blocks: StoryBlock[] }) {
     : <p className={block.type === "strong" ? "about-strong-line" : undefined} key={index}>{block.text}</p>)}</div>;
 }
 
-function Media({ image, alt, left, right }: { image: string; alt: string; left: string; right: string }) {
-  return <div className="about-editorial-media"><figure><img src={`/assets/about/${image}`} alt={alt} /></figure><div className="about-image-caption"><span>{left}</span><span>{right}</span></div></div>;
+function Media({ image, alt, left, right, eager = false }: { image: string; alt: string; left: string; right: string; eager?: boolean }) {
+  const src = `/assets/about/${image}`;
+  return <div className="about-editorial-media"><figure>{eager
+    ? <img src={src} alt={alt} decoding="async" fetchPriority="high" />
+    : <img src={src} alt={alt} loading="lazy" decoding="async" />
+  }</figure><div className="about-image-caption"><span>{left}</span><span>{right}</span></div></div>;
 }
 
 export default function AboutPage() {
   return <main><Header /><div className="about-editorial">
     <section className="about-editorial-hero"><div className="about-editorial-hero-inner">
       <div className="about-editorial-hero-copy"><p className="section-kicker">About Steve Love</p><h1>About<br />Steve Love</h1><p className="about-editorial-subhead">I became a father before I knew how to be a man.</p><p className="about-editorial-deck">This is not a highlight reel. It is the lived story behind Fathers Front: fatherhood, addiction, family court, exile, reconstruction, international litigation, and the decision to become impossible to erase.</p></div>
-      <Media image="about-steve-intro-with-sons-at-court.jpg" alt="Steve Love with two of his sons at court" left="Fatherhood" right="Austin, Texas" />
+      <Media image="about-steve-intro-with-sons-at-court.jpg" alt="Steve Love with two of his sons at court" left="Fatherhood" right="Austin, Texas" eager />
     </div></section>
     {chapters.map((chapter) => <section className="about-editorial-story" id={`about-${chapter.number}`} key={chapter.number}><div className="about-editorial-story-inner">
       <Media image={chapter.image} alt={chapter.alt} left={chapter.number} right={chapter.caption} />

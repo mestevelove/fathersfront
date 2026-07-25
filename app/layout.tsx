@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 const sharedDescription = "A front for fathers building families, businesses, and futures through the battles meant to break them.";
-const sharedTitle = "Fathers Front - Born in Blood. Forged in Fire.";
+const sharedTitle = "Fathers Front | Fight for Your Fatherhood";
 const sharedImage = "/assets/social/fathers-front-social-share.jpg";
 
 export const metadata: Metadata = {
