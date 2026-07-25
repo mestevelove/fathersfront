@@ -21,7 +21,7 @@ type StoryChapter = {
 
 const chapters: StoryChapter[] = [
   {
-    number:"01", caption:"Father at 19", title:"I Became a Father Before I Knew How to Be a Man", image:"about-steve-01-father-at-19.jpg", alt:"A young Steve Love holding his newborn son",
+    number:"01", caption:"Father at 19", title:"I Became a Father Before I Knew How to Be a Man", image:"about-steve-01-father-at-19.webp", alt:"A young Steve Love holding his newborn son",
     blocks:[
       {text:"I became a father at 19 after getting my high school girlfriend of three years pregnant."},
       {text:"I was still an Orange County punk rock kid."},
@@ -42,7 +42,7 @@ const chapters: StoryChapter[] = [
     ],
   },
   {
-    number:"02", caption:"The awakening", title:"The Moment Everything Changed", image:"about-steve-02-moment-everything-changed.jpg", alt:"Steve Love seated with two of his sons",
+    number:"02", caption:"The awakening", title:"The Moment Everything Changed", image:"about-steve-02-moment-everything-changed.webp", alt:"Steve Love seated with two of his sons",
     blocks:[
       {text:"In the middle of the worst personal crisis of my life, something broke open inside me."},
       {text:"One sentence came through clearly:"},
@@ -59,7 +59,7 @@ const chapters: StoryChapter[] = [
     ],
   },
   {
-    number:"03", caption:"Family court", title:"The First Time Through Family Court", image:"about-steve-03-first-family-court.jpg", alt:"Steve Love standing in front of a courthouse with tape across his mouth",
+    number:"03", caption:"Family court", title:"The First Time Through Family Court", image:"about-steve-03-first-family-court.webp", alt:"Steve Love standing in front of a courthouse with tape across his mouth",
     blocks:[
       {text:"I believed I had done everything a father was supposed to do."},
       {text:"I made six figures."},
@@ -80,7 +80,7 @@ const chapters: StoryChapter[] = [
     ],
   },
   {
-    number:"04", caption:"Bali", title:"Exile and Reconstruction", image:"about-steve-04-exile-reconstruction.jpg", alt:"Steve Love standing in front of a staircase in Bali",
+    number:"04", caption:"Bali", title:"Exile and Reconstruction", image:"about-steve-04-exile-reconstruction.webp", alt:"Steve Love standing in front of a staircase in Bali",
     blocks:[
       {text:"After the final hearing, I moved to Bali."},
       {text:"I had been a husband and father for my entire adult life."},
@@ -106,7 +106,7 @@ const chapters: StoryChapter[] = [
     ],
   },
   {
-    number:"05", caption:"A new beginning", title:"Another Chance at Fatherhood", image:"about-steve-05-another-chance-at-fatherhood.jpg", alt:"Steve Love and his pregnant partner together outdoors",
+    number:"05", caption:"A new beginning", title:"Another Chance at Fatherhood", image:"about-steve-05-another-chance-at-fatherhood.webp", alt:"Steve Love and his pregnant partner together outdoors",
     blocks:[
       {text:"After working with a relationship coach, I met a beautiful German woman."},
       {text:"We fell in love quickly."},
@@ -125,7 +125,7 @@ const chapters: StoryChapter[] = [
     ],
   },
   {
-    number:"06", caption:"The second fight", title:"The Second Time, I Learned to Lead", image:"about-steve-06-second-time-learned-to-lead.jpg", alt:"Steve Love with two of his sons outside the Travis County family courts facility",
+    number:"06", caption:"The second fight", title:"The Second Time, I Learned to Lead", image:"about-steve-06-second-time-learned-to-lead.webp", alt:"Steve Love with two of his sons outside the Travis County family courts facility",
     blocks:[
       {text:"The first time through family court, I depended on an attorney while knowing almost nothing about the battlefield."},
       {text:"The second time, I refused to remain a passenger in my own life."},
@@ -154,7 +154,7 @@ const chapters: StoryChapter[] = [
     ],
   },
   {
-    number:"07", caption:"The other side", title:"Who Am I on the Other Side of Impossible?", image:"about-steve-07-other-side-of-impossible.jpg", alt:"Steve Love standing outdoors after training",
+    number:"07", caption:"The other side", title:"Who Am I on the Other Side of Impossible?", image:"about-steve-07-other-side-of-impossible.webp", alt:"Steve Love standing outdoors after training",
     blocks:[
       {text:"The first time through family court, I left believing the courts favored mothers and there was nothing I could do about it."},
       {text:"The second time, I began asking a different question:"},
@@ -169,7 +169,7 @@ const chapters: StoryChapter[] = [
     ],
   },
   {
-    number:"08", caption:"The framework", title:"Why I Created Fathers Front", image:"about-steve-08-why-i-created-fathers-front.jpg", alt:"Steve Love holding his infant son Ori", fronts:true,
+    number:"08", caption:"The framework", title:"Why I Created Fathers Front", image:"about-steve-08-why-i-created-fathers-front.webp", alt:"Steve Love holding his infant son Ori", fronts:true,
     blocks:[
       {text:"Family court may be where the fight starts."},
       {text:"It does not stay there."},
@@ -209,6 +209,6 @@ export default function AboutPage() {
         {chapter.fronts && <div className="about-fronts">{fronts.map(([index,title,text]) => <article key={title}><span>{index}</span><h3>{title}</h3><p>{text}</p></article>)}</div>}
       </div>
     </div></section>)}
-    <section className="about-editorial-finale"><div className="about-editorial-finale-inner"><div className="about-editorial-copy"><p className="about-section-number">09</p><h2>This Is the Work</h2><Prose blocks={[{text:"My story is not about how much I survived."},{text:"It is about what each fight required me to become."},{text:"I am a father of four sons."},{text:"Everything I build begins there."}]} /><div className="about-book-line">My book <em>Stolen Sons</em> tells the story.<br /><em>Family Lawfare</em> is the legal strategy.<br /><br />Fathers Front is the framework for fathers to take command of the fight, rebuild what it has cost them, and forge the future that follows.</div><div className="about-cta-row"><Link className="button ember" href="/work-with-steve">Work With Steve</Link><Link className="button ink" href="/the-framework">Explore the Four Fronts</Link></div></div><Media image="about-steve-09-this-is-the-work.jpg" alt="Portrait of Steve Love seated on a staircase" left="The work" right="Leadership" /></div></section>
+    <section className="about-editorial-finale"><div className="about-editorial-finale-inner"><div className="about-editorial-copy"><p className="about-section-number">09</p><h2>This Is the Work</h2><Prose blocks={[{text:"My story is not about how much I survived."},{text:"It is about what each fight required me to become."},{text:"I am a father of four sons."},{text:"Everything I build begins there."}]} /><div className="about-book-line">My book <em>Stolen Sons</em> tells the story.<br /><em>Family Lawfare</em> is the legal strategy.<br /><br />Fathers Front is the framework for fathers to take command of the fight, rebuild what it has cost them, and forge the future that follows.</div><div className="about-cta-row"><Link className="button ember" href="/work-with-steve">Work With Steve</Link><Link className="button ink" href="/the-framework">Explore the Four Fronts</Link></div></div><Media image="about-steve-09-this-is-the-work.webp" alt="Portrait of Steve Love seated on a staircase" left="The work" right="Leadership" /></div></section>
   </div><Footer /></main>;
 }

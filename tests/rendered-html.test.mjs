@@ -18,8 +18,8 @@ test("exports a complete static homepage", async () => {
   assert.match(html, /name="twitter:card" content="summary_large_image"/);
   assert.match(html, /href="\/favicon\.svg"/);
   assert.match(html, /href="\/apple-touch-icon\.png"/);
-  assert.match(html, /V\.77/);
-  assert.match(html, /Menu · V\.77/);
+  assert.match(html, /V\.78/);
+  assert.match(html, /Menu · V\.78/);
   assert.match(html, /Born in/);
   assert.match(html, /Blood\./);
   assert.match(html, /Forged in Fire\./);
@@ -60,6 +60,18 @@ test("exports the expected site routes", async () => {
   }
 });
 
+test("exports optimized book cover assets", async () => {
+  const homepage = await readFile(new URL("index.html", outputRoot), "utf8");
+  const familyLawfare = await readFile(new URL("family-lawfare/index.html", outputRoot), "utf8");
+  const stolenSons = await readFile(new URL("stolen-sons/index.html", outputRoot), "utf8");
+
+  assert.match(homepage, /family-lawfare-cover\.webp/);
+  assert.match(homepage, /stolen-sons-cover\.webp/);
+  assert.match(familyLawfare, /family-lawfare-cover\.webp/);
+  assert.match(stolenSons, /stolen-sons-cover\.webp/);
+  assert.doesNotMatch(homepage, /family-lawfare\.png|stolen-sons\.png/);
+});
+
 test("exports the cream editorial About Steve page", async () => {
   const html = await readFile(new URL("about/index.html", outputRoot), "utf8");
 
@@ -70,15 +82,15 @@ test("exports the cream editorial About Steve page", async () => {
   assert.match(html, /This Is the Work/);
   for (const image of [
     "about-steve-intro-with-sons-at-court.jpg",
-    "about-steve-01-father-at-19.jpg",
-    "about-steve-02-moment-everything-changed.jpg",
-    "about-steve-03-first-family-court.jpg",
-    "about-steve-04-exile-reconstruction.jpg",
-    "about-steve-05-another-chance-at-fatherhood.jpg",
-    "about-steve-06-second-time-learned-to-lead.jpg",
-    "about-steve-07-other-side-of-impossible.jpg",
-    "about-steve-08-why-i-created-fathers-front.jpg",
-    "about-steve-09-this-is-the-work.jpg",
+    "about-steve-01-father-at-19.webp",
+    "about-steve-02-moment-everything-changed.webp",
+    "about-steve-03-first-family-court.webp",
+    "about-steve-04-exile-reconstruction.webp",
+    "about-steve-05-another-chance-at-fatherhood.webp",
+    "about-steve-06-second-time-learned-to-lead.webp",
+    "about-steve-07-other-side-of-impossible.webp",
+    "about-steve-08-why-i-created-fathers-front.webp",
+    "about-steve-09-this-is-the-work.webp",
   ]) {
     assert.match(html, new RegExp(`/assets/about/${image}`));
   }
@@ -102,7 +114,7 @@ test("exports the Four Fronts framework page", async () => {
 test("exports the unlinked article template", async () => {
   const html = await readFile(new URL("template.html", outputRoot), "utf8");
   assert.match(html, /The Fathers Front Dispatch/);
-  assert.match(html, /ARTICLE TEMPLATE · V\.77/);
+  assert.match(html, /ARTICLE TEMPLATE · V\.78/);
 });
 
 test("exports phase one messaging", async () => {

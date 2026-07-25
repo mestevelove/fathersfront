@@ -15,7 +15,7 @@ export function generateStaticParams() {
 }
 
 function PageContent({ type }: { type: string }) {
-  if (type === "books") return <div className="inner-grid books-list"><article><img src="/assets/stolen-sons.png" alt="Stolen Sons" /><div><span>Memoir</span><h2>Stolen Sons</h2><p>A father erased. A son taken. A fight not finished.</p><Link className="button ink" href="/stolen-sons">Explore the book</Link></div></article><article><img src="/assets/family-lawfare.png" alt="Family Lawfare" /><div><span>Field guide</span><h2>Family Lawfare</h2><p>Protect your bloodline, rights, and future when the courts enter your family.</p><Link className="button ink" href="/family-lawfare">Explore the book</Link></div></article></div>;
+  if (type === "books") return <div className="inner-grid books-list"><article><img src="/assets/stolen-sons-cover.webp" alt="Stolen Sons" /><div><span>Memoir</span><h2>Stolen Sons</h2><p>A father erased. A son taken. A fight not finished.</p><Link className="button ink" href="/stolen-sons">Explore the book</Link></div></article><article><img src="/assets/family-lawfare-cover.webp" alt="Family Lawfare" /><div><span>Field guide</span><h2>Family Lawfare</h2><p>Protect your bloodline, rights, and future when the courts enter your family.</p><Link className="button ink" href="/family-lawfare">Explore the book</Link></div></article></div>;
   if (type === "work") return <div className="work-with-page">
     <section className="work-opening"><p className="section-kicker">The work</p><h2>Every battle crosses<br /><em>more than one front.</em></h2><p>We work across Leadership, Lifestyle, Law, and Love because a decision made on one front creates consequences across the others.</p></section>
     <section className="transformation"><div className="transformation-head"><p className="section-kicker">The four-front transformation</p><div><span>Before</span><span>After</span></div></div>
@@ -29,7 +29,7 @@ function PageContent({ type }: { type: string }) {
   </div>;
   if (type === "speaking") return <div className="speaking-page speaking-page-rebuilt">
     <div className="speaking-lead">
-      <img src="/assets/steve-speaking.jpg" alt="Steve Love speaking to a live audience" />
+      <img src="/assets/steve-speaking.webp" alt="Steve Love speaking to a live audience" />
       <div><h1>Want Steve to speak to your audience or community?</h1></div>
     </div>
     <div className="work-simple-column work-page-body speaking-body">
@@ -79,15 +79,15 @@ function PageContent({ type }: { type: string }) {
 }
 
 const journey = [
-  { number:"01", era:"Age 19", title:"The first calling", text:"I became a father before I had become a man. I did not understand everything fatherhood would demand of me—but from that moment forward, my life was no longer mine alone.", image:"/assets/steve-sons.jpg", align:"right" },
+  { number:"01", era:"Age 19", title:"The first calling", text:"I became a father before I had become a man. I did not understand everything fatherhood would demand of me—but from that moment forward, my life was no longer mine alone.", image:"/assets/steve-sons.webp", align:"right" },
   { number:"02", era:"Fifteen years", title:"The divided man", text:"From the outside, I had built the life I was supposed to want: a wife, children, a home, and a six-figure career. Underneath it, addiction followed me for fifteen years. Achievement could not fill what I refused to face.", align:"left" },
   { number:"03", era:"The awakening", title:"The life behind the life", text:"Eventually, the old identity broke. Recovery was not the finish line. It was the first honest step toward becoming the father my sons deserved.", image:"/assets/steve-hero.jpg", align:"right" },
-  { number:"04", era:"The wider world", title:"Freedom, built", text:"I became present with my sons, traveled the world, built businesses, and discovered that freedom is not escape. It is the capacity to create a life you can stand inside without needing to run from it.", image:"/assets/steve-speaking.jpg", align:"left" },
+  { number:"04", era:"The wider world", title:"Freedom, built", text:"I became present with my sons, traveled the world, built businesses, and discovered that freedom is not escape. It is the capacity to create a life you can stand inside without needing to run from it.", image:"/assets/steve-speaking.webp", align:"left" },
   { number:"05", era:"A new beginning", title:"Love returned", text:"I started a new family. There was a beautiful woman, a home, and a new son. For a moment, everything I had fought to become seemed to have carried me into the life I had imagined.", align:"right" },
   { number:"06", era:"The abduction", title:"The world split open", text:"Then my son was taken across an ocean. In a single act, fatherhood became an international legal battle. The system expected distance, exhaustion, and delay to do what force could not: make me disappear.", align:"left" },
-  { number:"07", era:"Two years · Two countries", title:"Learning to litigate", text:"I learned the case down to the smallest fact and fought through courts in Texas and Germany. Every filing, hearing, allegation, and setback became part of a flawless record built around one principle: the best way to beat a lie is with the truth.", image:"/assets/fathers-front-home-hero.jpg", align:"right" },
+  { number:"07", era:"Two years · Two countries", title:"Learning to litigate", text:"I learned the case down to the smallest fact and fought through courts in Texas and Germany. Every filing, hearing, allegation, and setback became part of a flawless record built around one principle: the best way to beat a lie is with the truth.", image:"/assets/fathers-front-home-hero.webp", align:"right" },
   { number:"08", era:"Germany", title:"I went to get my son", text:"When the court gave me sole custody, I crossed the ocean to enforce the judgment and bring him home. There was no entourage—just a father who had promised his son he would never stop coming.", align:"left" },
-  { number:"09", era:"The return", title:"What comes after the fight", text:"Now it is my son and me, rebuilding daily life while I build the work that came out of the fire. Fathers Front exists for men who still have something to protect, something to lead, and something worth becoming.", image:"/assets/steve-sons.jpg", align:"right" },
+  { number:"09", era:"The return", title:"What comes after the fight", text:"Now it is my son and me, rebuilding daily life while I build the work that came out of the fire. Fathers Front exists for men who still have something to protect, something to lead, and something worth becoming.", image:"/assets/steve-sons.webp", align:"right" },
 ];
 
 function AboutTimeline() {

@@ -37,8 +37,8 @@ export function BookStack() {
       onMouseEnter={() => setFamilyFront(true)}
       onMouseLeave={() => setFamilyFront(false)}
     >
-      <figure className="book-card book-back"><img src="/assets/family-lawfare.png" alt="Family Lawfare book cover" /></figure>
-      <figure className="book-card book-front"><img src="/assets/stolen-sons.png" alt="Stolen Sons book cover" /></figure>
+      <figure className="book-card book-back"><img src="/assets/family-lawfare-cover.webp" alt="Family Lawfare book cover" /></figure>
+      <figure className="book-card book-front"><img src="/assets/stolen-sons-cover.webp" alt="Stolen Sons book cover" /></figure>
       <span className="book-switch-note">Click or tap to switch</span>
     </div>
   );
