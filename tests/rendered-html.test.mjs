@@ -18,8 +18,8 @@ test("exports a complete static homepage", async () => {
   assert.match(html, /name="twitter:card" content="summary_large_image"/);
   assert.match(html, /href="\/favicon\.svg"/);
   assert.match(html, /href="\/apple-touch-icon\.png"/);
-  assert.match(html, /V\.81/);
-  assert.match(html, /Menu · V\.81/);
+  assert.match(html, /V\.82/);
+  assert.match(html, /Menu · V\.82/);
   assert.match(html, /Born in/);
   assert.match(html, /Blood\./);
   assert.match(html, /Forged in <em>Fire\.<\/em>/);
@@ -62,6 +62,7 @@ test("exports the expected site routes", async () => {
 
 test("exports optimized book cover assets", async () => {
   const homepage = await readFile(new URL("index.html", outputRoot), "utf8");
+  const books = await readFile(new URL("books/index.html", outputRoot), "utf8");
   const familyLawfare = await readFile(new URL("family-lawfare/index.html", outputRoot), "utf8");
   const stolenSons = await readFile(new URL("stolen-sons/index.html", outputRoot), "utf8");
 
@@ -71,8 +72,12 @@ test("exports optimized book cover assets", async () => {
   assert.match(stolenSons, /stolen-sons-cover\.webp/);
   assert.match(familyLawfare, /https:\/\/portal\.fathersfront\.com\/family-lawfare/);
   assert.match(stolenSons, /https:\/\/portal\.fathersfront\.com\/stolen-sons/);
-  assert.match(homepage, /V\.81/);
-  assert.match(homepage, /aria-label="Site version 81"/);
+  assert.match(books, /href="\/stolen-sons\/?">Get the Book<\/a>/);
+  assert.match(books, /href="\/family-lawfare\/?">Get the Book<\/a>/);
+  assert.match(familyLawfare, /Order Now/);
+  assert.match(stolenSons, /Order Now/);
+  assert.match(homepage, /V\.82/);
+  assert.match(homepage, /aria-label="Site version 82"/);
   assert.doesNotMatch(homepage, /family-lawfare\.png|stolen-sons\.png/);
 });
 

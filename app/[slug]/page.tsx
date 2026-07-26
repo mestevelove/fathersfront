@@ -15,7 +15,7 @@ export function generateStaticParams() {
 }
 
 function PageContent({ type }: { type: string }) {
-  if (type === "books") return <div className="inner-grid books-list"><article><img src="/assets/stolen-sons-cover.webp" alt="Stolen Sons" /><div><span>Memoir</span><h2>Stolen Sons</h2><p>A father erased. A son taken. A fight not finished.</p><Link className="button ink" href="/stolen-sons">Explore the book</Link></div></article><article><img src="/assets/family-lawfare-cover.webp" alt="Family Lawfare" /><div><span>Field guide</span><h2>Family Lawfare</h2><p>Protect your bloodline, rights, and future when the courts enter your family.</p><Link className="button ink" href="/family-lawfare">Explore the book</Link></div></article></div>;
+  if (type === "books") return <div className="inner-grid books-list"><article><img src="/assets/stolen-sons-cover.webp" alt="Stolen Sons" /><div><span>Memoir</span><h2>Stolen Sons</h2><p>A father erased. A son taken. A fight not finished.</p><Link className="button ink" href="/stolen-sons">Get the Book</Link></div></article><article><img src="/assets/family-lawfare-cover.webp" alt="Family Lawfare" /><div><span>Field guide</span><h2>Family Lawfare</h2><p>Protect your bloodline, rights, and future when the courts enter your family.</p><Link className="button ink" href="/family-lawfare">Get the Book</Link></div></article></div>;
   if (type === "speaking") return <div className="speaking-page speaking-page-rebuilt">
     <div className="speaking-lead">
       <img src="/assets/steve-speaking.webp" alt="Steve Love speaking to a live audience" />
