@@ -140,6 +140,8 @@ test("exports phase one messaging", async () => {
   const home = await readFile(new URL("index.html", outputRoot), "utf8");
   const work = await readFile(new URL("work-with-steve/index.html", outputRoot), "utf8");
   const speaking = await readFile(new URL("speaking/index.html", outputRoot), "utf8");
+  const advisory = await readFile(new URL("bloodline-advisory/index.html", outputRoot), "utf8");
+  const brotherhood = await readFile(new URL("bloodline-brotherhood/index.html", outputRoot), "utf8");
 
   assert.match(home, /protect their relationship with their children/);
   assert.match(home, /The court case is one front\./);
@@ -171,6 +173,9 @@ test("exports phase one messaging", async () => {
   assert.match(speaking, /Steve's story is the doorway\. Your audience is the reason he tells it\./);
   assert.match(speaking, /Book Steve to Speak/);
   assert.match(speaking, /href="\/speaking-inquiry\/"/);
+  assert.match(advisory, /href="https:\/\/portal\.fathersfront\.com\/advisory"/);
+  assert.match(advisory, />Schedule Now</);
+  assert.match(brotherhood, /href="https:\/\/portal\.fathersfront\.com\/brotherhood"/);
 
   const speakingInquiry = await readFile(new URL("speaking-inquiry/index.html", outputRoot), "utf8");
   assert.match(speakingInquiry, /Speaking Inquiry/);

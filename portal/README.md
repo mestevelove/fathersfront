@@ -15,6 +15,9 @@ portal/
     fathers-front-footer-code.txt
     fathers-front-header-code.txt
   pages/
+    advisory/
+      complete-head-code.txt
+      page-head-code.txt
     stolen-sons/
       checkout-code.txt
       complete-head-code.txt
@@ -58,6 +61,12 @@ component is deleted and recreated.
 
 `pages/stolen-sons/complete-head-code.txt` is the known-working combined
 installation snapshot.
+
+## Bloodline Advisory checkout
+
+Use `pages/advisory/complete-head-code.txt` to replace the complete page head
+installation. Its page-only override is preserved separately in
+`pages/advisory/page-head-code.txt`.
 
 ## Order thank-you page
 

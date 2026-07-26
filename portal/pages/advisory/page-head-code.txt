@@ -1,0 +1,194 @@
+<!--
+  FATHERS FRONT - ADVISORY BOOKING OVERRIDES
+
+  INSTALLATION:
+  Paste this block after the shared Fathers Front base head code on the
+  Systeme.io Advisory booking/payment page.
+
+  SCOPE:
+  These rules style the Advisory calendar, booking steps, time choices,
+  form fields, offer radio, and action buttons. They intentionally do not
+  include the Stolen Sons checkout or Stripe-card overrides.
+-->
+<style>
+:root {
+  --ff-advisory-ink: #171412;
+  --ff-advisory-cream: #f4ecdc;
+  --ff-advisory-oxblood: #912d2f;
+  --ff-advisory-field: #fffaf0;
+  --ff-advisory-border: #f0f0f0;
+}
+
+/* Step 1 / Step 2 navigation */
+.sc-cPiKLY > div {
+  border-color: var(--ff-advisory-border) !important;
+  border-radius: 0 !important;
+}
+
+.sc-cPiKLY > div[style*="cursor: default"] {
+  position: relative !important;
+  z-index: 1 !important;
+  background: #fff !important;
+  border-color: var(--ff-advisory-oxblood) !important;
+  box-shadow: 0 0 0 1px var(--ff-advisory-oxblood) !important;
+}
+
+/* Calendar frame */
+.sc-fPXMVh:has(.rdp-root) {
+  border-color: var(--ff-advisory-border) !important;
+  border-radius: 0 !important;
+}
+
+/* Calendar dates */
+.rdp-day button {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  height: 56px !important;
+  margin: 0 !important;
+  border: 1px solid transparent !important;
+  border-radius: 0 !important;
+}
+
+/* Dates Systeme marks as available with its cream-filled state */
+.rdp-day button.drjxdR {
+  background: #fff !important;
+  border: 1px solid var(--ff-advisory-oxblood) !important;
+  color: var(--ff-advisory-ink) !important;
+}
+
+/* Selected calendar date */
+.rdp-day[data-selected] button,
+.rdp-day[aria-selected="true"] button,
+.rdp-day.rdp-selected button,
+.rdp-day button.kQubmW {
+  background: var(--ff-advisory-oxblood) !important;
+  border: 1px solid var(--ff-advisory-oxblood) !important;
+  border-radius: 0 !important;
+  color: #fff !important;
+}
+
+/* Time-slot choices */
+.sc-kOPcWA button[type="button"]:not(.rdp-root button):not(.sc-eeDRCX) {
+  border-radius: 0 !important;
+}
+
+/* Systeme renders appointment times as buttons, including the selected time. */
+.sc-kOPcWA .sc-hzhJZP > button.sc-fHjqPg {
+  background: #fff !important;
+  border: 1px solid var(--ff-advisory-oxblood) !important;
+  border-radius: 0 !important;
+  color: var(--ff-advisory-ink) !important;
+}
+
+.sc-kOPcWA .sc-hzhJZP > button.sc-fHjqPg.juwdqd {
+  background: var(--ff-advisory-oxblood) !important;
+  border-color: var(--ff-advisory-oxblood) !important;
+  color: #fff !important;
+}
+
+.sc-kOPcWA input[type="radio"][name*="time"] + span,
+.sc-kOPcWA input[type="radio"][value*=":"] + span {
+  background: #fff !important;
+  border: 1px solid var(--ff-advisory-oxblood) !important;
+  border-radius: 0 !important;
+}
+
+.sc-kOPcWA input[type="radio"][name*="time"]:checked + span,
+.sc-kOPcWA input[type="radio"][value*=":"]:checked + span {
+  background: #fff !important;
+  border-color: var(--ff-advisory-oxblood) !important;
+  color: var(--ff-advisory-ink) !important;
+}
+
+/* Next Step and final Submit buttons */
+.sc-kOPcWA button,
+.sc-eeDRCX {
+  border-radius: 0 !important;
+}
+
+/* Step 2 text fields */
+.sc-kOPcWA input:not([type="radio"]):not([type="checkbox"]),
+.sc-kOPcWA select,
+.sc-kOPcWA textarea {
+  box-sizing: border-box !important;
+  background: #fff !important;
+  border: 1px solid var(--ff-advisory-border) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  color: var(--ff-advisory-ink) !important;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease !important;
+}
+
+.sc-kOPcWA input:not([type="radio"]):not([type="checkbox"]):focus,
+.sc-kOPcWA input:not([type="radio"]):not([type="checkbox"]):focus-visible,
+.sc-kOPcWA select:focus,
+.sc-kOPcWA select:focus-visible,
+.sc-kOPcWA textarea:focus,
+.sc-kOPcWA textarea:focus-visible {
+  border-color: var(--ff-advisory-oxblood) !important;
+  box-shadow: 0 0 0 1px var(--ff-advisory-oxblood) !important;
+  outline: none !important;
+}
+
+/* Phone field: make the flag selector and number input behave as one field */
+.sc-kOPcWA div:has(> input[type="tel"]),
+.sc-kOPcWA div:has(> input[placeholder*="Phone"]) {
+  background: #fff !important;
+  border: 1px solid var(--ff-advisory-border) !important;
+  border-radius: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.sc-kOPcWA .react-tel-input,
+.sc-kOPcWA .react-tel-input .flag-dropdown,
+.sc-kOPcWA .react-tel-input .selected-flag {
+  border-color: var(--ff-advisory-border) !important;
+  border-radius: 0 !important;
+}
+
+.sc-kOPcWA .react-tel-input .flag-dropdown,
+.sc-kOPcWA .react-tel-input .selected-flag {
+  background: #fff !important;
+}
+
+.sc-kOPcWA button[aria-label="Country selector"] {
+  background: #fff !important;
+  border: 1px solid var(--ff-advisory-border) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.sc-kOPcWA div:has(> input[type="tel"]):focus-within,
+.sc-kOPcWA div:has(> input[placeholder*="Phone"]):focus-within {
+  border-color: var(--ff-advisory-oxblood) !important;
+  box-shadow: 0 0 0 1px var(--ff-advisory-oxblood) !important;
+  outline: none !important;
+}
+
+.sc-kOPcWA div:has(> input[type="tel"]) input:focus,
+.sc-kOPcWA div:has(> input[placeholder*="Phone"]) input:focus {
+  border-color: transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Advisory offer and payment-method radio bullets */
+.sc-kOPcWA input[type="radio"],
+#offerprice-ab6522e3 input[type="radio"],
+#payment-method-c6b65c4c input[type="radio"] {
+  accent-color: var(--ff-advisory-oxblood) !important;
+}
+
+.sc-kOPcWA input[type="radio"]:checked + span,
+#offerprice-ab6522e3 input[type="radio"]:checked + span,
+#payment-method-c6b65c4c input[type="radio"]:checked + span {
+  border-color: var(--ff-advisory-oxblood) !important;
+}
+
+/* Keep the coupon field off this page */
+#coupon-a49aed31 {
+  display: none !important;
+}
+</style>
