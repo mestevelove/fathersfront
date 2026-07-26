@@ -380,8 +380,22 @@ p.speaking-accent { margin:22px 0; font-size:clamp(25px,3.2vw,38px); }
 .speaking-body .speaking-copy-section + .speaking-copy-section { padding-top:0; }
 .speaking-body>.button { display:flex; width:max-content; }
 .speaking-copy-section>.button { margin-top:10px; }
+.speaking-inquiry { padding:0 0 clamp(72px,8vw,120px); }
+.speaking-inquiry-inner {
+  width:min(1040px,calc(100% - 36px));
+  margin:0 auto;
+  border-top:1px solid rgba(23,20,18,.18);
+}
+.speaking-inquiry iframe {
+  display:block;
+  width:100%;
+  min-height:1450px;
+  border:0;
+  background:transparent;
+}
 @media(max-width:900px) {
   .speaking-page-rebuilt .speaking-lead { grid-template-columns:1fr; gap:30px; }
+  .speaking-inquiry iframe { min-height:2050px; }
 }
 .inner-grid { display:grid; gap:24px; }
 .editorial-list { grid-template-columns:repeat(3,1fr); }

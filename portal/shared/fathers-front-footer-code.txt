@@ -1,0 +1,73 @@
+<!--
+  FATHERS FRONT - SHARED PORTAL JAVASCRIPT
+  Install on every Fathers Front Systeme.io page.
+  Controls the mobile menu, footer year, and campaign-parameter forwarding.
+-->
+<script>
+(function () {
+  function closeMenu(header) {
+    if (!header) return;
+    var toggle = header.querySelector(".ff-sio-header__toggle");
+    var nav = header.querySelector(".ff-sio-header__nav");
+    if (!toggle || !nav) return;
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", "Open navigation");
+    nav.classList.remove("is-open");
+    document.documentElement.style.overflow = "";
+  }
+
+  if (!window.__ffPortalMenuBound) {
+    window.__ffPortalMenuBound = true;
+
+    document.addEventListener("click", function (event) {
+      var toggle = event.target.closest(".ff-sio-header__toggle");
+
+      if (toggle) {
+        var header = toggle.closest(".ff-sio-header");
+        var nav = header && header.querySelector(".ff-sio-header__nav");
+        if (!nav) return;
+
+        var opening = toggle.getAttribute("aria-expanded") !== "true";
+        toggle.setAttribute("aria-expanded", String(opening));
+        toggle.setAttribute("aria-label", opening ? "Close navigation" : "Open navigation");
+        nav.classList.toggle("is-open", opening);
+        document.documentElement.style.overflow = opening ? "hidden" : "";
+        return;
+      }
+
+      var navLink = event.target.closest(".ff-sio-header__nav a");
+      if (navLink) closeMenu(navLink.closest(".ff-sio-header"));
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        document.querySelectorAll(".ff-sio-header").forEach(closeMenu);
+      }
+    });
+  }
+
+  var footer = document.querySelector(".ff-sio-footer");
+  if (!footer) return;
+
+  var year = footer.querySelector("[data-ff-current-year]");
+  if (year) year.textContent = new Date().getFullYear();
+
+  var allowed = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
+  var incoming = new URLSearchParams(window.location.search);
+  var campaign = new URLSearchParams();
+
+  allowed.forEach(function (key) {
+    if (incoming.has(key)) campaign.set(key, incoming.get(key));
+  });
+
+  if (!campaign.toString()) return;
+
+  footer.querySelectorAll('a[href^="https://fathersfront.com/"]').forEach(function (link) {
+    var url = new URL(link.href);
+    campaign.forEach(function (value, key) {
+      if (!url.searchParams.has(key)) url.searchParams.set(key, value);
+    });
+    link.href = url.toString();
+  });
+})();
+</script>

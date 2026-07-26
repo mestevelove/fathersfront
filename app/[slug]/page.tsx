@@ -25,7 +25,7 @@ function PageContent({ type }: { type: string }) {
       <div className="work-story speaking-opening">
         <p>Steve Love speaks about leadership as a father and in business when under impossible pressure. He is here to help men answer the question: <em className="speaking-accent">Who am I on the other side of impossible?</em>{" "}</p>
       </div>
-      <a className="button ember" href="mailto:hello@fathersfront.com?subject=Speaking%20or%20Podcast%20Invitation">Book Steve to Speak</a>
+      <Link className="button ember" href="/speaking-inquiry">Book Steve to Speak</Link>
 
       <section className="work-content-section speaking-copy-section">
         <h2>Steve&apos;s Story</h2>
@@ -58,7 +58,7 @@ function PageContent({ type }: { type: string }) {
           <p className="speaking-accent">Who am I on the other side of impossible?</p>
           <p>If your audience needs this conversation, check Steve&apos;s availability below.</p>
         </div>
-        <a className="button ember" href="mailto:hello@fathersfront.com?subject=Speaking%20or%20Podcast%20Invitation">Book Steve to Speak</a>
+        <Link className="button ember" href="/speaking-inquiry">Book Steve to Speak</Link>
       </section>
     </div>
   </div>;

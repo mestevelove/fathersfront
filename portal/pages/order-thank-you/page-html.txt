@@ -1,0 +1,99 @@
+<!-- FATHERS FRONT - ORDER THANK-YOU PAGE BODY -->
+<!-- Paste into a Raw HTML element between the shared header and footer. -->
+
+<main class="ff-order-confirmation">
+  <section class="ff-order-confirmation__hero">
+    <div class="ff-order-confirmation__shell">
+      <div class="ff-order-confirmation__grid">
+        <div class="ff-order-confirmation__copy">
+          <p class="ff-order-confirmation__eyebrow">Order confirmed</p>
+          <h1>I Got <span>Your Order!</span></h1>
+
+          <p class="ff-order-confirmation__lead">
+            You did not just buy something. You made a decision to move.
+          </p>
+
+          <p class="ff-order-confirmation__message">
+            Whatever brought you here - the fight, the rebuilding, or the future you
+            are determined to create - you are no longer standing still. That matters.
+            I am honored to be part of what comes next.
+          </p>
+
+        </div>
+
+        <div class="ff-order-confirmation__visual">
+          <figure class="ff-order-confirmation__visual-frame">
+            <img
+              src="https://d1yei2z3i6k35z.cloudfront.net/13804471/6a659e51bc2999.95170778_order-confirmation-steve-love.webp"
+              alt="Steve Love celebrating a new Fathers Front order"
+              width="1400"
+              height="934"
+            >
+          </figure>
+          <div class="ff-order-confirmation__caption">
+            <span>Order confirmed</span>
+            <span>Fathers Front</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ff-order-confirmation__next" aria-labelledby="ff-order-next">
+    <div class="ff-order-confirmation__shell">
+      <div class="ff-order-confirmation__next-header">
+        <h2 id="ff-order-next">What Happens Next</h2>
+        <p class="ff-order-confirmation__next-intro">
+          Your confirmation and the details for your order are already on their way.
+          Here is what to look for. If you have any issues, email
+          <a href="mailto:support@fathersfront.com">support@fathersfront.com</a>.
+        </p>
+      </div>
+
+      <div class="ff-order-confirmation__steps">
+        <article class="ff-order-confirmation__step">
+          <span class="ff-order-confirmation__number">01</span>
+          <h3>Check Your Inbox</h3>
+          <p>
+            Your receipt and order confirmation should arrive within a few minutes.
+            Check your promotions or spam folder if you do not see it.
+          </p>
+        </article>
+
+        <article class="ff-order-confirmation__step">
+          <span class="ff-order-confirmation__number">02</span>
+          <h3>Follow the Next Step</h3>
+          <p>
+            Your confirmation email contains the delivery, access, scheduling, or
+            shipping details that apply to what you ordered.
+          </p>
+        </article>
+
+        <article class="ff-order-confirmation__step">
+          <span class="ff-order-confirmation__number">03</span>
+          <h3>Do the Work</h3>
+          <p>
+            Buying creates possibility. What you do next creates the result. Open it,
+            use it, and take the next deliberate step.
+          </p>
+        </article>
+      </div>
+
+      <div class="ff-order-confirmation__closing">
+        <p>
+          Thank you for trusting Fathers Front. I do not take that lightly.
+        </p>
+        <div class="ff-order-confirmation__signoff">
+          <p>In gratitude,</p>
+          <img
+            class="ff-order-confirmation__signature"
+            src="https://d1yei2z3i6k35z.cloudfront.net/13804471/6a659e5ee483c6.69179196_steve-love-signature.png"
+            alt="Steve Love"
+            width="600"
+            height="138"
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

@@ -131,7 +131,7 @@ const chapters: StoryChapter[] = [
       {text:"The second time, I refused to remain a passenger in my own life."},
       {text:"I was terrified, but I represented myself through the case without an attorney."},
       {text:"I learned how to read the law, build the record, create pressure, and force decisions."},
-      {text:"In the beginning, I was my own worst liability, but I knew I would become legally lethal the longer the case continued."},
+      {text:"In the beginning, I was my own worst liability. By the end, I would be legally lethal."},
       {text:"I was accused of being controlling, abusive, and dangerous."},
       {text:"I was placed on supervised visitation for a few hours each week after already raising three sons."},
       {text:"I was shocked that they could do this to a man who had already raised three outstanding sons."},

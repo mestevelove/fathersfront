@@ -1,0 +1,464 @@
+<!--
+  FATHERS FRONT - SYSTEME.IO ORDER CONFIRMATION BODY
+
+  The image URLs below use the files hosted in the Fathers Front Systeme.io account.
+  Paste this entire snippet into a Raw HTML element between the site header and footer.
+-->
+
+<style>
+  .ff-order-confirmation,
+  .ff-order-confirmation * {
+    box-sizing: border-box;
+  }
+
+  .ff-order-confirmation {
+    --ff-ink: #171412;
+    --ff-cream: #f4ecdc;
+    --ff-oxblood: #912d2f;
+    --ff-ember: #e84509;
+    width: 100%;
+    margin: 0;
+    color: var(--ff-ink);
+    background: var(--ff-cream);
+    font-family: "Libre Franklin", Arial, sans-serif;
+    text-align: left !important;
+  }
+
+  .ff-order-confirmation__shell {
+    width: min(1280px, calc(100% - 48px));
+    margin: 0 auto;
+  }
+
+  .ff-order-confirmation__hero {
+    display: grid;
+    align-items: center;
+    padding: 64px 0 0;
+    overflow: hidden;
+  }
+
+  .ff-order-confirmation__eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 0 0 0 -24px;
+    color: var(--ff-oxblood);
+    font: 800 11px/1 "Barlow Condensed", Arial, sans-serif;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .ff-order-confirmation__eyebrow::before {
+    width: 34px;
+    height: 1px;
+    content: "";
+    background: var(--ff-oxblood);
+  }
+
+  .ff-order-confirmation__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+    align-items: center;
+    gap: clamp(56px, 8vw, 124px);
+  }
+
+  .ff-order-confirmation__copy,
+  .ff-order-confirmation__visual {
+    min-width: 0;
+  }
+
+  .ff-order-confirmation h1 {
+    max-width: 580px;
+    margin: 28px 0 0;
+    color: var(--ff-ink);
+    font: 900 clamp(68px, 8vw, 112px)/0.86 "Barlow Condensed", Arial, sans-serif;
+    letter-spacing: -0.045em;
+    text-transform: uppercase;
+  }
+
+  .ff-order-confirmation h1 span {
+    display: block;
+    color: var(--ff-ember);
+    font-family: "Source Serif 4", Georgia, serif;
+    font-size: 0.64em;
+    font-style: italic;
+    font-weight: 600;
+    line-height: 1.14;
+    letter-spacing: -0.045em;
+    text-transform: none;
+  }
+
+  .ff-order-confirmation__lead {
+    max-width: 610px;
+    margin: 32px 0 0;
+    color: var(--ff-ember);
+    font: italic 600 clamp(25px, 2.2vw, 38px)/1.14 "Source Serif 4", Georgia, serif;
+  }
+
+  .ff-order-confirmation__message {
+    max-width: 590px;
+    margin: 22px 0 0;
+    color: #615b53;
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .ff-order-confirmation__accent {
+    max-width: 590px;
+    margin: 22px 0 0;
+    color: var(--ff-ink);
+    font: 700 16px/1.6 "Libre Franklin", Arial, sans-serif;
+  }
+
+  .ff-order-confirmation__signoff {
+    margin-top: 30px;
+  }
+
+  .ff-order-confirmation__signoff p {
+    margin: 0 0 12px;
+    color: #615b53;
+    font: italic 600 18px/1.4 "Source Serif 4", Georgia, serif;
+  }
+
+  .ff-order-confirmation__signature {
+    display: block;
+    width: 200px !important;
+    max-width: 58% !important;
+    height: auto !important;
+  }
+
+  .ff-order-confirmation__visual {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+  }
+
+  .ff-order-confirmation__visual-frame {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+  }
+
+  .ff-order-confirmation__visual-frame::before {
+    position: absolute;
+    inset: 18px -18px -18px 18px;
+    z-index: -1;
+    content: "";
+    border: 1px solid rgba(23, 20, 18, 0.28);
+  }
+
+  .ff-order-confirmation__visual img {
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    aspect-ratio: auto !important;
+    display: block;
+    border: 1px solid rgba(23, 20, 18, 0.28);
+    background: #ded4c5;
+    filter: contrast(1.04) brightness(0.96);
+  }
+
+  .ff-order-confirmation__caption {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 18px;
+    color: #81786d;
+    font: 700 11px/1 "Barlow Condensed", Arial, sans-serif;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .ff-order-confirmation__caption span:first-child {
+    color: var(--ff-oxblood);
+  }
+
+  .ff-order-confirmation__next {
+    padding: 32px 0 60px;
+    color: var(--ff-ink);
+    background: var(--ff-cream);
+  }
+
+  .ff-order-confirmation__next-header {
+    display: grid;
+    grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+    gap: 36px;
+    align-items: end;
+    padding-bottom: 26px;
+    border-bottom: 1px solid rgba(23, 20, 18, 0.16);
+  }
+
+  .ff-order-confirmation__next h2 {
+    margin: 0;
+    color: var(--ff-ink);
+    font: 700 clamp(42px, 6vw, 68px)/0.88 "Barlow Condensed", Arial, sans-serif;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+  }
+
+  .ff-order-confirmation__next-intro {
+    max-width: 660px;
+    margin: 0;
+    color: #615b53;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .ff-order-confirmation__next-intro a {
+    color: var(--ff-oxblood);
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+
+  .ff-order-confirmation__next-intro a:hover,
+  .ff-order-confirmation__next-intro a:focus-visible {
+    color: var(--ff-ember);
+  }
+
+  .ff-order-confirmation__steps {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 0;
+  }
+
+  .ff-order-confirmation__step {
+    min-width: 0;
+    padding: 28px 32px 4px 0;
+    border-right: 1px solid rgba(23, 20, 18, 0.16);
+  }
+
+  .ff-order-confirmation__step + .ff-order-confirmation__step {
+    padding-left: 32px;
+  }
+
+  .ff-order-confirmation__step:last-child {
+    padding-right: 0;
+    border-right: 0;
+  }
+
+  .ff-order-confirmation__number {
+    display: block;
+    margin-bottom: 18px;
+    color: var(--ff-ember);
+    font: 700 14px/1 "Barlow Condensed", Arial, sans-serif;
+    letter-spacing: 0.14em;
+  }
+
+  .ff-order-confirmation__step h3 {
+    margin: 0 0 12px;
+    color: var(--ff-ink);
+    font: 700 26px/1 "Barlow Condensed", Arial, sans-serif;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+  }
+
+  .ff-order-confirmation__step p {
+    margin: 0;
+    color: #615b53;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .ff-order-confirmation__closing {
+    margin-top: 34px;
+    padding-top: 26px;
+    border-top: 1px solid rgba(23, 20, 18, 0.16);
+  }
+
+  .ff-order-confirmation__closing p {
+    max-width: 690px;
+    margin: 0;
+    color: var(--ff-ink);
+    font: italic 600 clamp(22px, 3vw, 30px)/1.2 "Source Serif 4", Georgia, serif;
+  }
+
+  .ff-order-confirmation__closing .ff-order-confirmation__signoff {
+    margin-top: 24px;
+  }
+
+  .ff-order-confirmation__closing .ff-order-confirmation__signoff p {
+    margin-bottom: 12px;
+    color: #615b53;
+    font-size: 18px;
+  }
+
+  @media (max-width: 850px) {
+    .ff-order-confirmation__hero {
+      min-height: auto;
+      padding: 62px 0 0;
+    }
+
+    .ff-order-confirmation__grid,
+    .ff-order-confirmation__next-header {
+      grid-template-columns: 1fr;
+      gap: 42px;
+    }
+
+    .ff-order-confirmation__next {
+      padding-top: 28px;
+    }
+
+    .ff-order-confirmation__copy {
+      max-width: 680px;
+    }
+
+    .ff-order-confirmation__eyebrow {
+      margin-left: 0;
+    }
+
+    .ff-order-confirmation__visual {
+      max-width: 680px;
+      margin: 0 18px 18px 0;
+    }
+
+    .ff-order-confirmation__steps {
+      grid-template-columns: 1fr;
+    }
+
+    .ff-order-confirmation__step,
+    .ff-order-confirmation__step + .ff-order-confirmation__step {
+      padding: 24px 0;
+      border-right: 0;
+      border-bottom: 1px solid rgba(23, 20, 18, 0.16);
+    }
+
+    .ff-order-confirmation__step:last-child {
+      border-bottom: 0;
+    }
+
+  }
+
+  @media (max-width: 560px) {
+    .ff-order-confirmation__shell {
+      width: min(100% - 30px, 1280px);
+    }
+
+    .ff-order-confirmation h1 {
+      font-size: 54px;
+    }
+
+    .ff-order-confirmation__hero {
+      padding: 52px 0 0;
+    }
+
+    .ff-order-confirmation__grid {
+      gap: 46px;
+    }
+
+    .ff-order-confirmation__next {
+      padding-top: 24px;
+    }
+
+    .ff-order-confirmation__lead {
+      font-size: 25px;
+    }
+
+    .ff-order-confirmation__visual-frame::before {
+      inset: 10px 0 -10px 10px;
+    }
+
+    .ff-order-confirmation__visual {
+      margin-right: 10px;
+    }
+
+  }
+</style>
+
+<main class="ff-order-confirmation">
+  <section class="ff-order-confirmation__hero">
+    <div class="ff-order-confirmation__shell">
+      <div class="ff-order-confirmation__grid">
+        <div class="ff-order-confirmation__copy">
+          <p class="ff-order-confirmation__eyebrow">Order confirmed</p>
+          <h1>I Got <span>Your Order!</span></h1>
+
+          <p class="ff-order-confirmation__lead">
+            You did not just buy something. You made a decision to move.
+          </p>
+
+          <p class="ff-order-confirmation__message">
+            Whatever brought you here - the fight, the rebuilding, or the future you
+            are determined to create - you are no longer standing still. That matters.
+            I am honored to be part of what comes next.
+          </p>
+
+        </div>
+
+        <div class="ff-order-confirmation__visual">
+          <figure class="ff-order-confirmation__visual-frame">
+            <img
+              src="https://d1yei2z3i6k35z.cloudfront.net/13804471/6a659e51bc2999.95170778_order-confirmation-steve-love.webp"
+              alt="Steve Love celebrating a new Fathers Front order"
+              width="1400"
+              height="934"
+            >
+          </figure>
+          <div class="ff-order-confirmation__caption">
+            <span>Order confirmed</span>
+            <span>Fathers Front</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ff-order-confirmation__next" aria-labelledby="ff-order-next">
+    <div class="ff-order-confirmation__shell">
+      <div class="ff-order-confirmation__next-header">
+        <h2 id="ff-order-next">What Happens Next</h2>
+        <p class="ff-order-confirmation__next-intro">
+          Your confirmation and the details for your order are already on their way.
+          Here is what to look for. If you have any issues, email
+          <a href="mailto:support@fathersfront.com">support@fathersfront.com</a>.
+        </p>
+      </div>
+
+      <div class="ff-order-confirmation__steps">
+        <article class="ff-order-confirmation__step">
+          <span class="ff-order-confirmation__number">01</span>
+          <h3>Check Your Inbox</h3>
+          <p>
+            Your receipt and order confirmation should arrive within a few minutes.
+            Check your promotions or spam folder if you do not see it.
+          </p>
+        </article>
+
+        <article class="ff-order-confirmation__step">
+          <span class="ff-order-confirmation__number">02</span>
+          <h3>Follow the Next Step</h3>
+          <p>
+            Your confirmation email contains the delivery, access, scheduling, or
+            shipping details that apply to what you ordered.
+          </p>
+        </article>
+
+        <article class="ff-order-confirmation__step">
+          <span class="ff-order-confirmation__number">03</span>
+          <h3>Do the Work</h3>
+          <p>
+            Buying creates possibility. What you do next creates the result. Open it,
+            use it, and take the next deliberate step.
+          </p>
+        </article>
+      </div>
+
+      <div class="ff-order-confirmation__closing">
+        <p>
+          Thank you for trusting Fathers Front. I do not take that lightly.
+        </p>
+        <div class="ff-order-confirmation__signoff">
+          <p>In gratitude,</p>
+          <img
+            class="ff-order-confirmation__signature"
+            src="https://d1yei2z3i6k35z.cloudfront.net/13804471/6a659e5ee483c6.69179196_steve-love-signature.png"
+            alt="Steve Love"
+            width="600"
+            height="138"
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

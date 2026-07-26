@@ -13,13 +13,14 @@ test("exports a complete static homepage", async () => {
   assert.doesNotMatch(html, /Fathers are being erased/);
   assert.doesNotMatch(html, /Love\. Law\. Leadership\. Lifestyle\./);
   assert.match(html, /The Foundation/);
+  assert.match(html, /father erasure, abduction and international custody litigation/);
   assert.match(html, /Fathers Front \| Fight for Your Fatherhood/);
   assert.match(html, /property="og:image" content="https:\/\/fathersfront\.com\/assets\/social\/fathers-front-social-share\.jpg"/);
   assert.match(html, /name="twitter:card" content="summary_large_image"/);
   assert.match(html, /href="\/favicon\.svg"/);
   assert.match(html, /href="\/apple-touch-icon\.png"/);
-  assert.match(html, /V\.82/);
-  assert.match(html, /Menu · V\.82/);
+  assert.match(html, /V\.83/);
+  assert.match(html, /Menu · V\.83/);
   assert.match(html, /Born in/);
   assert.match(html, /Blood\./);
   assert.match(html, /Forged in <em>Fire\.<\/em>/);
@@ -76,8 +77,8 @@ test("exports optimized book cover assets", async () => {
   assert.match(books, /href="\/family-lawfare\/?">Get the Book<\/a>/);
   assert.match(familyLawfare, /Order Now/);
   assert.match(stolenSons, /Order Now/);
-  assert.match(homepage, /V\.82/);
-  assert.match(homepage, /aria-label="Site version 82"/);
+  assert.match(homepage, /V\.83/);
+  assert.match(homepage, /aria-label="Site version 83"/);
   assert.doesNotMatch(homepage, /family-lawfare\.png|stolen-sons\.png/);
 });
 
@@ -97,6 +98,7 @@ test("exports the cream editorial About Steve page", async () => {
   assert.match(html, /Who Am I on the Other Side of Impossible\?/);
   assert.match(html, /Why I Created Fathers Front/);
   assert.match(html, /This Is the Work/);
+  assert.match(html, /In the beginning, I was my own worst liability\. By the end, I would be legally lethal\./);
   for (const image of [
     "about-steve-intro-with-sons-at-court.jpg",
     "about-steve-01-father-at-19.webp",
@@ -150,6 +152,8 @@ test("exports phase one messaging", async () => {
   assert.match(work, /Your kids, money, peace, and future depend/);
   assert.match(work, /Three Levels\. One Fight for Your Future\./);
   assert.match(work, /46% custody and was ordered to pay child support/);
+  assert.match(work, /They gave mom primary while she was driving drunk with the kids in the car\./);
+  assert.doesNotMatch(work, /snorting coke and driving drunk/);
   assert.match(work, /There is another father in the group who needs you\./);
   assert.match(work, /One brotherhood\. Two ways to work with me\./);
   assert.match(work, /Join Bloodline Brotherhood/);
@@ -166,4 +170,9 @@ test("exports phase one messaging", async () => {
   assert.match(speaking, /Who am I on the other side of impossible\?/);
   assert.match(speaking, /Steve's story is the doorway\. Your audience is the reason he tells it\./);
   assert.match(speaking, /Book Steve to Speak/);
+  assert.match(speaking, /href="\/speaking-inquiry\/"/);
+
+  const speakingInquiry = await readFile(new URL("speaking-inquiry/index.html", outputRoot), "utf8");
+  assert.match(speakingInquiry, /Speaking Inquiry/);
+  assert.match(speakingInquiry, /tally\.so\/embed\/vGVjOd/);
 });

@@ -124,7 +124,7 @@ export default function WorkWithStevePage() {
           <p>The first time, I got 46% custody and was ordered to pay child support after being married for 20 years.</p>
           <p>We had three boys together.</p>
           <p>And the oldest of my three sons was alienated from me.</p>
-          <p>They gave mom primary while she was snorting coke and driving drunk.</p>
+          <p>They gave mom primary while she was driving drunk with the kids in the car.</p>
           <p>I couldn’t prove it, but I could smell it on her breath.</p>
           <p>The panic I would feel letting her take the kids, let alone paying her bills.</p>
           <p>The problem was that I didn’t know what to do.</p>

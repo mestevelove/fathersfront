@@ -1,0 +1,48 @@
+<!--
+  FATHERS FRONT - SHARED HEADER/MENU HTML
+  Install on every Fathers Front Systeme.io page.
+-->
+<header class="ff-sio-header">
+  <div class="ff-sio-header__inner">
+    <a class="ff-sio-header__brand" href="https://fathersfront.com/" aria-label="Fathers Front home">
+      <span>Fathers</span>
+      <span class="ff-sio-header__brand-front">Front</span>
+    </a>
+
+    <button
+      class="ff-sio-header__toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="ff-sio-primary-menu"
+      aria-label="Open navigation"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="ff-sio-header__nav" id="ff-sio-primary-menu" aria-label="Primary navigation">
+      <div class="ff-sio-header__mobile-heading">
+        <span>Fathers Front</span>
+        <b>Menu &middot; V.81</b>
+      </div>
+
+      <a href="https://fathersfront.com/">Home</a>
+      <a href="https://fathersfront.com/books/">Books</a>
+      <a href="https://fathersfront.com/articles/">Articles</a>
+      <a href="https://fathersfront.com/speaking/">Speaking</a>
+
+      <div class="ff-sio-header__dropdown">
+        <a class="ff-sio-header__dropdown-label" href="https://fathersfront.com/about/">About</a>
+        <div class="ff-sio-header__submenu">
+          <a href="https://fathersfront.com/about/">About Steve</a>
+          <a href="https://fathersfront.com/the-framework/">The Framework</a>
+        </div>
+      </div>
+
+      <a class="ff-sio-header__cta" href="https://fathersfront.com/work-with-steve/">Work With Steve</a>
+    </nav>
+
+    <span class="ff-sio-header__version" aria-label="Site version 81">V.81</span>
+  </div>
+</header>
