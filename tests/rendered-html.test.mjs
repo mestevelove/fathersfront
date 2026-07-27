@@ -19,8 +19,8 @@ test("exports a complete static homepage", async () => {
   assert.match(html, /name="twitter:card" content="summary_large_image"/);
   assert.match(html, /href="\/favicon\.svg"/);
   assert.match(html, /href="\/apple-touch-icon\.png"/);
-  assert.match(html, /V\.83/);
-  assert.match(html, /Menu · V\.83/);
+  assert.match(html, /V\.84/);
+  assert.match(html, /Menu · V\.84/);
   assert.match(html, /Born in/);
   assert.match(html, /Blood\./);
   assert.match(html, /Forged in <em>Fire\.<\/em>/);
@@ -31,8 +31,19 @@ test("exports a complete static homepage", async () => {
   assert.match(html, /Love/);
   assert.match(html, /The Fathers Front Dispatch/);
   assert.match(html, /A weekly field note for fathers and builders under pressure\./);
-  assert.match(html, /Join the Dispatch/);
+  assert.match(html, /footer-dispatch-form/);
+  assert.match(html, /First name/);
+  assert.match(html, /Email address/);
   assert.doesNotMatch(html, /Born in Blood\.<br\/?><em>Forged in Fire\.<\/em>/);
+});
+
+test("uses the secure Dispatch subscription endpoint", async () => {
+  const footerSource = await readFile(new URL("../app/components/Footer.tsx", import.meta.url), "utf8");
+
+  assert.match(footerSource, /\/api\/dispatch/);
+  assert.match(footerSource, /Received — Welcome to the Front/);
+  assert.doesNotMatch(footerSource, /form-script-tag-24876260/);
+  assert.doesNotMatch(footerSource, /systeme\.io\/embedded\/43080160\/subscription/);
 });
 
 test("exports the expected site routes", async () => {
@@ -77,8 +88,8 @@ test("exports optimized book cover assets", async () => {
   assert.match(books, /href="\/family-lawfare\/?">Get the Book<\/a>/);
   assert.match(familyLawfare, /Order Now/);
   assert.match(stolenSons, /Order Now/);
-  assert.match(homepage, /V\.83/);
-  assert.match(homepage, /aria-label="Site version 83"/);
+  assert.match(homepage, /V\.84/);
+  assert.match(homepage, /aria-label="Site version 84"/);
   assert.doesNotMatch(homepage, /family-lawfare\.png|stolen-sons\.png/);
 });
 

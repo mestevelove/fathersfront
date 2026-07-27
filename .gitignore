@@ -32,6 +32,7 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+.dev.vars
 
 # vercel
 .vercel
@@ -40,6 +41,7 @@ yarn-error.log*
 next-env.d.ts
 /dist/
 /.wrangler/
+**/.wrangler/
 /outputs/
 /work/
 /.openai/
