@@ -1,5 +1,5 @@
 const SYSTEME_API = "https://api.systeme.io/api";
-const DISPATCH_TAG = "Fathers Front Dispatch";
+const DISPATCH_TAG = "dispatch";
 const ALLOWED_ORIGINS = new Set([
   "https://fathersfront.com",
   "https://www.fathersfront.com",
@@ -39,13 +39,29 @@ async function systemeRequest(env, path, options = {}) {
   return { response, data };
 }
 
+function collectionItems(data) {
+  if (Array.isArray(data)) {
+    return data;
+  }
+
+  if (Array.isArray(data?.items)) {
+    return data.items;
+  }
+
+  if (Array.isArray(data?.["hydra:member"])) {
+    return data["hydra:member"];
+  }
+
+  return [];
+}
+
 async function upsertContact(env, email, firstName) {
   const lookup = await systemeRequest(env, `/contacts?email=${encodeURIComponent(email)}`);
   if (!lookup.response.ok) {
     throw new Error(`Contact lookup failed: ${lookup.response.status}`);
   }
 
-  const existing = lookup.data?.items?.[0];
+  const existing = collectionItems(lookup.data)[0];
   const contactPayload = {
     locale: "en",
     fields: firstName ? [{ slug: "first_name", value: firstName }] : [],
@@ -78,12 +94,12 @@ async function upsertContact(env, email, firstName) {
 }
 
 async function findOrCreateDispatchTag(env) {
-  const lookup = await systemeRequest(env, `/tags?query=${encodeURIComponent(DISPATCH_TAG)}&limit=10`);
+  const lookup = await systemeRequest(env, "/tags?limit=100");
   if (!lookup.response.ok) {
     throw new Error(`Tag lookup failed: ${lookup.response.status}`);
   }
 
-  const existing = lookup.data?.items?.find(
+  const existing = collectionItems(lookup.data).find(
     (tag) => tag.name?.toLowerCase() === DISPATCH_TAG.toLowerCase(),
   );
 
