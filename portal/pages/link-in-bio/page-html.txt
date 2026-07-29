@@ -1,0 +1,67 @@
+<!-- FATHERS FRONT - LINK IN BIO PAGE BODY -->
+<main class="ff-bio">
+  <div class="ff-bio__shell">
+    <div class="ff-bio__brand" aria-label="Fathers Front">
+      <span>Fathers</span><span>Front</span>
+    </div>
+
+    <div class="ff-bio__rule" aria-hidden="true"></div>
+
+    <p class="ff-bio__intro">
+      <strong>Four Fronts. One Father.</strong>
+      Fight for your fatherhood. Fortify your foundation.<br>
+      <em>Forge your family&apos;s future.</em>
+    </p>
+
+    <nav class="ff-bio__links" aria-label="Fathers Front links">
+      <a class="ff-bio__link ff-bio__link--primary ff-bio__book-link" href="https://fathersfront.com/stolen-sons/">
+        <img class="ff-bio__book-cover" src="https://fathersfront.com/assets/products/stolen-sons-book-cover.webp" alt="">
+        <span><strong>Buy Stolen Sons Book</strong><small>The story of the fight across Texas and Germany</small></span>
+      </a>
+
+      <a class="ff-bio__link ff-bio__link--primary ff-bio__book-link" href="https://fathersfront.com/family-lawfare/">
+        <img class="ff-bio__book-cover" src="https://fathersfront.com/assets/products/family-lawfare-book-cover.webp" alt="">
+        <span><strong>Buy Family Lawfare Book</strong><small>Join the release list while the field manual is completed</small></span>
+      </a>
+
+      <a class="ff-bio__link" href="https://fathersfront.com/work-with-steve/">
+        <span><strong>Work With Steve</strong><small>Take command of all four fronts</small></span>
+      </a>
+
+      <a class="ff-bio__link" href="https://fathersfront.com/bloodline-brotherhood/">
+        <span><strong>Join the Brotherhood</strong><small>Calls, questions, accountability, and community</small></span>
+      </a>
+
+      <a class="ff-bio__link" href="https://fathersfront.com/speaking/">
+        <span><strong>Book Steve to Speak</strong><small>Leadership on the other side of impossible</small></span>
+      </a>
+
+      <a class="ff-bio__link" href="https://fathersfront.com/?dispatch-preview=1">
+        <span><strong>Join the Dispatch</strong><small>A weekly field note for fathers and builders under pressure</small></span>
+      </a>
+    </nav>
+
+    <nav class="ff-bio__social" aria-label="Follow Fathers Front">
+      <a href="https://instagram.com/FatherFront" target="_blank" rel="noopener noreferrer" aria-label="Fathers Front on Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+          <circle cx="12" cy="12" r="4.2"></circle>
+          <circle class="ff-bio__social-fill" cx="17.4" cy="6.8" r="1.1"></circle>
+        </svg>
+      </a>
+      <a href="https://facebook.com/FatherFront" target="_blank" rel="noopener noreferrer" aria-label="Fathers Front on Facebook">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path class="ff-bio__social-fill" d="M13.7 21v-8h2.8l.4-3.1h-3.2v-2c0-.9.3-1.5 1.6-1.5H17V3.6c-.5-.1-1.4-.2-2.5-.2-2.5 0-4.2 1.5-4.2 4.3v2.2H7.5V13h2.8v8h3.4Z"></path>
+        </svg>
+      </a>
+      <a href="https://youtube.com/@FatherFront" target="_blank" rel="noopener noreferrer" aria-label="Fathers Front on YouTube">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="2.5" y="5" width="19" height="14" rx="4"></rect>
+          <path class="ff-bio__social-fill" d="m10 9 6 3-6 3V9Z"></path>
+        </svg>
+      </a>
+    </nav>
+
+    <p class="ff-bio__footer">&copy; 2026 Fathers Front</p>
+  </div>
+</main>

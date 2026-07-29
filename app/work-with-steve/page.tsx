@@ -243,20 +243,20 @@ export default function WorkWithStevePage() {
         </div>
         <div className="work-v2-offers">
           <article className="work-v2-brotherhood">
-            <span>Bloodline Brotherhood</span>
-            <h3>Bloodline<br />Brotherhood</h3>
+            <span>Brotherhood</span>
+            <h3>Brotherhood</h3>
             <p>One program.</p><p>Three levels.</p><p>One weekly call.</p><p>Start where you are.</p>
             <p>Fight for your fatherhood.<br />Fortify your foundation.<br />Forge your family’s future.</p>
-            <p>Bloodline Brotherhood combines weekly group coaching, direct feedback, accountability, and the support of fathers moving through the same three levels. There is another father in the group who needs you.</p>
+            <p>Brotherhood combines weekly group coaching, direct feedback, accountability, and the support of fathers moving through the same three levels. There is another father in the group who needs you.</p>
             <strong>$497 <small>per month</small></strong>
-            <Link className="button cream-button" href="/bloodline-brotherhood">Join Bloodline Brotherhood</Link>
+            <Link className="button cream-button" href="/bloodline-brotherhood">Join Brotherhood</Link>
           </article>
           <article className="work-v2-advisory">
-            <span>Bloodline Advisory</span>
-            <h3>Bloodline<br />Advisory</h3>
+            <span>Advisory</span>
+            <h3>Advisory</h3>
             <p>Some fights require more proximity.</p>
-            <p>Bloodline Advisory is private strategic support for fathers facing complex litigation, major financial exposure, interstate or international conflict, abduction, enforcement, or cases involving multiple professional teams.</p>
-            <p>As a Bloodline Advisory client, you also receive access to Bloodline Brotherhood for the duration of your advisory engagement.</p>
+            <p>Advisory is private strategic support for fathers facing complex litigation, major financial exposure, interstate or international conflict, abduction, enforcement, or cases involving multiple professional teams.</p>
+            <p>As an Advisory client, you also receive access to Brotherhood for the duration of your advisory engagement.</p>
             <p>Private advisory engagements begin at $15,000.</p>
             <strong>$297 <small>initial strategy call</small></strong>
             <Link className="button ink" href="/bloodline-advisory">Book a Strategy Call</Link>

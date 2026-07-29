@@ -1,0 +1,268 @@
+<!-- =========================================================
+     FATHERS FRONT - DISPATCH POPUP
+     Systeme step name: Fathers Front Dispatch Popup
+     Suggested URL path: dispatch-popup
+     Paste this entire file into one Systeme Custom HTML block.
+     ========================================================= -->
+
+<style>
+@font-face {
+  font-family: "FF Barlow Condensed";
+  src: url("https://fathersfront.com/fonts/site/barlow-condensed-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "FF Source Serif 4";
+  src: url("https://fathersfront.com/fonts/site/source-serif-4-600-italic.woff2") format("woff2");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+.ff-systeme-capture,
+.ff-systeme-capture * {
+  box-sizing: border-box;
+}
+
+/*
+  Systeme wraps popup content in its own scrollable shell. Carry the cream
+  surface through that shell so the close control remains inside the modal,
+  and conceal the unnecessary always-visible scrollbar.
+*/
+body:has(.ff-systeme-capture) #app > div:first-child,
+body:has(.ff-systeme-capture) #app > div:first-child > div:first-child {
+  background: #f4ecdc !important;
+}
+
+body:has(.ff-systeme-capture) #app > div:first-child > div:first-child {
+  scrollbar-width: none;
+}
+
+body:has(.ff-systeme-capture) #app > div:first-child > div:first-child::-webkit-scrollbar {
+  display: none;
+}
+
+.ff-systeme-capture {
+  --ff-ink: #171412;
+  --ff-cream: #f4ecdc;
+  --ff-oxblood: #912d2f;
+  --ff-ember: #e84509;
+  width: 100%;
+  margin: 0;
+  padding: 62px;
+  color: var(--ff-ink);
+  background: var(--ff-cream);
+  border: 1px solid #9f9487;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left;
+}
+
+.ff-systeme-capture::before {
+  content: "";
+  display: block;
+  width: 88px;
+  height: 2px;
+  margin-bottom: 34px;
+  background: var(--ff-oxblood);
+}
+
+.ff-systeme-capture__kicker {
+  margin: 0 0 18px;
+  color: var(--ff-oxblood);
+  font: 700 11px "FF Barlow Condensed", Impact, sans-serif;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.ff-systeme-capture__title {
+  margin: 0;
+  color: var(--ff-ink);
+  font: 700 clamp(46px, 7vw, 76px)/.88 "FF Barlow Condensed", Impact, sans-serif;
+  letter-spacing: -.025em;
+  text-transform: uppercase;
+}
+
+.ff-systeme-capture__title em {
+  color: var(--ff-ember);
+  font: 600 italic .72em/1.05 "FF Source Serif 4", Georgia, serif;
+  text-transform: none;
+}
+
+.ff-systeme-capture__description {
+  max-width: 560px;
+  margin: 24px 0 30px;
+  color: #665e55;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.ff-systeme-capture__form {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, .72fr) minmax(0, 1.28fr);
+  gap: 10px;
+}
+
+.ff-systeme-capture__form input {
+  min-width: 0;
+  margin: 0;
+  padding: 16px;
+  color: var(--ff-ink);
+  background: #fffaf0;
+  border: 1px solid #9f9487;
+  border-radius: 0;
+  box-shadow: none;
+  font: 500 14px Arial, Helvetica, sans-serif;
+}
+
+.ff-systeme-capture__form input::placeholder {
+  color: #756c63;
+}
+
+.ff-systeme-capture__form input:focus {
+  border-color: var(--ff-oxblood);
+  outline: 1px solid var(--ff-oxblood);
+  outline-offset: 1px;
+}
+
+.ff-systeme-capture__form input:disabled {
+  opacity: .55;
+}
+
+.ff-systeme-capture__form button {
+  grid-column: 1 / -1;
+  min-height: 52px;
+  margin: 0;
+  padding: 12px 18px;
+  color: var(--ff-ink);
+  background: transparent;
+  border: 2px solid var(--ff-oxblood);
+  border-radius: 0;
+  box-shadow: none;
+  cursor: pointer;
+  font: 700 13px "FF Barlow Condensed", Impact, sans-serif;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.ff-systeme-capture__form button:hover:not(:disabled),
+.ff-systeme-capture__form button:focus-visible {
+  color: var(--ff-cream);
+  background: var(--ff-oxblood);
+}
+
+.ff-systeme-capture__honeypot,
+.ff-systeme-capture__sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.ff-systeme-capture__status {
+  min-height: 18px;
+  margin: 9px 0 0;
+  color: #665e55;
+  font-size: 12px;
+}
+
+.ff-systeme-capture__status.is-error {
+  color: var(--ff-oxblood);
+}
+
+@media (max-width: 600px) {
+  .ff-systeme-capture {
+    padding: 48px 24px 30px;
+  }
+
+  .ff-systeme-capture__form {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<section class="ff-systeme-capture" data-ff-capture-tag="dispatch">
+  <p class="ff-systeme-capture__kicker">Weekly field note</p>
+  <h2 class="ff-systeme-capture__title">
+    The Fathers Front<br>
+    <em>Dispatch</em>
+  </h2>
+  <p class="ff-systeme-capture__description">
+    A weekly field note for fathers and builders under pressure. No noise. No empty motivation. Just something useful for the fight and the life that follows.
+  </p>
+
+  <form class="ff-systeme-capture__form">
+    <label class="ff-systeme-capture__sr-only" for="ff-dispatch-popup-first-name">First name</label>
+    <input id="ff-dispatch-popup-first-name" name="firstName" type="text" autocomplete="given-name" placeholder="First name" required>
+
+    <label class="ff-systeme-capture__sr-only" for="ff-dispatch-popup-email">Email address</label>
+    <input id="ff-dispatch-popup-email" name="email" type="email" autocomplete="email" placeholder="Email address" required>
+
+    <div class="ff-systeme-capture__honeypot" aria-hidden="true">
+      <label for="ff-dispatch-popup-website">Website</label>
+      <input id="ff-dispatch-popup-website" name="website" type="text" tabindex="-1" autocomplete="off">
+    </div>
+
+    <button type="submit" data-idle-label="Join the Dispatch" data-success-label="Received - Welcome to the Front">
+      Join the Dispatch
+    </button>
+  </form>
+
+  <p class="ff-systeme-capture__status" role="status" aria-live="polite"></p>
+</section>
+
+<script>
+(function () {
+  document.querySelectorAll(".ff-systeme-capture").forEach(function (capture) {
+    if (capture.dataset.ffCaptureReady === "true") return;
+    capture.dataset.ffCaptureReady = "true";
+
+    var form = capture.querySelector(".ff-systeme-capture__form");
+    var button = form.querySelector("button[type='submit']");
+    var status = capture.querySelector(".ff-systeme-capture__status");
+
+    form.addEventListener("submit", async function (event) {
+      event.preventDefault();
+      var data = new FormData(form);
+
+      button.disabled = true;
+      button.textContent = "Sending...";
+      status.textContent = "";
+      status.classList.remove("is-error");
+
+      try {
+        var response = await fetch("https://fathersfront.com/api/dispatch", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            firstName: data.get("firstName"),
+            email: data.get("email"),
+            website: data.get("website"),
+            tag: capture.dataset.ffCaptureTag
+          })
+        });
+
+        if (!response.ok) throw new Error("Submission failed");
+        form.reset();
+        form.querySelectorAll("input").forEach(function (input) {
+          input.disabled = true;
+        });
+        button.textContent = button.dataset.successLabel;
+      } catch (error) {
+        button.disabled = false;
+        button.textContent = button.dataset.idleLabel;
+        status.textContent = "Something went wrong. Please try again.";
+        status.classList.add("is-error");
+      }
+    });
+  });
+})();
+</script>

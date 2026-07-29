@@ -673,244 +673,172 @@ body {
 </style>
 
 <!--
-  FATHERS FRONT - ADVISORY BOOKING OVERRIDES
+  FATHERS FRONT - BLOODLINE BROTHERHOOD CHECKOUT OVERRIDES
 
-  This page-only block follows the shared Fathers Front header/footer base.
+  INSTALLATION:
+  Paste this block only on the Bloodline Brotherhood order page, after the shared
+  Fathers Front base code.
+
+  SCOPE:
+  These selectors target Systeme.io-generated checkout component IDs and
+  shipping-field names. Do not install this file globally because those IDs
+  are specific to this order page and can change if its components are rebuilt.
 -->
 <style>
-:root {
-  --ff-advisory-ink: #171412;
-  --ff-advisory-cream: #f4ecdc;
-  --ff-advisory-oxblood: #912d2f;
-  --ff-advisory-field: #fffaf0;
-  --ff-advisory-border: #f0f0f0;
-}
-
-.sc-cPiKLY > div {
-  border-color: var(--ff-advisory-border) !important;
-  border-radius: 0 !important;
-}
-
-.sc-cPiKLY > div[style*="cursor: default"] {
-  position: relative !important;
-  z-index: 1 !important;
-  background: #fff !important;
-  border-color: var(--ff-advisory-oxblood) !important;
-  box-shadow: 0 0 0 1px var(--ff-advisory-oxblood) !important;
-}
-
-.sc-fPXMVh:has(.rdp-root) {
-  border-color: var(--ff-advisory-border) !important;
-  border-radius: 0 !important;
-}
-
-.rdp-day button {
+/* Stripe card input */
+#payment-method-c6b65c4c .Card.StripeElement {
   box-sizing: border-box !important;
+  min-height: 48px !important;
+  padding: 14px 16px !important;
+  background-color: #fffaf0 !important;
+  border: 1px solid #f0f0f0 !important;
+  border-radius: 1px !important;
+  box-shadow: none !important;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease !important;
+}
+
+/* Stripe card focus and error states */
+#payment-method-c6b65c4c .Card.StripeElement--focus {
+  border-color: #912d2f !important;
+  box-shadow: 0 0 0 1px #912d2f !important;
+}
+
+#payment-method-c6b65c4c .Card.StripeElement--invalid {
+  border-color: #912d2f !important;
+}
+
+/* Payment labels and payment block */
+#payment-method-c6b65c4c label {
+  color: #171412 !important;
+  font-family: "Libre Franklin", Arial, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
+#payment-method-c6b65c4c {
+  border-color: rgba(23, 20, 18, 0.14) !important;
+  border-radius: 1px !important;
+}
+
+/* Payment-method and customer-type radio buttons */
+#payment-method-c6b65c4c input[type="radio"],
+input[type="radio"][name="customer-type"] {
+  accent-color: #912d2f !important;
+  width: 16px !important;
+  height: 16px !important;
+  cursor: pointer;
+}
+
+/* Explicit-consent checkbox and text */
+#explicit-consent-f4b6897f input[type="checkbox"] {
+  accent-color: #912d2f !important;
+  width: 16px !important;
+  height: 16px !important;
+  cursor: pointer;
+}
+
+#explicit-consent-f4b6897f,
+#explicit-consent-f4b6897f p,
+#explicit-consent-f4b6897f a {
+  color: #171412 !important;
+}
+
+/* Order-summary text color */
+#row-8891df19 div,
+#row-8891df19 p,
+#row-8891df19 span,
+#row-8891df19 strong {
+  color: #171412 !important;
+}
+
+/* Order Summary alignment */
+#row-fbbe6057 {
   width: 100% !important;
-  height: 56px !important;
-  margin: 0 !important;
-  border: 1px solid transparent !important;
-  border-radius: 0 !important;
-}
-
-.rdp-day button.drjxdR {
-  background: #fff !important;
-  border: 1px solid var(--ff-advisory-oxblood) !important;
-  color: var(--ff-advisory-ink) !important;
-}
-
-.rdp-day[data-selected] button,
-.rdp-day[aria-selected="true"] button,
-.rdp-day.rdp-selected button,
-.rdp-day button.kQubmW {
-  background: var(--ff-advisory-oxblood) !important;
-  border: 1px solid var(--ff-advisory-oxblood) !important;
-  border-radius: 0 !important;
-  color: #fff !important;
-}
-
-.sc-kOPcWA button[type="button"]:not(.rdp-root button):not(.sc-eeDRCX) {
-  border-radius: 0 !important;
-}
-
-.sc-kOPcWA .sc-hzhJZP > button.sc-fHjqPg {
-  background: #fff !important;
-  border: 1px solid var(--ff-advisory-oxblood) !important;
-  border-radius: 0 !important;
-  color: var(--ff-advisory-ink) !important;
-}
-
-.sc-kOPcWA .sc-hzhJZP > button.sc-fHjqPg.juwdqd {
-  background: var(--ff-advisory-oxblood) !important;
-  border-color: var(--ff-advisory-oxblood) !important;
-  color: #fff !important;
-}
-
-.sc-kOPcWA input[type="radio"][name*="time"] + span,
-.sc-kOPcWA input[type="radio"][value*=":"] + span {
-  background: #fff !important;
-  border: 1px solid var(--ff-advisory-oxblood) !important;
-  border-radius: 0 !important;
-}
-
-.sc-kOPcWA input[type="radio"][name*="time"]:checked + span,
-.sc-kOPcWA input[type="radio"][value*=":"]:checked + span {
-  background: #fff !important;
-  border-color: var(--ff-advisory-oxblood) !important;
-  color: var(--ff-advisory-ink) !important;
-}
-
-.sc-kOPcWA button,
-.sc-eeDRCX {
-  border-radius: 0 !important;
-}
-
-.sc-kOPcWA input:not([type="radio"]):not([type="checkbox"]),
-.sc-kOPcWA select,
-.sc-kOPcWA textarea {
-  box-sizing: border-box !important;
-  background: #fff !important;
-  border: 1px solid var(--ff-advisory-border) !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  color: var(--ff-advisory-ink) !important;
-  transition:
-    border-color 160ms ease,
-    box-shadow 160ms ease !important;
-}
-
-.sc-kOPcWA input:not([type="radio"]):not([type="checkbox"]):focus,
-.sc-kOPcWA input:not([type="radio"]):not([type="checkbox"]):focus-visible,
-.sc-kOPcWA select:focus,
-.sc-kOPcWA select:focus-visible,
-.sc-kOPcWA textarea:focus,
-.sc-kOPcWA textarea:focus-visible {
-  border-color: var(--ff-advisory-oxblood) !important;
-  box-shadow: 0 0 0 1px var(--ff-advisory-oxblood) !important;
-  outline: none !important;
-}
-
-.sc-kOPcWA div:has(> input[type="tel"]),
-.sc-kOPcWA div:has(> input[placeholder*="Phone"]) {
-  background: #fff !important;
-  border: 1px solid var(--ff-advisory-border) !important;
-  border-radius: 0 !important;
+  min-height: 45px !important;
+  padding: 10px 16px 11px !important;
   box-sizing: border-box !important;
 }
 
-.sc-kOPcWA .react-tel-input,
-.sc-kOPcWA .react-tel-input .flag-dropdown,
-.sc-kOPcWA .react-tel-input .selected-flag {
-  border-color: var(--ff-advisory-border) !important;
-  border-radius: 0 !important;
-}
-
-.sc-kOPcWA .react-tel-input .flag-dropdown,
-.sc-kOPcWA .react-tel-input .selected-flag {
-  background: #fff !important;
-}
-
-.sc-kOPcWA button[aria-label="Country selector"] {
-  background: #fff !important;
-  border: 1px solid var(--ff-advisory-border) !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-}
-
-.sc-kOPcWA div:has(> input[type="tel"]):focus-within,
-.sc-kOPcWA div:has(> input[placeholder*="Phone"]):focus-within {
-  border-color: var(--ff-advisory-oxblood) !important;
-  box-shadow: 0 0 0 1px var(--ff-advisory-oxblood) !important;
-  outline: none !important;
-}
-
-.sc-kOPcWA div:has(> input[type="tel"]) input:focus,
-.sc-kOPcWA div:has(> input[placeholder*="Phone"]) input:focus {
-  border-color: transparent !important;
-  box-shadow: none !important;
-  outline: none !important;
-}
-
-.sc-kOPcWA input[type="radio"],
-#offerprice-ab6522e3 input[type="radio"],
-#payment-method-c6b65c4c input[type="radio"] {
-  accent-color: var(--ff-advisory-oxblood) !important;
-}
-
-.sc-kOPcWA input[type="radio"]:checked + span,
-#offerprice-ab6522e3 input[type="radio"]:checked + span,
-#payment-method-c6b65c4c input[type="radio"]:checked + span {
-  border-color: var(--ff-advisory-oxblood) !important;
-}
-
-/* Coupon field: match the checkout inputs and Stolen Sons focus treatment */
-#coupon-94adb628 input {
+/* Shipping section border */
+#row-38174a5d > div:first-child {
+  border: 1px solid rgba(103, 106, 108, 0.1) !important;
   box-sizing: border-box !important;
-  background: #fff !important;
-  border: 1px solid var(--ff-advisory-border) !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  color: var(--ff-advisory-ink) !important;
-  transition:
-    border-color 160ms ease,
-    box-shadow 160ms ease !important;
 }
 
-#coupon-94adb628 input:focus,
-#coupon-94adb628 input:focus-visible,
-#coupon-94adb628:focus-within input {
-  border-color: var(--ff-advisory-oxblood) !important;
-  box-shadow: 0 0 0 1px var(--ff-advisory-oxblood) !important;
+/* Shipping and contact-field focus treatment */
+input[name="first_name"]:focus,
+input[name="first_name"]:focus-visible,
+input[name="surname"]:focus,
+input[name="surname"]:focus-visible,
+input[name="street_address"]:focus,
+input[name="street_address"]:focus-visible,
+input[name="city"]:focus,
+input[name="city"]:focus-visible,
+input[name="state"]:focus,
+input[name="state"]:focus-visible,
+input[name="postcode"]:focus,
+input[name="postcode"]:focus-visible,
+input[name="company_name"]:focus,
+input[name="company_name"]:focus-visible,
+input[name="tax_number"]:focus,
+input[name="tax_number"]:focus-visible,
+input[name="email"][placeholder="Email *"]:focus,
+input[name="email"][placeholder="Email *"]:focus-visible,
+select:focus,
+select:focus-visible {
+  border-color: #912d2f !important;
+  box-shadow: 0 0 0 1px #912d2f !important;
   outline: none !important;
 }
 
-#coupon-94adb628 button,
-#coupon-94adb628 .btn,
-#coupon-94adb628 input[type="submit"],
-#coupon-94adb628 [role="button"] {
+#coupon-2ef57d4a input {
+  background: #fffaf0 !important;
+  border: 1px solid #f0f0f0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+#coupon-2ef57d4a input:focus,
+#coupon-2ef57d4a input:focus-visible {
+  border-color: #912d2f !important;
+  box-shadow: 0 0 0 1px #912d2f !important;
+  outline: none !important;
+}
+
+#coupon-2ef57d4a button {
   background: transparent !important;
-  border: 1px solid var(--ff-advisory-oxblood) !important;
+  border: 1px solid #912d2f !important;
   border-radius: 0 !important;
-  color: var(--ff-advisory-ink) !important;
-  box-shadow: none !important;
+  color: #912d2f !important;
 }
 
-#coupon-94adb628 button *,
-#coupon-94adb628 .btn *,
-#coupon-94adb628 [role="button"] * {
-  color: var(--ff-advisory-ink) !important;
-}
-
-/* Stripe card fields: oxblood border while the secure iframe has focus. */
-#stripe-card-number.StripeElement--focus,
-#stripe-card-expiration.StripeElement--focus,
-#stripe-card-security_code.StripeElement--focus {
-  border-color: var(--ff-advisory-oxblood) !important;
-  box-shadow: 0 0 0 1px var(--ff-advisory-oxblood) !important;
+/* Phone input and flag-selector focus treatment */
+#row-38174a5d div[id^="form-input-"]:has(> input[placeholder="Phone number *"]):focus-within {
+  box-shadow: 0 0 0 2px #912d2f !important;
   outline: none !important;
 }
 
-/*
-  Checkout pages can be shorter than the browser viewport.
-  Match the root canvas to the footer so Systeme's default white background
-  cannot appear beneath the footer.
-*/
-html,
-body,
-#app {
-  background-color: #0c0a09 !important;
+#row-38174a5d input[placeholder="Phone number *"]:focus,
+#row-38174a5d input[placeholder="Phone number *"]:focus-visible {
+  box-shadow: none !important;
+  outline: none !important;
 }
 
-/* Hide the checkout opt-in while preserving the desktop footer columns. */
-.ff-sio-footer__dispatch {
-  visibility: hidden !important;
-  pointer-events: none !important;
+/* Hide the unnecessary product-image carousel scrollbar */
+.carousel-slider-ui {
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
+  scrollbar-width: none !important;
 }
 
-/* Remove the unused opt-in from the stacked mobile footer. */
-@media (max-width: 760px) {
-  .ff-sio-footer__dispatch {
-    display: none !important;
-  }
+.carousel-slider-ui::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+input[name="Brotherhood Monthly Payment Plan"] + span {
+  border-color: #912d2f !important;
 }
 </style>

@@ -1,0 +1,264 @@
+<!-- =========================================================
+     FATHERS FRONT DISPATCH — SYSTEME.IO INLINE OPT-IN
+
+     Install the CSS in the page's <head>.
+     Install the HTML where the inline opt-in should appear.
+     No JavaScript is required for the visual design or submission.
+     ========================================================= -->
+
+<!-- ========================= CSS / HEAD ========================= -->
+<style>
+.ff-dispatch-optin,
+.ff-dispatch-optin * {
+  box-sizing: border-box;
+}
+
+.ff-dispatch-optin {
+  --ff-dispatch-cream: #f4ecdc;
+  --ff-dispatch-oxblood: #912d2f;
+  --ff-dispatch-ember: #e84509;
+
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: var(--ff-dispatch-cream);
+  text-align: left;
+}
+
+.ff-dispatch-optin__kicker {
+  margin: 0 0 12px;
+  color: #8d8378;
+  font: 600 11px "FF Barlow Condensed", "Barlow Condensed", Impact, sans-serif;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.ff-dispatch-optin__title {
+  max-width: 560px;
+  margin: 0;
+  color: var(--ff-dispatch-cream);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  font-size: 42px;
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+}
+
+.ff-dispatch-optin__description {
+  max-width: 560px;
+  margin: 12px 0 22px;
+  color: #a99f92;
+  font-family: "FF Libre Franklin", "Libre Franklin", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.ff-dispatch-optin__form {
+  width: 100%;
+  max-width: 580px;
+  margin: 0;
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+}
+
+.ff-dispatch-optin__form input[type="text"],
+.ff-dispatch-optin__form input[type="email"] {
+  min-width: 0;
+  flex: 1 1 auto;
+  margin: 0;
+  padding: 15px 16px;
+  color: var(--ff-dispatch-cream);
+  background: #100e0d;
+  border: 1px solid #675d53;
+  border-radius: 0;
+  box-shadow: none;
+  font: 500 14px "FF Libre Franklin", "Libre Franklin", Arial, sans-serif;
+}
+
+.ff-dispatch-optin__form input[type="text"]::placeholder,
+.ff-dispatch-optin__form input[type="email"]::placeholder {
+  color: #8d8378;
+}
+
+.ff-dispatch-optin__form input[type="text"]:focus,
+.ff-dispatch-optin__form input[type="email"]:focus {
+  border-color: var(--ff-dispatch-cream);
+  outline: 1px solid var(--ff-dispatch-cream);
+  outline-offset: 1px;
+}
+
+.ff-dispatch-optin__form input:disabled {
+  color: #8d8378;
+  background: #171412;
+  border-color: #403a35;
+  cursor: not-allowed;
+  opacity: 0.62;
+}
+
+.ff-dispatch-optin__form input[name="first_name"] {
+  flex: 0 1 150px;
+}
+
+.ff-dispatch-optin__form .f-row {
+  flex: 0 0 auto;
+  margin: 0;
+  display: flex;
+}
+
+.ff-dispatch-optin__form button {
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 0 18px;
+  color: var(--ff-dispatch-cream);
+  background: transparent;
+  border: 2px solid var(--ff-dispatch-oxblood);
+  border-radius: 0;
+  box-shadow: none;
+  cursor: pointer;
+  font: 600 12px "FF Barlow Condensed", "Barlow Condensed", Impact, sans-serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: color 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+
+.ff-dispatch-optin__form button:hover,
+.ff-dispatch-optin__form button:focus-visible {
+  color: var(--ff-dispatch-cream);
+  background: rgba(145, 45, 47, 0.16);
+  border-color: var(--ff-dispatch-ember);
+}
+
+.ff-dispatch-optin__form button:disabled {
+  cursor: default;
+}
+
+.ff-dispatch-optin__response {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  border: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.ff-dispatch-optin__sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+@media (max-width: 560px) {
+  .ff-dispatch-optin__title {
+    font-size: clamp(34px, 10vw, 42px);
+  }
+
+  .ff-dispatch-optin__form {
+    flex-direction: column;
+  }
+
+  .ff-dispatch-optin__form input[name="first_name"] {
+    flex: 1 1 auto;
+  }
+
+  .ff-dispatch-optin__form .f-row {
+    width: 100%;
+  }
+
+  .ff-dispatch-optin__form button {
+    width: 100%;
+    min-height: 50px;
+  }
+}
+</style>
+
+<!-- ============================ HTML ============================ -->
+<section class="ff-dispatch-optin" aria-labelledby="ff-dispatch-optin-title">
+  <p class="ff-dispatch-optin__kicker">Weekly field note</p>
+  <h2 class="ff-dispatch-optin__title" id="ff-dispatch-optin-title">
+    The Fathers Front Dispatch
+  </h2>
+  <p class="ff-dispatch-optin__description">
+    A weekly field note for fathers and builders under pressure.
+  </p>
+
+  <form
+    class="ff-dispatch-optin__form"
+    action="https://systeme.io/embedded/43080160/subscription"
+    method="post"
+    target="ff-dispatch-optin-response"
+  >
+    <label class="ff-dispatch-optin__sr-only" for="ff-dispatch-optin-first-name">
+      First name
+    </label>
+    <input
+      id="ff-dispatch-optin-first-name"
+      name="first_name"
+      type="text"
+      autocomplete="given-name"
+      placeholder="First name"
+    >
+
+    <label class="ff-dispatch-optin__sr-only" for="ff-dispatch-optin-email">
+      Email address
+    </label>
+    <input
+      id="ff-dispatch-optin-email"
+      name="email"
+      type="email"
+      autocomplete="email"
+      placeholder="Email address"
+      required
+    >
+    <div class="f-row">
+      <button class="btn" type="submit">Join the Dispatch</button>
+    </div>
+  </form>
+  <iframe
+    class="ff-dispatch-optin__response"
+    name="ff-dispatch-optin-response"
+    title="Dispatch subscription response"
+  ></iframe>
+</section>
+
+<!-- ======================= JAVASCRIPT ============================ -->
+<script>
+(function () {
+  var form = document.querySelector(".ff-dispatch-optin__form");
+  var response = document.querySelector(".ff-dispatch-optin__response");
+  if (!form || !response) return;
+
+  var button = form.querySelector('button[type="submit"]');
+  var submitted = false;
+
+  form.addEventListener("submit", function () {
+    submitted = true;
+    button.disabled = true;
+    button.textContent = "Sending...";
+  });
+
+  response.addEventListener("load", function () {
+    if (!submitted) return;
+
+    try {
+      if (!response.contentWindow.location.href ||
+          response.contentWindow.location.href === "about:blank") return;
+    } catch (error) {
+      /* A cross-origin response means Systeme.io answered. */
+    }
+
+    button.textContent = "Received — Welcome to the Front";
+    form.querySelectorAll("input").forEach(function (input) {
+      input.disabled = true;
+    });
+  });
+})();
+</script>

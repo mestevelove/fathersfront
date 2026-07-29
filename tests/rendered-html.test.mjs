@@ -19,8 +19,8 @@ test("exports a complete static homepage", async () => {
   assert.match(html, /name="twitter:card" content="summary_large_image"/);
   assert.match(html, /href="\/favicon\.svg"/);
   assert.match(html, /href="\/apple-touch-icon\.png"/);
-  assert.match(html, /V\.84/);
-  assert.match(html, /Menu · V\.84/);
+  assert.match(html, /V\.85/);
+  assert.match(html, /Menu · V\.85/);
   assert.match(html, /Born in/);
   assert.match(html, /Blood\./);
   assert.match(html, /Forged in <em>Fire\.<\/em>/);
@@ -82,14 +82,20 @@ test("exports optimized book cover assets", async () => {
   assert.match(homepage, /stolen-sons-cover\.webp/);
   assert.match(familyLawfare, /family-lawfare-cover\.webp/);
   assert.match(stolenSons, /stolen-sons-cover\.webp/);
-  assert.match(familyLawfare, /https:\/\/portal\.fathersfront\.com\/family-lawfare/);
   assert.match(stolenSons, /https:\/\/portal\.fathersfront\.com\/stolen-sons/);
   assert.match(books, /href="\/stolen-sons\/?">Get the Book<\/a>/);
   assert.match(books, /href="\/family-lawfare\/?">Get the Book<\/a>/);
-  assert.match(familyLawfare, /Order Now/);
-  assert.match(stolenSons, /Order Now/);
-  assert.match(homepage, /V\.84/);
-  assert.match(homepage, /aria-label="Site version 84"/);
+  assert.match(familyLawfare, /Buy Family Lawfare/);
+  assert.match(familyLawfare, /Notify Me When It Drops/);
+  assert.match(familyLawfare, /family-lawfare-waitlist/);
+  assert.doesNotMatch(familyLawfare, /Test Systeme Popup/);
+  assert.doesNotMatch(familyLawfare, /form-script-tag-24902650/);
+  assert.match(stolenSons, /Choose Your Edition/);
+  assert.match(stolenSons, /The Founding Hundred/);
+  assert.match(stolenSons, /\$25/);
+  assert.match(stolenSons, /\$100/);
+  assert.match(homepage, /V\.85/);
+  assert.match(homepage, /aria-label="Site version 85"/);
   assert.doesNotMatch(homepage, /family-lawfare\.png|stolen-sons\.png/);
 });
 
@@ -169,8 +175,9 @@ test("exports phase one messaging", async () => {
   assert.doesNotMatch(work, /snorting coke and driving drunk/);
   assert.match(work, /There is another father in the group who needs you\./);
   assert.match(work, /One brotherhood\. Two ways to work with me\./);
-  assert.match(work, /Join Bloodline Brotherhood/);
-  assert.match(work, /you also receive access to Bloodline Brotherhood/);
+  assert.match(work, /Join Brotherhood/);
+  assert.match(work, /you also receive access to Brotherhood/);
+  assert.doesNotMatch(work, /Bloodline (?:Brotherhood|Advisory)/);
   assert.match(work, /class="button ink" href="\/bloodline-advisory\/?"/);
   assert.match(work, /\$297/);
   assert.match(work, /initial strategy call/);

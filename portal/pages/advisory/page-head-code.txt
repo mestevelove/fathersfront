@@ -187,8 +187,58 @@
   border-color: var(--ff-advisory-oxblood) !important;
 }
 
-/* Keep the coupon field off this page */
-#coupon-a49aed31 {
-  display: none !important;
+/* Coupon field: match the checkout inputs and Stolen Sons focus treatment */
+#coupon-94adb628 input {
+  box-sizing: border-box !important;
+  background: #fffaf0 !important;
+  border: 1px solid #f0f0f0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  color: var(--ff-advisory-ink) !important;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease !important;
+}
+
+#coupon-94adb628 input:focus,
+#coupon-94adb628 input:focus-visible,
+#coupon-94adb628:focus-within input {
+  border-color: var(--ff-advisory-oxblood) !important;
+  box-shadow: 0 0 0 1px var(--ff-advisory-oxblood) !important;
+  outline: none !important;
+}
+
+#coupon-94adb628 button,
+#coupon-94adb628 .btn,
+#coupon-94adb628 input[type="submit"],
+#coupon-94adb628 [role="button"] {
+  background: transparent !important;
+  border: 1px solid var(--ff-advisory-oxblood) !important;
+  border-radius: 0 !important;
+  color: var(--ff-advisory-ink) !important;
+  box-shadow: none !important;
+}
+
+#coupon-94adb628 button *,
+#coupon-94adb628 .btn *,
+#coupon-94adb628 [role="button"] * {
+  color: var(--ff-advisory-ink) !important;
+}
+
+/* Stripe card number, expiration date, and CVC focus treatment */
+.Card.StripeElement--focus,
+.StripeElement--focus,
+.StripeElement:focus-within,
+.sc-kOPcWA div:has(> iframe[name^="__privateStripeFrame"]):focus-within {
+  border-color: var(--ff-advisory-oxblood) !important;
+  box-shadow: 0 0 0 1px var(--ff-advisory-oxblood) !important;
+  outline: none !important;
+}
+
+/* Step 2 description */
+#row-ae2df18c > div > div > div > div > div > div:nth-child(2),
+#row-ae2df18c > div > div > div > div > div > div:nth-child(2) > p,
+#row-ae2df18c > div > div > div > div > div > div:nth-child(2) * {
+  font-weight: 700 !important;
 }
 </style>

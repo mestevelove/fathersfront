@@ -18,6 +18,12 @@ portal/
     advisory/
       complete-head-code.txt
       page-head-code.txt
+    brotherhood/
+      complete-head-code.txt
+      header-code.txt
+      footer-code.txt
+      footer-html-code-block.txt
+      page-head-code.txt
     stolen-sons/
       checkout-code.txt
       complete-head-code.txt
@@ -67,6 +73,19 @@ installation snapshot.
 Use `pages/advisory/complete-head-code.txt` to replace the complete page head
 installation. Its page-only override is preserved separately in
 `pages/advisory/page-head-code.txt`.
+
+## Bloodline Brotherhood checkout
+
+Use `pages/brotherhood/complete-head-code.txt` to replace the complete page
+head installation. The page-specific file contains only the custom oxblood
+selection indicator required by this checkout.
+
+The same known-working installation is organized into the three distinct
+Systeme.io fields:
+
+1. `pages/brotherhood/header-code.txt`
+2. `pages/brotherhood/footer-code.txt`
+3. `pages/brotherhood/footer-html-code-block.txt`
 
 ## Order thank-you page
 

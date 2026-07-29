@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { DispatchPopup } from "./components/EmailCaptureModal";
 
 const sharedDescription = "A front for fathers building families, businesses, and futures through the battles meant to break them.";
 const sharedTitle = "Fathers Front | Fight for Your Fatherhood";
@@ -38,6 +39,6 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return <html lang="en" data-theme="dark">
-    <body>{children}</body>
+    <body>{children}<DispatchPopup /></body>
   </html>;
 }

@@ -820,3 +820,53 @@ input[name="tax_number"]:focus-visible,
   height: 0 !important;
 }
 </style>
+
+<!-- Fathers Front Dispatch handler: required in Header Code on Systeme checkout pages. -->
+<script>
+(function () {
+  if (window.__ffPortalDispatchBound) return;
+  window.__ffPortalDispatchBound = true;
+
+  document.addEventListener("submit", async function (event) {
+    var dispatchForm = event.target.closest("[data-ff-dispatch-form]");
+    if (!dispatchForm) return;
+
+    event.preventDefault();
+    event.stopPropagation();
+
+    var footer = dispatchForm.closest(".ff-sio-footer");
+    var button = dispatchForm.querySelector('button[type="submit"]');
+    var status = footer && footer.querySelector("[data-ff-dispatch-status]");
+    var fields = dispatchForm.querySelectorAll("input");
+    var formData = new FormData(dispatchForm);
+
+    button.disabled = true;
+    button.textContent = "Sending...";
+    if (status) status.textContent = "";
+
+    try {
+      var response = await fetch("https://fathersfront.com/api/dispatch", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          firstName: formData.get("firstName") || "",
+          email: formData.get("email") || "",
+          website: formData.get("website") || ""
+        })
+      });
+
+      if (!response.ok) throw new Error("Dispatch signup failed");
+
+      fields.forEach(function (field) {
+        if (field.name !== "website") field.value = "";
+        field.disabled = true;
+      });
+      button.textContent = "Received - Welcome to the Front";
+    } catch (error) {
+      button.disabled = false;
+      button.textContent = "Join the Dispatch";
+      if (status) status.textContent = "Something went wrong. Please try again.";
+    }
+  }, true);
+})();
+</script>

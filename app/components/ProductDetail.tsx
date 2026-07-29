@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
+import { EmailModalButton } from "./EmailCaptureModal";
 
 type Detail = { number: string; title: string; copy: string };
 
@@ -12,6 +13,15 @@ type ProductDetailProps = {
   description: string;
   cta: string;
   ctaHref: string;
+  ctaModal?: {
+    eyebrow: string;
+    title: string;
+    accent: string;
+    description: string;
+    submitLabel: string;
+    tag: "family-lawfare-waitlist";
+    successMessage: string;
+  };
   image?: string;
   imageAlt?: string;
   productMark?: { eyebrow: string; name: string; price: string };
@@ -19,6 +29,7 @@ type ProductDetailProps = {
   details: Detail[];
   nextHref: string;
   nextLabel: string;
+  children?: React.ReactNode;
 };
 
 export function ProductDetail(props: ProductDetailProps) {
@@ -42,9 +53,12 @@ export function ProductDetail(props: ProductDetailProps) {
           <h1>{props.title}</h1>
           <p className="product-detail-deck">{props.deck}</p>
           <p>{props.description}</p>
-          <a className="button ember" href={props.ctaHref}>{props.cta}</a>
+          {props.ctaModal
+            ? <EmailModalButton className="button ember" label={props.cta} {...props.ctaModal} />
+            : <a className="button ember" href={props.ctaHref}>{props.cta}</a>}
         </div>
       </div>
+      {props.children}
       <div className={`shell product-detail-sections product-detail-sections-${props.details.length}`}>
         {props.details.map((detail) => <article key={detail.number}><span>{detail.number}</span><h2>{detail.title}</h2><p>{detail.copy}</p></article>)}
       </div>

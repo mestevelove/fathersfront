@@ -1,8 +1,9 @@
 const SYSTEME_API = "https://api.systeme.io/api";
-const DISPATCH_TAG = "dispatch";
+const ALLOWED_TAGS = new Set(["dispatch", "family-lawfare-waitlist"]);
 const ALLOWED_ORIGINS = new Set([
   "https://fathersfront.com",
   "https://www.fathersfront.com",
+  "https://portal.fathersfront.com",
   "http://localhost:3000",
 ]);
 
@@ -93,14 +94,14 @@ async function upsertContact(env, email, firstName) {
   return created.data.id;
 }
 
-async function findOrCreateDispatchTag(env) {
+async function findOrCreateTag(env, requestedTag) {
   const lookup = await systemeRequest(env, "/tags?limit=100");
   if (!lookup.response.ok) {
     throw new Error(`Tag lookup failed: ${lookup.response.status}`);
   }
 
   const existing = collectionItems(lookup.data).find(
-    (tag) => tag.name?.toLowerCase() === DISPATCH_TAG.toLowerCase(),
+    (tag) => tag.name?.toLowerCase() === requestedTag.toLowerCase(),
   );
 
   if (existing) {
@@ -109,7 +110,7 @@ async function findOrCreateDispatchTag(env) {
 
   const created = await systemeRequest(env, "/tags", {
     method: "POST",
-    body: JSON.stringify({ name: DISPATCH_TAG }),
+    body: JSON.stringify({ name: requestedTag }),
   });
 
   if (!created.response.ok || !created.data?.id) {
@@ -133,6 +134,7 @@ async function subscribe(request, env) {
   const email = typeof body?.email === "string" ? body.email.trim().toLowerCase() : "";
   const firstName = typeof body?.firstName === "string" ? body.firstName.trim().slice(0, 80) : "";
   const website = typeof body?.website === "string" ? body.website.trim() : "";
+  const requestedTag = typeof body?.tag === "string" ? body.tag.trim().toLowerCase() : "dispatch";
 
   if (website) {
     return json({ ok: true }, 200, origin);
@@ -142,10 +144,14 @@ async function subscribe(request, env) {
     return json({ ok: false, error: "Enter a valid email address" }, 400, origin);
   }
 
+  if (!ALLOWED_TAGS.has(requestedTag)) {
+    return json({ ok: false, error: "Invalid subscription" }, 400, origin);
+  }
+
   try {
     const [contactId, tagId] = await Promise.all([
       upsertContact(env, email, firstName),
-      findOrCreateDispatchTag(env),
+      findOrCreateTag(env, requestedTag),
     ]);
 
     const assigned = await systemeRequest(env, `/contacts/${contactId}/tags`, {
