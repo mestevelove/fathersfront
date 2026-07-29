@@ -26,10 +26,10 @@ export default function AdvisoryPage() {
         {
           number: "03",
           title: "Decide what comes next",
-          copy: "Use the final 15 minutes to decide whether deeper private advisory makes sense. Private engagements begin at $15,000, by fit.",
+          copy: "Use the final 15 minutes to decide whether deeper private advisory makes sense.",
         },
       ]}
-      nextHref="/bloodline-brotherhood"
+      nextHref="/brotherhood"
       nextLabel="Explore Brotherhood"
     />
   );

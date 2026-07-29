@@ -19,8 +19,8 @@ test("exports a complete static homepage", async () => {
   assert.match(html, /name="twitter:card" content="summary_large_image"/);
   assert.match(html, /href="\/favicon\.svg"/);
   assert.match(html, /href="\/apple-touch-icon\.png"/);
-  assert.match(html, /V\.85/);
-  assert.match(html, /Menu · V\.85/);
+  assert.match(html, /V\.86/);
+  assert.match(html, /Menu · V\.86/);
   assert.match(html, /Born in/);
   assert.match(html, /Blood\./);
   assert.match(html, /Forged in <em>Fire\.<\/em>/);
@@ -52,8 +52,8 @@ test("exports the expected site routes", async () => {
   for (const route of [
     "articles",
     "about",
-    "bloodline-advisory",
-    "bloodline-brotherhood",
+    "advisory",
+    "brotherhood",
     "family-lawfare",
     "stolen-sons",
     "the-framework",
@@ -87,15 +87,16 @@ test("exports optimized book cover assets", async () => {
   assert.match(books, /href="\/family-lawfare\/?">Get the Book<\/a>/);
   assert.match(familyLawfare, /Buy Family Lawfare/);
   assert.match(familyLawfare, /Notify Me When It Drops/);
-  assert.match(familyLawfare, /family-lawfare-waitlist/);
+  assert.match(familyLawfare, /tag\\":\\"dispatch/);
+  assert.doesNotMatch(familyLawfare, /family-lawfare-waitlist/);
   assert.doesNotMatch(familyLawfare, /Test Systeme Popup/);
   assert.doesNotMatch(familyLawfare, /form-script-tag-24902650/);
   assert.match(stolenSons, /Choose Your Edition/);
   assert.match(stolenSons, /The Founding Hundred/);
   assert.match(stolenSons, /\$25/);
   assert.match(stolenSons, /\$100/);
-  assert.match(homepage, /V\.85/);
-  assert.match(homepage, /aria-label="Site version 85"/);
+  assert.match(homepage, /V\.86/);
+  assert.match(homepage, /aria-label="Site version 86"/);
   assert.doesNotMatch(homepage, /family-lawfare\.png|stolen-sons\.png/);
 });
 
@@ -157,8 +158,8 @@ test("exports phase one messaging", async () => {
   const home = await readFile(new URL("index.html", outputRoot), "utf8");
   const work = await readFile(new URL("work-with-steve/index.html", outputRoot), "utf8");
   const speaking = await readFile(new URL("speaking/index.html", outputRoot), "utf8");
-  const advisory = await readFile(new URL("bloodline-advisory/index.html", outputRoot), "utf8");
-  const brotherhood = await readFile(new URL("bloodline-brotherhood/index.html", outputRoot), "utf8");
+  const advisory = await readFile(new URL("advisory/index.html", outputRoot), "utf8");
+  const brotherhood = await readFile(new URL("brotherhood/index.html", outputRoot), "utf8");
 
   assert.match(home, /protect their relationship with their children/);
   assert.match(home, /The court case is one front\./);
@@ -178,9 +179,12 @@ test("exports phase one messaging", async () => {
   assert.match(work, /Join Brotherhood/);
   assert.match(work, /you also receive access to Brotherhood/);
   assert.doesNotMatch(work, /Bloodline (?:Brotherhood|Advisory)/);
-  assert.match(work, /class="button ink" href="\/bloodline-advisory\/?"/);
+  assert.match(work, /class="button ink" href="\/advisory\/?"/);
   assert.match(work, /\$297/);
   assert.match(work, /initial strategy call/);
+  assert.doesNotMatch(home, /\$15,000/);
+  assert.doesNotMatch(work, /\$15,000/);
+  assert.doesNotMatch(advisory, /\$15,000/);
   assert.match(work, /Fathers Front is not a law firm/);
   assert.match(work, /no attorney-client relationship is created/);
   assert.doesNotMatch(work, /The Four Fronts/);

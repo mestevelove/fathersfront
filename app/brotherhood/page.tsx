@@ -29,7 +29,7 @@ export default function BrotherhoodPage() {
           copy: "A focused peer room and member community for fathers and builders who want honest feedback, responsibility, and action, not passive content.",
         },
       ]}
-      nextHref="/bloodline-advisory"
+      nextHref="/advisory"
       nextLabel="Explore Advisory"
     />
   );

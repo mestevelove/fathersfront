@@ -2,7 +2,7 @@
 
 import { FormEvent, useEffect, useId, useRef, useState } from "react";
 
-type CaptureTag = "dispatch" | "family-lawfare-waitlist";
+type CaptureTag = "dispatch";
 type CaptureStatus = "idle" | "submitting" | "success" | "error";
 
 type CaptureCopy = {

@@ -19,7 +19,7 @@ type ProductDetailProps = {
     accent: string;
     description: string;
     submitLabel: string;
-    tag: "family-lawfare-waitlist";
+    tag: "dispatch";
     successMessage: string;
   };
   image?: string;

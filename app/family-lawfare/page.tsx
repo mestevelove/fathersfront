@@ -16,7 +16,7 @@ export default function FamilyLawfarePage() {
         accent: "Family Lawfare drops.",
         description: "Be the first to know when Family Lawfare is available. Enter your name and email and I will tell you when the field manual is ready.",
         submitLabel: "Notify Me When It Drops",
-        tag: "family-lawfare-waitlist",
+        tag: "dispatch",
         successMessage: "You're on the list",
       }}
       image="/assets/family-lawfare-cover.webp"

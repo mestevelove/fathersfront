@@ -1,5 +1,5 @@
 const SYSTEME_API = "https://api.systeme.io/api";
-const ALLOWED_TAGS = new Set(["dispatch", "family-lawfare-waitlist"]);
+const ALLOWED_TAGS = new Set(["dispatch"]);
 const ALLOWED_ORIGINS = new Set([
   "https://fathersfront.com",
   "https://www.fathersfront.com",
@@ -95,7 +95,10 @@ async function upsertContact(env, email, firstName) {
 }
 
 async function findOrCreateTag(env, requestedTag) {
-  const lookup = await systemeRequest(env, "/tags?limit=100");
+  const lookup = await systemeRequest(
+    env,
+    `/tags?query=${encodeURIComponent(requestedTag)}&limit=100`,
+  );
   if (!lookup.response.ok) {
     throw new Error(`Tag lookup failed: ${lookup.response.status}`);
   }
@@ -114,10 +117,22 @@ async function findOrCreateTag(env, requestedTag) {
   });
 
   if (!created.response.ok || !created.data?.id) {
-    throw new Error(`Tag creation failed: ${created.response.status}`);
+    throw new Error(
+      `Tag creation failed: ${created.response.status} ${JSON.stringify(created.data)}`,
+    );
   }
 
   return created.data.id;
+}
+
+async function verifyContactTag(env, contactId, tagId) {
+  const contact = await systemeRequest(env, `/contacts/${contactId}`);
+  if (!contact.response.ok) {
+    throw new Error(`Contact verification failed: ${contact.response.status}`);
+  }
+
+  const tags = Array.isArray(contact.data?.tags) ? contact.data.tags : [];
+  return tags.some((tag) => Number(tag.id) === Number(tagId));
 }
 
 async function subscribe(request, env) {
@@ -163,7 +178,12 @@ async function subscribe(request, env) {
       throw new Error(`Tag assignment failed: ${assigned.response.status}`);
     }
 
-    return json({ ok: true }, 200, origin);
+    const tagIsAssigned = await verifyContactTag(env, contactId, tagId);
+    if (!tagIsAssigned) {
+      throw new Error(`Tag assignment could not be verified: ${assigned.response.status}`);
+    }
+
+    return json({ ok: true, tag: requestedTag }, 200, origin);
   } catch (error) {
     console.error("Dispatch subscription failed", error);
     return json({ ok: false, error: "Subscription failed" }, 502, origin);
