@@ -145,4 +145,184 @@ input[name="tax_number"]:focus-visible,
   width: 0 !important;
   height: 0 !important;
 }
+/* Hide the opt-in while preserving the desktop footer layout */
+.ff-sio-footer__dispatch {
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Do not preserve the empty space on mobile */
+@media (max-width: 760px) {
+  .ff-sio-footer__dispatch {
+    display: none !important;
+  }
+}
+
+/* Quantity controls: compact oxblood circles with an unboxed count. */
+.ff-ss-quantity-control {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 30px !important;
+  min-width: 30px !important;
+  height: 30px !important;
+  min-height: 30px !important;
+  padding: 0 !important;
+  color: #912d2f !important;
+  background: transparent !important;
+  border: 1px solid #912d2f !important;
+  border-radius: 50% !important;
+  box-shadow: none !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  transition:
+    color 160ms ease,
+    background-color 160ms ease !important;
+}
+
+.ff-ss-quantity-control:hover,
+.ff-ss-quantity-control:focus-visible,
+.ff-ss-quantity-control:active {
+  color: #f4ecdc !important;
+  background: #912d2f !important;
+  outline: none !important;
+}
+
+/* Edition controls: quiet by default, clearly selected when active. */
+.ff-ss-edition-control {
+  padding: 10px 16px !important;
+  color: #171412 !important;
+  background: transparent !important;
+  border: 1px solid transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  cursor: pointer !important;
+}
+
+.ff-ss-edition-control.is-ff-selected {
+  color: #171412 !important;
+  background: #fffaf0 !important;
+  border-color: #912d2f !important;
+}
 </style>
+
+<!--
+  Reads ?edition=standard or ?edition=signed, selects the matching Systeme
+  product option, and adds stable Fathers Front classes to generated controls.
+  A visitor can still change editions manually after arriving.
+-->
+<script>
+(function () {
+  if (window.__ffStolenSonsOptionsBound) return;
+  window.__ffStolenSonsOptionsBound = true;
+
+  var requested = new URLSearchParams(window.location.search).get("edition");
+  var selectedEdition = requested === "signed" ? "signed" : "standard";
+  var querySelectionApplied = false;
+  var setupQueued = false;
+
+  function normalizedText(node) {
+    return (node && node.textContent || "").replace(/\s+/g, " ").trim().toLowerCase();
+  }
+
+  function exactTextElements(root, text) {
+    var wanted = text.toLowerCase();
+    return Array.from(root.querySelectorAll("button, label, [role='button'], [role='radio'], div, span"))
+      .filter(function (node) {
+        if (normalizedText(node) !== wanted) return false;
+        return !Array.from(node.children).some(function (child) {
+          return normalizedText(child) === wanted;
+        });
+      });
+  }
+
+  function visualControl(node, text) {
+    if (!node) return null;
+    var wanted = text.toLowerCase();
+    var control = node.closest("button, label, [role='button'], [role='radio']");
+
+    if (control) return control;
+
+    control = node;
+    while (control.parentElement && normalizedText(control.parentElement) === wanted) {
+      control = control.parentElement;
+    }
+    return control;
+  }
+
+  function editionControl(root, name) {
+    var leaf = exactTextElements(root, name)[0];
+    if (!leaf) return null;
+    return {
+      leaf: leaf,
+      control: visualControl(leaf, name)
+    };
+  }
+
+  function setEditionVisual(name, controls) {
+    selectedEdition = name;
+    Object.keys(controls).forEach(function (key) {
+      controls[key].control.classList.toggle("is-ff-selected", key === name);
+    });
+  }
+
+  function bindEditionControl(name, item, controls) {
+    item.control.classList.add("ff-ss-edition-control");
+    if (item.control.dataset.ffEditionBound === "true") return;
+
+    item.control.dataset.ffEditionBound = "true";
+    item.control.addEventListener("click", function () {
+      setEditionVisual(name, controls);
+    });
+  }
+
+  function styleQuantityControls(root) {
+    ["-", "+"].forEach(function (symbol) {
+      exactTextElements(root, symbol).forEach(function (leaf) {
+        var control = visualControl(leaf, symbol);
+        if (control) control.classList.add("ff-ss-quantity-control");
+      });
+    });
+  }
+
+  function setupControls() {
+    setupQueued = false;
+    var orderSummary = document.getElementById("row-8891df19");
+    if (!orderSummary) return;
+
+    styleQuantityControls(orderSummary);
+
+    var standard = editionControl(orderSummary, "standard");
+    var signed = editionControl(orderSummary, "signed");
+    if (!standard || !signed) return;
+
+    var controls = { standard: standard, signed: signed };
+    bindEditionControl("standard", standard, controls);
+    bindEditionControl("signed", signed, controls);
+    setEditionVisual(selectedEdition, controls);
+
+    if (!querySelectionApplied && (requested === "standard" || requested === "signed")) {
+      querySelectionApplied = true;
+      controls[selectedEdition].leaf.click();
+      setEditionVisual(selectedEdition, controls);
+    }
+  }
+
+  function queueSetup() {
+    if (setupQueued) return;
+    setupQueued = true;
+    window.requestAnimationFrame(setupControls);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", queueSetup, { once: true });
+  } else {
+    queueSetup();
+  }
+
+  new MutationObserver(queueSetup).observe(document.documentElement, {
+    childList: true,
+    subtree: true
+  });
+})();
+</script>

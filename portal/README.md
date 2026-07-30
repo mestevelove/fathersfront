@@ -62,7 +62,10 @@ paste a new version beneath an older copy.
 
 Add `pages/stolen-sons/checkout-code.txt` after the shared installation. It
 contains only checkout-specific field, Stripe, consent, radio, summary, and
-focus styling. The generated Systeme.io component IDs must be rechecked if a
+focus styling. It also styles the quantity and edition controls and reads
+`?edition=standard` or `?edition=signed` to preselect the edition requested
+from the Fathers Front product page. Visitors can still change that selection
+manually. The generated Systeme.io component IDs must be rechecked if a
 component is deleted and recreated.
 
 `pages/stolen-sons/complete-head-code.txt` is the known-working combined

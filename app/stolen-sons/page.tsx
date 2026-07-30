@@ -1,6 +1,7 @@
 import { ProductDetail } from "../components/ProductDetail";
 
-const checkoutUrl = "https://portal.fathersfront.com/stolen-sons";
+const standardCheckoutUrl = "https://portal.fathersfront.com/stolen-sons?edition=standard";
+const signedCheckoutUrl = "https://portal.fathersfront.com/stolen-sons?edition=signed";
 
 export default function StolenSonsPage() {
   return (
@@ -45,7 +46,7 @@ export default function StolenSonsPage() {
               <li>The complete story of the fight across Texas and Germany</li>
               <li>Standard fulfillment</li>
             </ul>
-            <a className="button ink" href={checkoutUrl}>Buy the Standard Edition</a>
+            <a className="button ink" href={standardCheckoutUrl}>Buy the Standard Edition</a>
           </article>
           <article className="book-edition-card book-edition-card-featured">
             <p className="book-edition-number">Limited to 100 copies</p>
@@ -56,7 +57,7 @@ export default function StolenSonsPage() {
               <li>Individually numbered as part of the Founding Hundred</li>
               <li>Your purchase supports Ori&apos;s return and recovery efforts</li>
             </ul>
-            <a className="button ember" href={checkoutUrl}>Claim a Signed Copy</a>
+            <a className="button ember" href={signedCheckoutUrl}>Claim a Signed Copy</a>
           </article>
         </div>
         <p className="book-editions-note">Both buttons lead to the same secure checkout. Select your edition before completing your order.</p>
