@@ -3,6 +3,19 @@ import { readFile, readdir } from "node:fs/promises";
 import test from "node:test";
 
 const outputRoot = new URL("../out/", import.meta.url);
+const sourceRoot = new URL("../", import.meta.url);
+
+test("keeps Family Lawfare checkout quantity styling scoped and edition-free", async () => {
+  const code = await readFile(
+    new URL("portal/pages/family-lawfare/complete-head-code.txt", sourceRoot),
+    "utf8",
+  );
+
+  assert.match(code, /\.ff-fl-quantity-control/);
+  assert.match(code, /document\.getElementById\("row-8891df19"\)/);
+  assert.match(code, /\["-", "\+"\]/);
+  assert.doesNotMatch(code, /edition=standard|edition=signed|ff-ss-edition-control/);
+});
 
 test("exports a complete static homepage", async () => {
   const html = await readFile(new URL("index.html", outputRoot), "utf8");
@@ -19,7 +32,7 @@ test("exports a complete static homepage", async () => {
   assert.match(html, /name="twitter:card" content="summary_large_image"/);
   assert.match(html, /href="\/favicon\.svg"/);
   assert.match(html, /href="\/apple-touch-icon\.png"/);
-  assert.match(html, /Menu · V\.87/);
+  assert.match(html, /Menu · V\.88/);
   assert.match(html, /Born in/);
   assert.match(html, /Blood\./);
   assert.match(html, /Forged in <em>Fire\.<\/em>/);
@@ -53,6 +66,7 @@ test("exports the expected site routes", async () => {
     "about",
     "advisory",
     "brotherhood",
+    "donate",
     "family-lawfare",
     "stolen-sons",
     "the-framework",
@@ -69,6 +83,26 @@ test("exports the expected site routes", async () => {
   ]) {
     assert.ok(!entries.includes(removedRoute), `unexpected concept route: ${removedRoute}`);
   }
+});
+
+test("exports the GoFundMe donate page", async () => {
+  const donate = await readFile(new URL("donate/index.html", outputRoot), "utf8");
+
+  assert.match(donate, /Help Me Bring/);
+  assert.match(donate, /My Son Home\./);
+  assert.match(donate, /class="gfm-embed-iframe"/);
+  assert.match(donate, /help-me-bring-my-son-ori-home-from-germany/);
+  assert.match(donate, /widget\/large\?attribution_id=/);
+});
+
+test("uses Donate in shared navigation while keeping Articles available", async () => {
+  const home = await readFile(new URL("index.html", outputRoot), "utf8");
+  const articles = await readFile(new URL("articles/index.html", outputRoot), "utf8");
+
+  assert.match(home, /href="\/donate\/?"[^>]*>Donate</);
+  assert.match(home, /Site version 88/);
+  assert.match(home, /V\.88/);
+  assert.match(articles, /Articles/);
 });
 
 test("exports optimized book cover assets", async () => {
@@ -95,7 +129,7 @@ test("exports optimized book cover assets", async () => {
   assert.match(stolenSons, /The Founding Hundred/);
   assert.match(stolenSons, /\$25/);
   assert.match(stolenSons, /\$100/);
-  assert.match(homepage, /aria-label="Site version 87"/);
+  assert.match(homepage, /aria-label="Site version 88"/);
   assert.doesNotMatch(homepage, /family-lawfare\.png|stolen-sons\.png/);
 });
 
@@ -176,6 +210,8 @@ test("exports phase one messaging", async () => {
   assert.match(work, /There is another father in the group who needs you\./);
   assert.match(work, /One brotherhood\. Two ways to work with me\./);
   assert.match(work, /Join Brotherhood/);
+  assert.match(work, /Group Coaching/);
+  assert.match(work, /One-on-One Coaching/);
   assert.match(work, /you also receive access to Brotherhood/);
   assert.doesNotMatch(work, /Bloodline (?:Brotherhood|Advisory)/);
   assert.match(work, /class="button ink" href="\/advisory\/?"/);

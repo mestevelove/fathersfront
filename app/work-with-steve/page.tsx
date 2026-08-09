@@ -243,7 +243,7 @@ export default function WorkWithStevePage() {
         </div>
         <div className="work-v2-offers">
           <article className="work-v2-brotherhood">
-            <span>Brotherhood</span>
+            <span>Group Coaching</span>
             <h3>Brotherhood</h3>
             <p>One program.</p><p>Three levels.</p><p>One weekly call.</p><p>Start where you are.</p>
             <p>Fight for your fatherhood.<br />Fortify your foundation.<br />Forge your family’s future.</p>
@@ -252,7 +252,7 @@ export default function WorkWithStevePage() {
             <Link className="button cream-button" href="/brotherhood">Join Brotherhood</Link>
           </article>
           <article className="work-v2-advisory">
-            <span>Advisory</span>
+            <span>One-on-One Coaching</span>
             <h3>Advisory</h3>
             <p>Some fights require more proximity.</p>
             <p>Advisory is private strategic support for fathers facing complex litigation, major financial exposure, interstate or international conflict, abduction, enforcement, or cases involving multiple professional teams.</p>

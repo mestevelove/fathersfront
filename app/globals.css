@@ -1197,3 +1197,33 @@ h3 {
   .about-cta-row { align-items:stretch; }
   .about-cta-row .button { width:100%; }
 }
+
+/* ===== Donate: GoFundMe campaign ===== */
+.donate-page { min-height:70vh; background:var(--cream); color:var(--ink); }
+.donate-hero { padding:clamp(82px,9vw,138px) 0 clamp(96px,10vw,152px); }
+.donate-shell { width:min(1280px,calc(100% - 48px)); margin:0 auto; }
+.donate-shell>.section-kicker { margin-bottom:38px; }
+.donate-grid { display:grid; grid-template-columns:minmax(0,.95fr) minmax(340px,.72fr); align-items:start; gap:clamp(54px,8vw,124px); }
+.donate-copy { min-width:0; padding-top:16px; }
+.donate-copy h1 { max-width:780px; margin:0; font-size:clamp(64px,8vw,116px); line-height:.84; letter-spacing:-.05em; }
+.donate-copy h1 span { display:block; color:var(--ember); font:600 italic .62em/1.05 var(--font-accent); letter-spacing:-.035em; text-transform:none; }
+.donate-copy>p { max-width:650px; color:#615b53; font-size:17px; line-height:1.78; }
+.donate-copy .donate-lead { margin:42px 0 16px; color:var(--ink); font-size:21px; line-height:1.55; }
+.donate-direct-link { margin-top:26px; }
+.donate-widget { min-width:0; padding:18px; border:1px solid rgba(23,20,18,.28); background:#eee4d2; box-shadow:18px 18px 0 rgba(23,20,18,.08); }
+.donate-widget iframe { display:block; width:100%!important; max-width:100%!important; min-height:500px; margin:0 auto!important; border:0; }
+.donate-widget noscript a { color:var(--red); font-weight:700; }
+@media(max-width:900px){
+  .donate-grid { grid-template-columns:1fr; }
+  .donate-widget { width:min(100%,620px); }
+}
+@media(max-width:640px){
+  .donate-shell { width:calc(100% - 30px); }
+  .donate-shell>.section-kicker { margin-bottom:28px; }
+  .donate-grid { gap:46px; }
+  .donate-copy h1 { font-size:54px; }
+  .donate-copy .donate-lead { margin-top:30px; font-size:19px; }
+  .donate-copy>p { font-size:16px; }
+  .donate-direct-link { width:100%; }
+  .donate-widget { padding:10px; box-shadow:10px 10px 0 rgba(23,20,18,.08); }
+}

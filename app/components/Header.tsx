@@ -12,8 +12,8 @@ export function Header() {
           <span /><span /><span />
         </button>
         <nav className={open ? "nav open" : "nav"} aria-label="Primary navigation">
-          <div className="mobile-menu-heading"><span>Fathers Front</span><b>Menu · V.87</b></div>
-          <Link href="/">Home</Link><Link href="/books">Books</Link><Link href="/articles">Articles</Link>
+          <div className="mobile-menu-heading"><span>Fathers Front</span><b>Menu · V.88</b></div>
+          <Link href="/">Home</Link><Link href="/books">Books</Link><Link href="/donate">Donate</Link>
           <Link href="/speaking">Speaking</Link>
           <div className="nav-dropdown">
             <Link href="/about" className="nav-dropdown-label">About</Link>
@@ -24,7 +24,7 @@ export function Header() {
           </div>
           <Link className="nav-cta" href="/work-with-steve">Work With Steve</Link>
         </nav>
-        <span className="site-version" aria-label="Site version 87">V.87</span>
+        <span className="site-version" aria-label="Site version 88">V.88</span>
       </div>
     </header>
   );
