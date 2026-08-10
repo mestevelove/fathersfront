@@ -32,7 +32,7 @@ test("exports a complete static homepage", async () => {
   assert.match(html, /name="twitter:card" content="summary_large_image"/);
   assert.match(html, /href="\/favicon\.svg"/);
   assert.match(html, /href="\/apple-touch-icon\.png"/);
-  assert.match(html, /Menu · V\.88/);
+  assert.match(html, /Menu · V\.89/);
   assert.match(html, /Born in/);
   assert.match(html, /Blood\./);
   assert.match(html, /Forged in <em>Fire\.<\/em>/);
@@ -91,6 +91,9 @@ test("exports the GoFundMe donate page", async () => {
   assert.match(donate, /Help Me Bring/);
   assert.match(donate, /My Son Home\./);
   assert.match(donate, /class="gfm-embed-iframe"/);
+  assert.match(donate, /aria-label="Primary navigation"/);
+  assert.match(donate, /The Fathers Front Dispatch/);
+  assert.match(donate, /height="620"/);
   assert.match(donate, /help-me-bring-my-son-ori-home-from-germany/);
   assert.match(donate, /widget\/large\?attribution_id=/);
 });
@@ -100,8 +103,8 @@ test("uses Donate in shared navigation while keeping Articles available", async 
   const articles = await readFile(new URL("articles/index.html", outputRoot), "utf8");
 
   assert.match(home, /href="\/donate\/?"[^>]*>Donate</);
-  assert.match(home, /Site version 88/);
-  assert.match(home, /V\.88/);
+  assert.match(home, /Site version 89/);
+  assert.match(home, /V\.89/);
   assert.match(articles, /Articles/);
 });
 
@@ -129,7 +132,7 @@ test("exports optimized book cover assets", async () => {
   assert.match(stolenSons, /The Founding Hundred/);
   assert.match(stolenSons, /\$25/);
   assert.match(stolenSons, /\$100/);
-  assert.match(homepage, /aria-label="Site version 88"/);
+  assert.match(homepage, /aria-label="Site version 89"/);
   assert.doesNotMatch(homepage, /family-lawfare\.png|stolen-sons\.png/);
 });
 

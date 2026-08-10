@@ -1,10 +1,14 @@
+import { Footer } from "../components/Footer";
+import { Header } from "../components/Header";
+
 const fundraiserUrl =
   "https://www.gofundme.com/f/help-me-bring-my-son-ori-home-from-germany";
 
 export default function DonatePage() {
   return (
-    <main className="donate-page">
-      <section className="donate-hero">
+    <main>
+      <Header />
+      <section className="donate-page donate-hero">
         <div className="donate-shell">
           <p className="section-kicker">Bring Ori Home</p>
 
@@ -42,7 +46,7 @@ export default function DonatePage() {
                 src="https://www.gofundme.com/f/help-me-bring-my-son-ori-home-from-germany/widget/large?attribution_id=sl%3A7a4485cb-2c0a-4449-a1c1-9302960c1cd6"
                 title="Help bring Ori home from Germany"
                 width="100%"
-                height="500"
+                height="620"
                 scrolling="no"
               />
               <noscript>
@@ -52,6 +56,7 @@ export default function DonatePage() {
           </div>
         </div>
       </section>
+      <Footer />
     </main>
   );
 }

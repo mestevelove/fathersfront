@@ -1211,11 +1211,12 @@ h3 {
 .donate-copy .donate-lead { margin:42px 0 16px; color:var(--ink); font-size:21px; line-height:1.55; }
 .donate-direct-link { margin-top:26px; }
 .donate-widget { min-width:0; padding:18px; border:1px solid rgba(23,20,18,.28); background:#eee4d2; box-shadow:18px 18px 0 rgba(23,20,18,.08); }
-.donate-widget iframe { display:block; width:100%!important; max-width:100%!important; min-height:500px; margin:0 auto!important; border:0; }
+.donate-widget iframe { display:block; width:100%!important; max-width:100%!important; height:620px; min-height:620px; margin:0 auto!important; border:0; }
 .donate-widget noscript a { color:var(--red); font-weight:700; }
 @media(max-width:900px){
   .donate-grid { grid-template-columns:1fr; }
   .donate-widget { width:min(100%,620px); }
+  .donate-widget iframe { height:540px; min-height:540px; }
 }
 @media(max-width:640px){
   .donate-shell { width:calc(100% - 30px); }
