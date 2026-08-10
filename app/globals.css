@@ -103,7 +103,7 @@ button { font:inherit; }
 .nav-dropdown { position:relative; z-index:5; display:flex; align-items:center; height:100%; }
 .nav-dropdown-label::after { content:"+"; margin-left:.35em; color:var(--red); }
 .nav-submenu { position:absolute; top:100%; left:0; width:250px; padding:8px 0; display:grid; gap:0; background:#11100f; box-shadow:0 24px 55px #000b; opacity:0; visibility:hidden; transform:translate(0,8px); transition:.2s ease; z-index:5; }
-.nav-submenu a { padding:14px 20px 12px; position:relative; font:600 28px/1 var(--display); letter-spacing:.06em; text-transform:uppercase; white-space:nowrap; border-bottom:0; }
+.nav-submenu a { width:max-content; max-width:100%; padding:14px 20px 12px; position:relative; justify-self:start; font:600 28px/1 var(--display); letter-spacing:.06em; text-transform:uppercase; white-space:nowrap; border-bottom:0; }
 .nav-submenu a:after { content:""; position:absolute; left:20px; right:100%; bottom:8px; height:2px; background:var(--ember); transition:.2s; }
 .nav-submenu a:hover:after { right:20px; }
 .nav-dropdown:hover .nav-submenu,.nav-dropdown:focus-within .nav-submenu { opacity:1; visibility:visible; transform:translate(0,0); }
