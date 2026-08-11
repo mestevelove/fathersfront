@@ -47,7 +47,7 @@ export function Footer() {
         <div className="footer-dispatch">
           <p className="footer-dispatch-kicker">Weekly field note</p>
           <h2>The Fathers Front Dispatch</h2>
-          <p>A weekly field note for fathers and builders under pressure.</p>
+          <p>A weekly field note for fathers who are fighting, fortifying and forging their family&apos;s future.</p>
           <form className="footer-dispatch-form" onSubmit={subscribeToDispatch}>
             <label className="sr-only" htmlFor="footer-dispatch-first-name">First name</label>
             <input

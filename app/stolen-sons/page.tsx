@@ -7,7 +7,7 @@ export default function StolenSonsPage() {
   return (
     <ProductDetail
       type="Book · Memoir"
-      status="Available now"
+      status="Preorder now"
       title={<>Stolen<br />Sons</>}
       deck="A father erased. A son taken. A fight not finished."
       description="A memoir of love, exile, international family court, and a father who refused to disappear when distance and the system expected him to surrender."
@@ -15,6 +15,7 @@ export default function StolenSonsPage() {
       ctaHref="#editions"
       image="/assets/stolen-sons-cover.webp"
       imageAlt="Stolen Sons book cover"
+      hideDetails
       details={[
         {
           number: "01",
@@ -34,7 +35,17 @@ export default function StolenSonsPage() {
         <div className="book-editions-heading">
           <p className="section-kicker">Choose your edition</p>
           <h2 id="stolen-sons-editions-title">One story.<br /><em>Two ways to stand behind it.</em></h2>
-          <p>Choose the standard edition or claim one of one hundred signed copies created for those who want to stand behind the mission that gave this story its meaning.</p>
+          <div className="book-editions-campaign">
+            <p className="book-editions-intro">Choose the standard edition or claim one of one hundred signed copies created for those who want to stand behind the mission that gave this story its meaning.</p>
+            <p>This is more than a preorder. It is a funding campaign to help bring Ori home, support his recovery, finish <em>Stolen Sons</em>, and carry this work into the world.</p>
+            <p className="book-campaign-label">Every purchase, whichever edition you choose, helps fund all four stages:</p>
+            <ol className="book-campaign-roadmap" aria-label="What your preorder helps move forward">
+              <li><span>01</span><div><strong>Bring Ori home.</strong><p>Support the legal, international, travel, and recovery work still ahead.</p></div></li>
+              <li><span>02</span><div><strong>Finish living the book.</strong><p>The final chapter cannot be completed honestly until Ori is home.</p></div></li>
+              <li><span>03</span><div><strong>Finish writing the book.</strong><p>Complete the full story of abduction, litigation, fatherhood, and return.</p></div></li>
+              <li><span>04</span><div><strong>Edit, publish, and reach the world.</strong><p>I expect to complete the final edit and publish after Ori is back, then put this work into the hands of fathers who need it.</p></div></li>
+            </ol>
+          </div>
         </div>
         <div className="book-edition-grid">
           <article className="book-edition-card">

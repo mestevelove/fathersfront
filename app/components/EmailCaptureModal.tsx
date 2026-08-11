@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useEffect, useId, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 
 type CaptureTag = "dispatch";
 type CaptureStatus = "idle" | "submitting" | "success" | "error";
@@ -189,17 +190,20 @@ const dispatchCopy: CaptureCopy = {
   eyebrow: "Weekly field note",
   title: "The Fathers Front",
   accent: "Dispatch",
-  description: "A weekly field note for fathers and builders under pressure. No noise. No empty motivation. Just something useful for the fight and the life that follows.",
+  description: "A weekly field note for fathers who are fighting, fortifying and forging their family's future. No noise. No empty motivation. Just something useful for the fight and the life that follows.",
   submitLabel: "Join the Dispatch",
   tag: "dispatch",
   successMessage: "Received — Welcome to the Front",
 };
 
 export function DispatchPopup() {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [eligible, setEligible] = useState(false);
 
   useEffect(() => {
+    if (pathname === "/") return;
+
     const preview = new URLSearchParams(window.location.search).has("dispatch-preview");
     const dismissedAt = Number(window.localStorage.getItem("ff-dispatch-popup-dismissed") || 0);
     const cooldownExpired = Date.now() - dismissedAt > 14 * 24 * 60 * 60 * 1000;
@@ -222,9 +226,9 @@ export function DispatchPopup() {
       window.clearTimeout(timer);
       window.removeEventListener("scroll", onScroll);
     };
-  }, []);
+  }, [pathname]);
 
-  if (!eligible) return null;
+  if (pathname === "/" || !eligible) return null;
 
   function dismiss() {
     window.localStorage.setItem("ff-dispatch-popup-dismissed", String(Date.now()));

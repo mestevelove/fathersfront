@@ -673,10 +673,10 @@ body {
 </style>
 
 <!--
-  FATHERS FRONT - BLOODLINE BROTHERHOOD CHECKOUT OVERRIDES
+  FATHERS FRONT - STOLEN SONS CHECKOUT OVERRIDES
 
   INSTALLATION:
-  Paste this block only on the Bloodline Brotherhood order page, after the shared
+  Paste this block only on the Stolen Sons order page, after the shared
   Fathers Front base code.
 
   SCOPE:
@@ -784,34 +784,15 @@ input[name="company_name"]:focus,
 input[name="company_name"]:focus-visible,
 input[name="tax_number"]:focus,
 input[name="tax_number"]:focus-visible,
-input[name="email"][placeholder="Email *"]:focus,
-input[name="email"][placeholder="Email *"]:focus-visible,
-select:focus,
-select:focus-visible {
+#row-38174a5d input[name="email"]:focus,
+#row-38174a5d input[name="email"]:focus-visible,
+#row-38174a5d select:focus,
+#row-38174a5d select:focus-visible,
+#coupon-a49aed31 input:focus,
+#coupon-a49aed31 input:focus-visible {
   border-color: #912d2f !important;
   box-shadow: 0 0 0 1px #912d2f !important;
   outline: none !important;
-}
-
-#coupon-2ef57d4a input {
-  background: #fffaf0 !important;
-  border: 1px solid #f0f0f0 !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-}
-
-#coupon-2ef57d4a input:focus,
-#coupon-2ef57d4a input:focus-visible {
-  border-color: #912d2f !important;
-  box-shadow: 0 0 0 1px #912d2f !important;
-  outline: none !important;
-}
-
-#coupon-2ef57d4a button {
-  background: transparent !important;
-  border: 1px solid #912d2f !important;
-  border-radius: 0 !important;
-  color: #912d2f !important;
 }
 
 /* Phone input and flag-selector focus treatment */
@@ -838,10 +819,6 @@ select:focus-visible {
   width: 0 !important;
   height: 0 !important;
 }
-/* Brotherhood Monthly selected radio indicator */
-input[type="radio"][name="Brotherhood Monthly"]:checked + span {
-  border-color: #912d2f !important;
-}
 /* Hide the opt-in while preserving the desktop footer layout */
 .ff-sio-footer__dispatch {
   visibility: hidden !important;
@@ -854,4 +831,105 @@ input[type="radio"][name="Brotherhood Monthly"]:checked + span {
     display: none !important;
   }
 }
+
+/* Quantity controls: compact oxblood circles with an unboxed count. */
+.ff-fl-quantity-control {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 30px !important;
+  min-width: 30px !important;
+  height: 30px !important;
+  min-height: 30px !important;
+  padding: 0 !important;
+  color: #912d2f !important;
+  background: transparent !important;
+  border: 1px solid #912d2f !important;
+  border-radius: 50% !important;
+  box-shadow: none !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  transition:
+    color 160ms ease,
+    background-color 160ms ease !important;
+}
+
+.ff-fl-quantity-control:hover,
+.ff-fl-quantity-control:focus-visible,
+.ff-fl-quantity-control:active {
+  color: #f4ecdc !important;
+  background: #912d2f !important;
+  outline: none !important;
+}
 </style>
+
+<!--
+  Adds a stable Fathers Front class to the Systeme-generated quantity controls.
+  This intentionally contains no edition-selection or query-string behavior.
+-->
+<script>
+(function () {
+  if (window.__ffFamilyLawfareQuantityBound) return;
+  window.__ffFamilyLawfareQuantityBound = true;
+
+  var setupQueued = false;
+
+  function normalizedText(node) {
+    return (node && node.textContent || "").replace(/\s+/g, " ").trim();
+  }
+
+  function exactTextElements(root, text) {
+    return Array.from(root.querySelectorAll("button, label, [role='button'], div, span"))
+      .filter(function (node) {
+        if (normalizedText(node) !== text) return false;
+        return !Array.from(node.children).some(function (child) {
+          return normalizedText(child) === text;
+        });
+      });
+  }
+
+  function visualControl(node, text) {
+    if (!node) return null;
+
+    var control = node.closest("button, label, [role='button']");
+    if (control) return control;
+
+    control = node;
+    while (control.parentElement && normalizedText(control.parentElement) === text) {
+      control = control.parentElement;
+    }
+    return control;
+  }
+
+  function setupQuantityControls() {
+    setupQueued = false;
+
+    var orderSummary = document.getElementById("row-8891df19");
+    if (!orderSummary) return;
+
+    ["-", "+"].forEach(function (symbol) {
+      exactTextElements(orderSummary, symbol).forEach(function (leaf) {
+        var control = visualControl(leaf, symbol);
+        if (control) control.classList.add("ff-fl-quantity-control");
+      });
+    });
+  }
+
+  function queueSetup() {
+    if (setupQueued) return;
+    setupQueued = true;
+    window.requestAnimationFrame(setupQuantityControls);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", queueSetup, { once: true });
+  } else {
+    queueSetup();
+  }
+
+  new MutationObserver(queueSetup).observe(document.documentElement, {
+    childList: true,
+    subtree: true
+  });
+})();
+</script>

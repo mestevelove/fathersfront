@@ -32,7 +32,7 @@ test("exports a complete static homepage", async () => {
   assert.match(html, /name="twitter:card" content="summary_large_image"/);
   assert.match(html, /href="\/favicon\.svg"/);
   assert.match(html, /href="\/apple-touch-icon\.png"/);
-  assert.match(html, /Menu · V\.90/);
+  assert.match(html, /Menu · V\.92/);
   assert.match(html, /Born in/);
   assert.match(html, /Blood\./);
   assert.match(html, /Forged in <em>Fire\.<\/em>/);
@@ -42,7 +42,10 @@ test("exports a complete static homepage", async () => {
   assert.match(html, /Law/);
   assert.match(html, /Love/);
   assert.match(html, /The Fathers Front Dispatch/);
-  assert.match(html, /A weekly field note for fathers and builders under pressure\./);
+  assert.match(html, /A weekly field note for fathers who are fighting, fortifying and forging their family(?:&#x27;|&apos;|â€™|')s future\./);
+  assert.doesNotMatch(html, /Founding cohort opening soon\./);
+  assert.match(html, /home-dispatch-form/);
+  assert.doesNotMatch(html, /View all articles/);
   assert.match(html, /footer-dispatch-form/);
   assert.match(html, /First name/);
   assert.match(html, /Email address/);
@@ -103,8 +106,8 @@ test("uses Donate in shared navigation while keeping Articles available", async 
   const articles = await readFile(new URL("articles/index.html", outputRoot), "utf8");
 
   assert.match(home, /href="\/donate\/?"[^>]*>Donate</);
-  assert.match(home, /Site version 90/);
-  assert.match(home, /V\.90/);
+  assert.match(home, /Site version 92/);
+  assert.match(home, /V\.92/);
   assert.match(articles, /Articles/);
 });
 
@@ -130,9 +133,15 @@ test("exports optimized book cover assets", async () => {
   assert.doesNotMatch(familyLawfare, /form-script-tag-24902650/);
   assert.match(stolenSons, /Choose Your Edition/);
   assert.match(stolenSons, /The Founding Hundred/);
+  assert.match(stolenSons, /This is more than a preorder/);
+  assert.match(stolenSons, /Every purchase, whichever edition you choose, helps fund all four stages/);
+  assert.match(stolenSons, /Finish living the book/);
+  assert.match(stolenSons, /Edit, publish, and reach the world/);
+  assert.doesNotMatch(stolenSons, /For the father who will not disappear/);
+  assert.match(stolenSons, /Next book: Family Lawfare/);
   assert.match(stolenSons, /\$25/);
   assert.match(stolenSons, /\$100/);
-  assert.match(homepage, /aria-label="Site version 90"/);
+  assert.match(homepage, /aria-label="Site version 92"/);
   assert.doesNotMatch(homepage, /family-lawfare\.png|stolen-sons\.png/);
 });
 

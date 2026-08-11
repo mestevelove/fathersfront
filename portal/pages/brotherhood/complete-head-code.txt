@@ -888,7 +888,20 @@ select:focus-visible {
   width: 0 !important;
   height: 0 !important;
 }
-input[name="Brotherhood Monthly Payment Plan"] + span {
+/* Brotherhood Monthly selected radio indicator */
+input[type="radio"][name="Brotherhood Monthly"]:checked + span {
   border-color: #912d2f !important;
+}
+/* Hide the opt-in while preserving the desktop footer layout */
+.ff-sio-footer__dispatch {
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Do not preserve the empty space on mobile */
+@media (max-width: 760px) {
+  .ff-sio-footer__dispatch {
+    display: none !important;
+  }
 }
 </style>

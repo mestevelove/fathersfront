@@ -27,6 +27,7 @@ type ProductDetailProps = {
   productMark?: { eyebrow: string; name: string; price: string };
   markTone?: "ink" | "oxblood";
   details: Detail[];
+  hideDetails?: boolean;
   nextHref: string;
   nextLabel: string;
   children?: React.ReactNode;
@@ -59,9 +60,9 @@ export function ProductDetail(props: ProductDetailProps) {
         </div>
       </div>
       {props.children}
-      <div className={`shell product-detail-sections product-detail-sections-${props.details.length}`}>
+      {!props.hideDetails && props.details.length > 0 && <div className={`shell product-detail-sections product-detail-sections-${props.details.length}`}>
         {props.details.map((detail) => <article key={detail.number}><span>{detail.number}</span><h2>{detail.title}</h2><p>{detail.copy}</p></article>)}
-      </div>
+      </div>}
       <div className="shell product-next"><Link href={props.nextHref}>{props.nextLabel} →</Link></div>
     </section>
     <Footer />

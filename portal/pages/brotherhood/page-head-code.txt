@@ -165,8 +165,8 @@ select:focus-visible {
   height: 0 !important;
 }
 
-/* Brotherhood payment-plan selection indicator */
-input[name="Brotherhood Monthly Payment Plan"] + span {
+/* Brotherhood Monthly selected radio indicator */
+input[type="radio"][name="Brotherhood Monthly"]:checked + span {
   border-color: #912d2f !important;
 }
 </style>
